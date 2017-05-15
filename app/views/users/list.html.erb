@@ -1,0 +1,13 @@
+<% if @users.blank? %>
+    <p>No existen usuarios creados.</p>
+<% else %>
+    <p>Estos son los usuarios creados</p>
+
+    <ul id = "users">
+      <% @users.each do |c| %>
+          <li><%= link_to c.name, {:action => 'show', :id => c.id} -%></li>
+      <% end %>
+    </ul>
+
+<% end %>
+<p><%= link_to "Agregar nuevo usuario", {:action => 'new' }%></p>
