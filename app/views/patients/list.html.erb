@@ -1,0 +1,14 @@
+<% if @patients.blank? %>
+    <p>No existen pacientes creados.</p>
+<% else %>
+    <p>Estos son los pacientes creados</p>
+
+    <ul id = "patients">
+      <% @patients.each do |c| %>
+          <li><%= link_to c.name, {:action => 'show', :id => c.id} -%>
+          <b> <%= link_to 'Editar', {:action => "edit", :id => c.id} %></b></li>
+      <% end %>
+    </ul>
+
+<% end %>
+<p><%= link_to "Agregar nuevo paciente", {:action => 'new' }%></p>

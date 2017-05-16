@@ -1,0 +1,26 @@
+<h1>Modificar Paciente</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @patient, :url =>{:action => "update", :id =>@patient} do |f| %>
+
+        <p>Nombre: <%= f.text_field :name, class: 'form-control' %></p>
+        <p>Apellido: <%= f.text_field  :surname, class: 'form-control' %></p>
+        <p>DNI: <%= f.text_field  :document_number, class: 'form-control' %></p>
+        <p>Obra Social/Num: <%= f.text_field  :associate_number, class: 'form-control' %></p>
+        <p>Fecha de Nacimiento: <%= f.date_select :birth_date,{:start_year=>1930, order: [:day, :month, :year]}, {:class => "form-inline"} %></p>
+        <p>Sexo: <%= f.check_box  :sex, class: 'form-control' %></p>
+        <p>Sexo:<%= f.select :sex, ['Masculino', 'Femenino']  , {class: 'form-control' }%></p>
+        <p>Nacionalidad: <%= f.country_select  :country_code, {},{ class: 'form-control' } %></p>
+        <p>Estado Civil: <%= f.text_field  :marital_status, class: 'form-control' %></p>
+        <p>Ciudad: <%= f.text_field  :city, class: 'form-control' %></p>
+        <p>Telefono: <%= f.text_field  :phone, class: 'form-control' %></p>
+        <p>Tel. Allegado/Familiar: <%= f.text_field  :close_person_phone, class: 'form-control' %></p>
+        <p>Ocupacion: <%= f.text_field  :job, class: 'form-control' %></p>
+
+        <%= f.submit "Actualizar paciente" %>
+    <% end %>
+
+    <%= link_to 'Back', {:action => 'list' } %>
+  </div>
+</div>

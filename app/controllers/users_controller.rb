@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
     @user = User.new(user_params)
     if @user.save
-      redirect_to '/boxes/list'
+      redirect_to '/patients/list'
     else
       flash[:error] = "Error al generar usuario."
       render 'new'

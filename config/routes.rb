@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   resources :users do
   end
 
+  get 'patients/list'
+  resources :patients do
+  end
+
 end

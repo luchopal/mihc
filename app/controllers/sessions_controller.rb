@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       log_in user
-      redirect_to '/main/index'
+      redirect_to '/patients/list'
     else
       flash[:error] = 'Verifique el correo o contraseña' # Not quite right!
       render 'new'

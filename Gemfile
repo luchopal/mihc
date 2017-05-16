@@ -35,6 +35,8 @@ gem 'bcrypt','~>3.1.11'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails'
 
+gem 'country_select'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
