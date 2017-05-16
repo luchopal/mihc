@@ -1,4 +1,4 @@
-<h1>Sign up</h1>
+<h1>Nuevo usuario</h1>
 
 
 <div class="row">
@@ -13,19 +13,23 @@
             <% end %>
         <% end %>
 
-        <%= f.label :name, class: 'form-control' %>
+        <%= f.label :name, "Nombre" %>
         <%= f.text_field :name, class: 'form-control' %>
 
-        <%= f.label :email, class: 'form-control' %>
+        <%= f.label :surname, "Apellido" %>
+        <%= f.text_field :surname, class: 'form-control' %>
+
+        <%= f.label :email%>
         <%= f.email_field :email, class: 'form-control' %>
 
-        <%= f.label :password, class: 'form-control' %>
+        <%= f.label :password, "Contraseña"%>
         <%= f.password_field :password, class: 'form-control' %>
 
-        <%= f.label :password_confirmation, "Confirmation", class: 'form-control' %>
+        <%= f.label :password_confirmation, "Confirmar contraseña"%>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
+        <hr>
+        <%= f.submit "Crear usuario", class: "btn btn-primary" %>
 
-        <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
