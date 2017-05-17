@@ -34,7 +34,11 @@ class PatientsController < ApplicationController
   end
 
   def patient_params
-    params.require(:patient).permit(:name, :surname, :document_number,:associate_number, :birth_date, :sex, :country_code, :marital_status, :city, :phone, :close_person_phone, :job)
+    params.require(:patient).permit(:name, :surname, :document_number,:associate_number, :birth_date, :sex, :country_code,
+                                    :marital_status, :city, :phone, :close_person_phone, :job, :asthma, :hearth_failure,
+                                    :ischemic_heart_disease, :arteriopathy, :arterial_hypertension, :stroke, :diabetes,
+                                    :dyslipidemia,:renal_insufficiency,:liver_disease,:ulcer_disease, :hematological_disease,
+                                    :tuberculosis, :aids, :do_drugs, :alcoholism, :smoking, :allergies, :others, :others_description, :medicines, :surgical_history)
   end
 
   def edit

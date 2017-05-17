@@ -1,14 +1,23 @@
-<% if @patients.blank? %>
-    <p>No existen pacientes creados.</p>
-<% else %>
-    <p>Estos son los pacientes creados</p>
+<h1>Afiliado</h1>
 
-    <ul id = "patients">
-      <% @patients.each do |c| %>
-          <li><%= link_to c.name, {:action => 'show', :id => c.id} -%>
-          <b> <%= link_to 'Editar', {:action => "edit", :id => c.id} %></b></li>
+<div class="row">
+    <table class="table">
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>DNI</th>
+        <th>Obra Social/Num</th>
+        <th>Accion</th>
+      </tr>
+      <% @patients.each do |data| %>
+          <tr>
+            <td><%= data.name %></td>
+            <td><%= data.surname %></td>
+            <td><%= data.document_number %></td>
+            <td><%= data.associate_number %></td>
+            <td><b> <%= link_to 'Editar', {:action => "edit", :id => data.id} %></b></td>
+          </tr>
       <% end %>
-    </ul>
-
-<% end %>
-<p><%= link_to "Agregar nuevo paciente", {:action => 'new' }%></p>
+    </table>
+</div>
+<p><%= link_to "Agregar nuevo paciente", {:action => 'new' }, class: "btn btn-primary"%></p>

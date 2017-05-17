@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516232133) do
+ActiveRecord::Schema.define(version: 20170517150827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,8 +28,30 @@ ActiveRecord::Schema.define(version: 20170516232133) do
     t.string   "phone"
     t.string   "close_person_phone"
     t.string   "job"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.boolean  "asthma"
+    t.boolean  "hearth_failure"
+    t.boolean  "ischemic_heart_disease"
+    t.boolean  "arteriopathy"
+    t.boolean  "arterial_hypertension"
+    t.boolean  "stroke"
+    t.boolean  "diabetes"
+    t.boolean  "dyslipidemia"
+    t.boolean  "renal_insufficiency"
+    t.boolean  "liver_disease"
+    t.boolean  "ulcer_disease"
+    t.boolean  "hematological_disease"
+    t.boolean  "tuberculosis"
+    t.boolean  "aids"
+    t.boolean  "do_drugs"
+    t.boolean  "alcoholism"
+    t.boolean  "smoking"
+    t.boolean  "allergies"
+    t.boolean  "others"
+    t.string   "others_description"
+    t.string   "medicines"
+    t.string   "surgical_history"
   end
 
   create_table "users", force: :cascade do |t|
