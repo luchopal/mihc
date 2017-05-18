@@ -55,7 +55,7 @@
       </div>
       <div class="col-md-4">
         <p><label for = "sex">Sexo</label>:</p>
-        <%= f.select :sex, ['Masculino', 'Femenino'], {},{class: 'form-control'}  %>
+        <%= f.select :sex, Patient::SEX, {},{class: 'form-control'}  %>
       </div>
     </div>
     <div class="row">

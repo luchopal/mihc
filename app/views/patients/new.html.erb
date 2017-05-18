@@ -58,7 +58,7 @@
       </div>
       <div class="col-md-4">
         <p><label for = "sex">Sexo</label>:</p>
-        <%= f.select :sex, ['Masculino', 'Femenino'], {},{class: 'form-control'}  %>
+        <%= f.select :sex, Patient::SEX, {},{class: 'form-control'}  %>
       </div>
     </div>
     <div class="row">
@@ -201,6 +201,24 @@
         <%= f.text_area :surgical_history, class: 'form-control' %>
       </div>
     </div>
+
+    <div class="row">
+      <h2>ANTECEDENTES HEREDOFAMILIARES</h2>
+    </div>
+
+
+    <%= f.fields_for :relatives do |ff| %>
+        <div class="field">
+          <%= ff.label :bond, "ESTADO" %>
+          <%= ff.select :bond, Relative::STATUS, {},{class: 'form-control'}  %>
+          <%= ff.label :status, "Situacion" %>
+          <%= ff.select :status, Relative::STATUS, {},{class: 'form-control'}  %>
+        </div>
+    <% end %>
+
+
+
+    <br>
     <div class="row">
       <div class="col-md-4">
         <%= f.submit "Dar de alta paciente", class: "btn btn-primary" %>
