@@ -6,7 +6,7 @@ class PatientsController < ApplicationController
                                     :ischemic_heart_disease, :arteriopathy, :arterial_hypertension, :stroke, :diabetes,
                                     :dyslipidemia,:renal_insufficiency,:liver_disease,:ulcer_disease, :hematological_disease,
                                     :tuberculosis, :aids, :do_drugs, :alcoholism, :smoking, :allergies, :others, :others_description,
-                                    :medicines, :surgical_history, :relatives[])
+                                    :medicines, :surgical_history, relatives_attributes: [:status, :bond, :observation, :_destroy])
   end
 
   def show
@@ -24,7 +24,7 @@ class PatientsController < ApplicationController
 
   def create
 
-    @patient = Patient.new(params.require(:patient))
+    @patient = Patient.new(patient_params)
     # @patient.relatives = params.require(:patient)[:relatives_attributes]
     if @patient.save
       redirect_to '/patients/list'

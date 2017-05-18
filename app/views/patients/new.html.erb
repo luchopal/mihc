@@ -206,17 +206,22 @@
       <h2>ANTECEDENTES HEREDOFAMILIARES</h2>
     </div>
 
-
-    <%= f.fields_for :relatives do |ff| %>
-        <div class="field">
-          <%= ff.label :bond, "ESTADO" %>
-          <%= ff.select :bond, Relative::STATUS, {},{class: 'form-control'}  %>
-          <%= ff.label :status, "Situacion" %>
-          <%= ff.select :status, Relative::STATUS, {},{class: 'form-control'}  %>
+    <div class="row">
+      <%= f.fields_for :relatives do |ff| %>
+        <div class="col-md-4">
+        <%= ff.label :bond, "Relacion" %>
+        <%= ff.select :bond, Relative::BOND, {},{class: 'form-control'}  %>
         </div>
-    <% end %>
-
-
+        <div class="col-md-4">
+        <%= ff.label :status, "Estado" %>
+        <%= ff.select :status, Relative::STATUS, {},{class: 'form-control'}  %>
+        </div>
+        <div class="col-md-4">
+          <%= ff.label :observation, "Observacion" %>
+          <%= ff.text_field :observation,{class: 'form-control'}  %>
+        </div>
+      <% end %>
+    </div>
 
     <br>
     <div class="row">
