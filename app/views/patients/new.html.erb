@@ -54,7 +54,7 @@
       </div>
       <div class="col-md-4">
         <p><label for = "birth_date">Fecha de Nacimiento</label>:</p>
-        <%= f.date_select :birth_date, {:start_year=>1930, order: [:day, :month, :year]}, {:class => "form-group"} %>
+        <%= f.date_select :birth_date, {:start_year=>1930, order: [:day, :month, :year]}, {:class => "date-select form-control"} %>
       </div>
       <div class="col-md-4">
         <p><label for = "sex">Sexo</label>:</p>
@@ -206,21 +206,14 @@
       <h2>ANTECEDENTES HEREDOFAMILIARES</h2>
     </div>
 
-    <div class="row">
-      <%= f.fields_for :relatives do |ff| %>
-        <div class="col-md-4">
-        <%= ff.label :bond, "Relacion" %>
-        <%= ff.select :bond, Relative::BOND, {},{class: 'form-control'}  %>
-        </div>
-        <div class="col-md-4">
-        <%= ff.label :status, "Estado" %>
-        <%= ff.select :status, Relative::STATUS, {},{class: 'form-control'}  %>
-        </div>
-        <div class="col-md-4">
-          <%= ff.label :observation, "Observacion" %>
-          <%= ff.text_field :observation,{class: 'form-control'}  %>
-        </div>
-      <% end %>
+
+    <%= f.fields_for :relatives do |relatives| %>
+        <%= render 'relative_fields', f: relatives %>
+    <% end %>
+    <br>
+
+    <div class="links">
+      <%= link_to_add_association 'Agregar relacion', f, :relatives, class: "btn btn-primary" %>
     </div>
 
     <br>

@@ -1,14 +1,17 @@
-<li class="control-group nested-fields">
-  <div class="controls">
-    <div class="row">
-      <div class="col-md-4">
-      <%= f.label :bond, "Familiar" %>
-      <%= f.select :bond, Relative::BOND, {},{class: 'form-control'}  %>
-      </div>
-      <div class="col-md-4">
-      <%= f.label :status, "Situacion" %>
-      <%= f.select :status, Relative::STATUS, {},{class: 'form-control'}  %>
-      </div>
-    </div>
+<div class="row nested-fields">
+  <div class="col-md-3">
+    <%= f.label :bond, "Relacion" %>
+    <%= f.select :bond, Relative::BOND, {},{class: 'form-control'}  %>
   </div>
-</li>
+  <div class="col-md-3">
+    <%= f.label :status, "Estado" %>
+    <%= f.select :status, Relative::STATUS, {},{class: 'form-control'}  %>
+  </div>
+  <div class="col-md-4">
+    <%= f.label :observation, "Observacion" %>
+    <%= f.text_field :observation,{class: 'form-control'}  %>
+  </div>
+  <div class="col-md-1">
+    <%= link_to_remove_association "Eliminar", f , class: "btn btn-danger"%>
+  </div>
+</div>

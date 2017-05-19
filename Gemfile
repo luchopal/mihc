@@ -37,6 +37,8 @@ gem 'autoprefixer-rails'
 
 gem 'country_select'
 
+gem 'cocoon'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
