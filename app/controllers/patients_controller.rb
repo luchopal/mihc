@@ -25,7 +25,6 @@ class PatientsController < ApplicationController
   def create
 
     @patient = Patient.new(patient_params)
-    # @patient.relatives = params.require(:patient)[:relatives_attributes]
     if @patient.save
       redirect_to '/patients/list'
     else
