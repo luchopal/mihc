@@ -182,11 +182,13 @@
           <td><label for = "others">OTROS </label></td>
           <td><%= f.check_box :others %></td>
         </tr>
-        <tr id="others_descrip">
-          <td><label for = "others_description">Aclaracion </label></td>
-          <td><%= f.text_field :others_description, class: 'form-control' %></td>
-        </tr>
       </table>
+      </div>
+    </div>
+    <div class="row" id="others_descrip">
+      <div class="col-md-12">
+          <label for = "others_description">Otros aclaracion </label>
+          <%= f.text_field :others_description, class: 'form-control' %>
       </div>
     </div>
     <div class="row">

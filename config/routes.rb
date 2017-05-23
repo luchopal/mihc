@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   resources :patients do
   end
 
+  resources :medical_consultations do
+  end
+
 end
