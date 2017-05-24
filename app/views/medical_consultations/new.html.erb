@@ -1,3 +1,63 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        if( $("#abdomenCheckBox").is(':checked')) {
+            $("#abdomenDiv").show();
+        } else {
+            $("#abdomenDiv").hide();
+        }
+
+        $("#abdomenCheckBox").click(function() {
+            if( $("#abdomenCheckBox").is(':checked')) {
+                $("#abdomenDiv").show();
+            } else {
+                $("#abdomenDiv").hide();
+            }
+        });
+
+        if( $("#inspectionCheckBox").is(':checked')) {
+            $("#inspectionDiv").show();
+        } else {
+            $("#inspectionDiv").hide();
+        }
+
+        $("#inspectionCheckBox").click(function() {
+            if( $("#inspectionCheckBox").is(':checked')) {
+                $("#inspectionDiv").show();
+            } else {
+                $("#inspectionDiv").hide();
+            }
+        });
+
+        if( $("#palpationCheckBox").is(':checked')) {
+            $("#palpationDiv").show();
+        } else {
+            $("#palpationDiv").hide();
+        }
+
+        $("#palpationCheckBox").click(function() {
+            if( $("#palpationCheckBox").is(':checked')) {
+                $("#palpationDiv").show();
+            } else {
+                $("#palpationDiv").hide();
+            }
+        });
+
+        if( $("#percussionCheckBox").is(':checked')) {
+            $("#percussionDiv").show();
+        } else {
+            $("#percussionDiv").hide();
+        }
+
+        $("#percussionCheckBox").click(function() {
+            if( $("#percussionCheckBox").is(':checked')) {
+                $("#percussionDiv").show();
+            } else {
+                $("#percussionDiv").hide();
+            }
+        });
+    });
+</script>
+
 <h1>Consulta</h1>
 
 
@@ -6,158 +66,160 @@
     <%= f.fields_for :physical_exam do |physical_exam| %>
       <div class="row">
         <div class="col-md-12">
-          <h2>Abdomen  <%= physical_exam.check_box :activate_abdomen %> </h2>
+          <h2>Abdomen  <%= physical_exam.check_box :activate_abdomen, id:"abdomenCheckBox" %> </h2>
         </div>
       </div>
-      <div class="row">
+      <div class="row" id="abdomenDiv">
         <div class="col-md-12">
           <%= physical_exam.fields_for :abdomen do |abdomen| %>
               <div class="row">
                 <div class="col-md-12">
-                  <h3><label>Inspeccion </label> <%= abdomen.check_box :inspection %></h3>
+                  <h3><label>Inspeccion </label> <%= abdomen.check_box :inspection, id: "inspectionCheckBox" %></h3>
                 </div>
               </div>
-              <hr>
-              <div class="row">
-                <div class="col-md-2">
-                  <label for = "plane">Plano </label>
-                  <%= abdomen.check_box :plane %>
+              <div id="inspectionDiv">
+                <div class="row">
+                  <div class="col-md-2">
+                    <label for = "plane">Plano </label>
+                    <%= abdomen.check_box :plane %>
+                  </div>
+                  <div class="col-md-2">
+                    <label for = "spherical">Globoso </label>
+                    <%= abdomen.check_box :spherical %>
+                  </div>
+                  <div class="col-md-2">
+                    <label for = "relaxed">Distendido </label>
+                    <%= abdomen.check_box :relaxed %>
+                  </div>
+                  <div class="col-md-2">
+                    <label for = "asymmetric">Asimetrico </label>
+                    <%= abdomen.check_box :asymmetric %>
+                  </div>
                 </div>
-                <div class="col-md-2">
-                  <label for = "spherical">Globoso </label>
-                  <%= abdomen.check_box :spherical %>
+                <div class="row">
+                  <div class="col-md-2">
+                    <label for = "umbilical_hernia">Hernia Umbilical </label>
+                    <%= abdomen.check_box :umbilical_hernia %>
+                  </div>
+                  <div class="col-md-2">
+                    <label for = "eventration">Eventracion </label>
+                    <%= abdomen.check_box :eventration %>
+                  </div>
+                  <div class="col-md-4">
+                    <label for = "location">Localizacion </label>
+                    <%= abdomen.text_field :location, class: 'form-control' %>
+                  </div>
+                  <div class="col-md-3">
+                    <label for = "size">Tamaño </label>
+                    <%= abdomen.text_field :size, class: 'form-control' %>
+                  </div>
                 </div>
-                <div class="col-md-2">
-                  <label for = "relaxed">Distendido </label>
-                  <%= abdomen.check_box :relaxed %>
+                <div class="row">
+                  <div class="col-md-2">
+                    <label for = "scar">Cicatrices </label>
+                    <%= abdomen.check_box :scar %>
+                  </div>
+                  <div class="col-md-2">
+                    <label for = "msu">MSU </label>
+                    <%= abdomen.check_box :msu %>
+                  </div>
+                  <div class="col-md-2">
+                    <label for = "miu">MIU </label>
+                    <%= abdomen.check_box :miu %>
+                  </div>
+                  <div class="col-md-2">
+                    <label for = "xp">XP </label>
+                    <%= abdomen.check_box :xp %>
+                  </div>
+                  <div class="col-md-2">
+                    <label for = "mc_burney">MC Burney </label>
+                    <%= abdomen.check_box :mc_burney %>
+                  </div>
+                  <div class="col-md-2">
+                    <label for = "kocher">Kocher </label>
+                    <%= abdomen.check_box :kocher %>
+                  </div>
                 </div>
-                <div class="col-md-2">
-                  <label for = "asymmetric">Asimetrico </label>
-                  <%= abdomen.check_box :asymmetric %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-2">
-                  <label for = "umbilical_hernia">Hernia Umbilical </label>
-                  <%= abdomen.check_box :umbilical_hernia %>
-                </div>
-                <div class="col-md-2">
-                  <label for = "eventration">Eventracion </label>
-                  <%= abdomen.check_box :eventration %>
-                </div>
-                <div class="col-md-4">
-                  <label for = "location">Localizacion </label>
-                  <%= abdomen.text_field :location, class: 'form-control' %>
-                </div>
-                <div class="col-md-3">
-                  <label for = "size">Tamaño </label>
-                  <%= abdomen.text_field :size, class: 'form-control' %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-2">
-                  <label for = "scar">Cicatrices </label>
-                  <%= abdomen.check_box :scar %>
-                </div>
-                <div class="col-md-2">
-                  <label for = "msu">MSU </label>
-                  <%= abdomen.check_box :msu %>
-                </div>
-                <div class="col-md-2">
-                  <label for = "miu">MIU </label>
-                  <%= abdomen.check_box :miu %>
-                </div>
-                <div class="col-md-2">
-                  <label for = "xp">XP </label>
-                  <%= abdomen.check_box :xp %>
-                </div>
-                <div class="col-md-2">
-                  <label for = "mc_burney">MC Burney </label>
-                  <%= abdomen.check_box :mc_burney %>
-                </div>
-                <div class="col-md-2">
-                  <label for = "kocher">Kocher </label>
-                  <%= abdomen.check_box :kocher %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-2">
-                  <label for = "pfannenstiel">Pfannenstiel </label>
-                  <%= abdomen.check_box :pfannenstiel %>
-                </div>
-                <div class="col-md-2">
-                  <label for = "others">Otras </label>
-                  <%= abdomen.check_box :others %>
-                </div>
-                <div class="col-md-6">
-                  <label for = "others_description">Aclaracion </label>
-                  <%= abdomen.text_field :others_description, class: 'form-control'  %>
+                <div class="row">
+                  <div class="col-md-2">
+                    <label for = "pfannenstiel">Pfannenstiel </label>
+                    <%= abdomen.check_box :pfannenstiel %>
+                  </div>
+                  <div class="col-md-2">
+                    <label for = "others">Otras </label>
+                    <%= abdomen.check_box :others %>
+                  </div>
+                  <div class="col-md-6">
+                    <label for = "others_description">Aclaracion </label>
+                    <%= abdomen.text_field :others_description, class: 'form-control'  %>
+                  </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <h3><label>Palpacion </label> <%= abdomen.check_box :palpation %></h3>
+                  <h3><label>Palpacion </label> <%= abdomen.check_box :palpation, id: "palpationCheckBox" %></h3>
                 </div>
               </div>
-              <hr>
-              <div class="row">
-                <div class="col-md-2">
-                  <label for = "soft">Blando </label>
-                  <%= abdomen.check_box :soft %>
+              <div id="palpationDiv">
+                <div class="row">
+                  <div class="col-md-2">
+                    <label for = "soft">Blando </label>
+                    <%= abdomen.check_box :soft %>
+                  </div>
+                  <div class="col-md-2">
+                    <label for = "uptight">Tenso </label>
+                    <%= abdomen.check_box :uptight %>
+                  </div>
+                  <div class="col-md-6">
+                    <label for = "painful">Doloroso </label>
+                    <%= abdomen.check_box :painful %>
+                  </div>
                 </div>
-                <div class="col-md-2">
-                  <label for = "uptight">Tenso </label>
-                  <%= abdomen.check_box :uptight %>
-                </div>
-                <div class="col-md-6">
-                  <label for = "painful">Doloroso </label>
-                  <%= abdomen.check_box :painful %>
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for = "superficial_pain">Dolor Superficial</label>
+                    <%= abdomen.select :superficial_pain, Abdomen::PALPATION_TYPE, {},{class: 'form-control'}  %>
+                  </div>
+                  <div class="col-md-3">
+                    <label for = "deep_pain">Dolor Profundo </label>
+                    <%= abdomen.select :deep_pain, Abdomen::PALPATION_TYPE, {},{class: 'form-control'}  %>
+                  </div>
+                  <div class="col-md-3">
+                    <label for = "defence">Defensa </label>
+                    <%= abdomen.select :defence, Abdomen::PALPATION_TYPE, {},{class: 'form-control'}  %>
+                  </div>
+                  <div class="col-md-3">
+                    <label for = "peritoneal_reaction">Reaccion Peritoneal </label>
+                    <%= abdomen.select :peritoneal_reaction, Abdomen::PALPATION_TYPE, {},{class: 'form-control'}  %>
+                  </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <label for = "superficial_pain">Dolor Superficial</label>
-                  <%= abdomen.select :superficial_pain, Abdomen::PALPATION_TYPE, {},{class: 'form-control'}  %>
-                </div>
-                <div class="col-md-3">
-                  <label for = "deep_pain">Dolor Profundo </label>
-                  <%= abdomen.select :deep_pain, Abdomen::PALPATION_TYPE, {},{class: 'form-control'}  %>
-                </div>
-                <div class="col-md-3">
-                  <label for = "defence">Defensa </label>
-                  <%= abdomen.select :defence, Abdomen::PALPATION_TYPE, {},{class: 'form-control'}  %>
-                </div>
-                <div class="col-md-3">
-                  <label for = "peritoneal_reaction">Reaccion Peritoneal </label>
-                  <%= abdomen.select :peritoneal_reaction, Abdomen::PALPATION_TYPE, {},{class: 'form-control'}  %>
-                </div>
-              </div>
-              <hr>
               <div class="row">
                 <div class="col-md-12">
-                  <h3><label>Percusion </label> <%= abdomen.check_box :percussion %></h3>
+                  <h3><label>Percusion </label> <%= abdomen.check_box :percussion, id:"percussionCheckBox" %></h3>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <label for = "bloat">Timpanismo</label>
-                  <%= abdomen.select :bloat, Abdomen::BLOAT_TYPE, {},{class: 'form-control'}  %>
+              <div id="percussionDiv">
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for = "bloat">Timpanismo</label>
+                    <%= abdomen.select :bloat, Abdomen::BLOAT_TYPE, {},{class: 'form-control'}  %>
+                  </div>
                 </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-md-12">
-                  <h3><label>Auscultacion </label> <%= abdomen.check_box :auscultation %></h3>
+                <div class="row">
+                  <div class="col-md-12">
+                    <h3><label>Auscultacion </label> <%= abdomen.check_box :auscultation %></h3>
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <label for = "bloat">Timpanismo</label>
-                  <%= abdomen.select :bloat, Abdomen::BLOAT_TYPE, {},{class: 'form-control'}  %>
-                </div>
-                <div class="col-md-6">
-                  <label for="auscultation_location">Localizacion de la anormalidad:</label>
-                  <%= abdomen.text_field :auscultation_location, class: 'form-control'  %>
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for = "bloat">Timpanismo</label>
+                    <%= abdomen.select :bloat, Abdomen::BLOAT_TYPE, {},{class: 'form-control'}  %>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="auscultation_location">Localizacion de la anormalidad:</label>
+                    <%= abdomen.text_field :auscultation_location, class: 'form-control'  %>
+                  </div>
                 </div>
               </div>
           </div>
