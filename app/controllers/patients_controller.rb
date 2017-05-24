@@ -15,7 +15,6 @@ class PatientsController < ApplicationController
 
   def new
     @patient = Patient.new
-    @relatives = @patient.relatives.build
   end
 
   def list

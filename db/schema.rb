@@ -10,15 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523130925) do
+ActiveRecord::Schema.define(version: 20170524134810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "abdomen", force: :cascade do |t|
+    t.integer  "physical_exam_id"
+    t.boolean  "inspection"
+    t.boolean  "plane"
+    t.boolean  "spherical"
+    t.boolean  "relaxed"
+    t.boolean  "asymmetric"
+    t.boolean  "umbilical_hernia"
+    t.boolean  "eventration"
+    t.string   "location"
+    t.string   "size"
+    t.boolean  "scar"
+    t.boolean  "msu"
+    t.boolean  "miu"
+    t.boolean  "xp"
+    t.boolean  "mc_burney"
+    t.boolean  "kocher"
+    t.boolean  "pfannenstiel"
+    t.boolean  "others"
+    t.string   "others_description"
+    t.boolean  "palpation"
+    t.boolean  "soft"
+    t.boolean  "uptight"
+    t.boolean  "painful"
+    t.string   "superficial_pain"
+    t.string   "deep_pain"
+    t.string   "defence"
+    t.string   "peritoneal_reaction"
+    t.boolean  "percussion"
+    t.string   "bloat"
+    t.string   "auscultation"
+    t.string   "auscultation_location"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "medical_consultations", force: :cascade do |t|
     t.date     "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "patient_id"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -63,6 +100,7 @@ ActiveRecord::Schema.define(version: 20170523130925) do
   create_table "physical_exams", force: :cascade do |t|
     t.integer  "medical_consultation_id"
     t.string   "overall_status"
+    t.boolean  "activate_abdomen"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end

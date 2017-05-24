@@ -1,3 +1,4 @@
 class PhysicalExam < ApplicationRecord
-  belongs_to :medical_consultation
+  has_one :abdomen
+  accepts_nested_attributes_for :abdomen
 end
