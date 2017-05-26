@@ -88,14 +88,25 @@
 </script>
 
 <h1>Consulta</h1>
-
-
 <%= form_for @medical_consultation do |f| %>
     <%= hidden_field_tag :patient_id , @patient_id %>
     <%= f.fields_for :physical_exam do |physical_exam| %>
       <div class="row">
+        <div class="col-md-1">
+          <label>Fecha </label>
+        </div>
         <div class="col-md-3">
-          <h2>Abdomen  <%= physical_exam.check_box :activate_abdomen, id:"abdomenCheckBox" %> </h2>
+            <%= f.date_select :date, {:start_year=>1930, order: [:day, :month, :year]}, {:class => "date-myselect form-control"} %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label>Motivo</label> <%= f.text_area :reason, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <h3>Abdomen  <%= physical_exam.check_box :activate_abdomen, id:"abdomenCheckBox" %> </h3>
         </div>
       </div>
       <div class="row" id="abdomenDiv">
@@ -256,7 +267,7 @@
       <% end %>
       <div class="row">
         <div class="col-md-12">
-          <h2>Examen Proctologico  <%= physical_exam.check_box :activate_proctochological_examination, id:"activateProctochologicalExaminationCheckBox" %> </h2>
+          <h3>Examen Proctologico  <%= physical_exam.check_box :activate_proctochological_examination, id:"activateProctochologicalExaminationCheckBox" %> </h3>
         </div>
       </div>
       <div class="row" id="proctochologicalExaminationDiv">
@@ -337,7 +348,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <h2>Examen Inguinocrural  <%= physical_exam.check_box :activate_inquinocrural_examination, id:"activateInguinocruralExaminationCheckBox" %> </h2>
+          <h3>Examen Inguinocrural  <%= physical_exam.check_box :activate_inquinocrural_examination, id:"activateInguinocruralExaminationCheckBox" %> </h3>
         </div>
       </div>
       <div class="row" id="inguinocruralExaminationDiv">
