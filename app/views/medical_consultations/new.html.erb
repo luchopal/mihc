@@ -55,6 +55,35 @@
                 $("#percussionDiv").hide();
             }
         });
+
+        if( $("#activateProctochologicalExaminationCheckBox").is(':checked')) {
+            $("#proctochologicalExaminationDiv").show();
+        } else {
+            $("#proctochologicalExaminationDiv").hide();
+        }
+
+        $("#activateProctochologicalExaminationCheckBox").click(function() {
+            if( $("#activateProctochologicalExaminationCheckBox").is(':checked')) {
+                $("#proctochologicalExaminationDiv").show();
+            } else {
+                $("#proctochologicalExaminationDiv").hide();
+            }
+        });
+
+        if( $("#activateInguinocruralExaminationCheckBox").is(':checked')) {
+            $("#inguinocruralExaminationDiv").show();
+        } else {
+            $("#inguinocruralExaminationDiv").hide();
+        }
+
+        $("#activateInguinocruralExaminationCheckBox").click(function() {
+            if( $("#activateInguinocruralExaminationCheckBox").is(':checked')) {
+                $("#inguinocruralExaminationDiv").show();
+            } else {
+                $("#inguinocruralExaminationDiv").hide();
+            }
+        });
+
     });
 </script>
 
@@ -65,7 +94,7 @@
     <%= hidden_field_tag :patient_id , @patient_id %>
     <%= f.fields_for :physical_exam do |physical_exam| %>
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-3">
           <h2>Abdomen  <%= physical_exam.check_box :activate_abdomen, id:"abdomenCheckBox" %> </h2>
         </div>
       </div>
@@ -225,6 +254,148 @@
           </div>
       </div>
       <% end %>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Examen Proctologico  <%= physical_exam.check_box :activate_proctochological_examination, id:"activateProctochologicalExaminationCheckBox" %> </h2>
+        </div>
+      </div>
+      <div class="row" id="proctochologicalExaminationDiv">
+        <div class="col-md-12">
+          <%= physical_exam.fields_for :proctochological_examination do |proctochological_examination| %>
+            <div class="row">
+              <div class="col-md-3">
+                <label for = "sking_lesion">Lesion de piel</label>
+                <%= proctochological_examination.select :sking_lesion, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
+              </div>
+              <div class="col-md-3">
+                <label for = "hematoma">Hematoma</label>
+                <%= proctochological_examination.select :hematoma, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
+              </div>
+              <div class="col-md-3">
+                <label for="traumatic_injury">Lesion Traumatica</label>
+                <%= proctochological_examination.select :traumatic_injury, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
+              </div>
+              <div class="col-md-3">
+                <label for="uncomplicated_hemorrhoids">Hemorroides no complicada</label>
+                <%= proctochological_examination.select :uncomplicated_hemorrhoids, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <label for = "acute_fissure">Fisura aguda</label>
+                <%= proctochological_examination.select :acute_fissure, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
+              </div>
+              <div class="col-md-3">
+                <label for = "chronic_fissure">Fisura cronica</label>
+                <%= proctochological_examination.select :chronic_fissure, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
+              </div>
+              <div class="col-md-3">
+                <label for="fistulous_orifice">Orificio fistuloso</label>
+                <%= proctochological_examination.select :fistulous_orifice, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
+              </div>
+              <div class="col-md-3">
+                <label for="bulging">Abombamiento</label>
+                <%= proctochological_examination.select :bulging, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <label for = "plicoma">Plicoma</label>
+                <%= proctochological_examination.select :plicoma, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
+              </div>
+              <div class="col-md-3">
+                <label for = "redness">Enrojecimiento</label>
+                <%= proctochological_examination.select :redness, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
+              </div>
+              <div class="col-md-3">
+                <label for="thrombosis_hemorrhoids">Hemorroides Complicada, Trombosis</label>
+                <%= proctochological_examination.select :thrombosis_hemorrhoids, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
+              </div>
+              <div class="col-md-3">
+                <label for="fluxion_hemorrhoids">Hemorroides Complicada, Fluxion</label>
+                <%= proctochological_examination.select :fluxion_hemorrhoids, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <label for="hemorrhage_hemorrhoids">Hemorroides Complicada, Hemorragia</label>
+                <%= proctochological_examination.select :hemorrhage_hemorrhoids, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <label for="anal_sphincter_tonicity">Tonicidad del esfinter anal</label>
+                <%= proctochological_examination.select :anal_sphincter_tonicity, ProctochologicalExamination::ANAL_SPHINCTER_TONICITY_TYPE, {},{class: 'form-control'}  %>
+              </div>
+              <div class="col-md-3">
+                <label for="anal_sphincter_tonicity">Tonicidad del esfinter anal</label>
+                <%= proctochological_examination.select :anal_sphincter_tonicity, ProctochologicalExamination::ANAL_SPHINCTER_TONICITY_TYPE, {},{class: 'form-control'}  %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Examen Inguinocrural  <%= physical_exam.check_box :activate_inquinocrural_examination, id:"activateInguinocruralExaminationCheckBox" %> </h2>
+        </div>
+      </div>
+      <div class="row" id="inguinocruralExaminationDiv">
+        <div class="col-md-12">
+          <%= physical_exam.fields_for :inguinocrural_examination do |inguinocrural_examination| %>
+              <div class="row">
+                <div class="col-md-12">
+                  <h4>Hernia Inguinal</h4>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for = "left_reductible_inguinal_hernia">Reductible Izquierda</label>
+                  <%= inguinocrural_examination.check_box :left_reductible_inguinal_hernia %>
+                </div>
+                <div class="col-md-3">
+                  <label for = "right_reductible_inguinal_hernia">Reductible Derecha</label>
+                  <%= inguinocrural_examination.check_box :right_reductible_inguinal_hernia %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for = "left_coercible_inguinal_hernia">Coercible Izquierda</label>
+                  <%= inguinocrural_examination.check_box :left_coercible_inguinal_hernia %>
+                </div>
+                <div class="col-md-3">
+                  <label for = "right_coercible_inguinal_hernia">Coercible Derecha</label>
+                  <%= inguinocrural_examination.check_box :right_coercible_inguinal_hernia %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <h4>Hernia Crural</h4>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for = "left_reductible_crural_hernia">Coercible Izquierda</label>
+                  <%= inguinocrural_examination.check_box :left_reductible_crural_hernia %>
+                </div>
+                <div class="col-md-3">
+                  <label for = "right_reductible_crural_hernia">Coercible Derecha</label>
+                  <%= inguinocrural_examination.check_box :right_reductible_crural_hernia %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for = "left_coercible_crural_hernia">Coercible Izquierda</label>
+                  <%= inguinocrural_examination.check_box :left_coercible_crural_hernia %>
+                </div>
+                <div class="col-md-3">
+                  <label for = "right_coercible_crural_hernia">Coercible Derecha</label>
+                  <%= inguinocrural_examination.check_box :right_coercible_crural_hernia %>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      </div>
   <% end %>
 
   <br>

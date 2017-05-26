@@ -1,0 +1,2 @@
+class InguinocruralExamination < ApplicationRecord
+end

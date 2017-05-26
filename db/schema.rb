@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524134810) do
+ActiveRecord::Schema.define(version: 20170526171348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,20 @@ ActiveRecord::Schema.define(version: 20170524134810) do
     t.string   "auscultation_location"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+  end
+
+  create_table "inguinocrural_examinations", force: :cascade do |t|
+    t.integer  "physical_exam_id"
+    t.boolean  "left_reductible_inguinal_hernia"
+    t.boolean  "right_reductible_inguinal_hernia"
+    t.boolean  "left_coercible_inguinal_hernia"
+    t.boolean  "right_coercible_inguinal_hernia"
+    t.boolean  "left_reductible_crural_hernia"
+    t.boolean  "right_reductible_crural_hernia"
+    t.boolean  "left_coercible_crural_hernia"
+    t.boolean  "right_coercible_crural_hernia"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "medical_consultations", force: :cascade do |t|
@@ -101,8 +115,33 @@ ActiveRecord::Schema.define(version: 20170524134810) do
     t.integer  "medical_consultation_id"
     t.string   "overall_status"
     t.boolean  "activate_abdomen"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.boolean  "activate_proctochological_examination"
+    t.boolean  "activate_inquinocrural_examination"
+  end
+
+  create_table "proctochological_examinations", force: :cascade do |t|
+    t.integer  "physical_exam_id"
+    t.string   "sking_lesion"
+    t.string   "hematoma"
+    t.string   "traumatic_injury"
+    t.string   "uncomplicated_hemorrhoids"
+    t.string   "acute_fissure"
+    t.string   "chronic_fissure"
+    t.string   "fistulous_orifice"
+    t.string   "bulging"
+    t.string   "plicoma"
+    t.string   "redness"
+    t.string   "thrombosis_hemorrhoids"
+    t.string   "fluxion_hemorrhoids"
+    t.string   "hemorrhage_hemorrhoids"
+    t.string   "anal_sphincter_tonicity"
+    t.string   "rectal_ampoule"
+    t.string   "occupied_rectal_ampoule"
+    t.boolean  "formation"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "relatives", force: :cascade do |t|
