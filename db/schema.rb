@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170526184017) do
+ActiveRecord::Schema.define(version: 20170529141007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,37 @@ ActiveRecord::Schema.define(version: 20170526184017) do
     t.string   "auscultation_location"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+  end
+
+  create_table "breast_exams", force: :cascade do |t|
+    t.integer  "physical_exam_id"
+    t.boolean  "left_breast_first_quadrant"
+    t.boolean  "left_breast_second_quadrant"
+    t.boolean  "left_breast_third_quadrant"
+    t.boolean  "left_breast_fourth_quadrant"
+    t.boolean  "left_breast_center"
+    t.boolean  "right_breast_first_quadrant"
+    t.boolean  "right_breast_second_quadrant"
+    t.boolean  "right_breast_third_quadrant"
+    t.boolean  "right_breast_fourth_quadrant"
+    t.boolean  "right_breast_center"
+    t.string   "breast_description"
+    t.boolean  "right_armpit"
+    t.boolean  "left_armpit"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  create_table "cervical_examinations", force: :cascade do |t|
+    t.integer  "physical_exam_id"
+    t.boolean  "lateral_tumor"
+    t.boolean  "left_lateral_tumor"
+    t.boolean  "right_lateral_tumor"
+    t.string   "tumor_description"
+    t.boolean  "central_tumor"
+    t.string   "central_tumor_description"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "inguinocrural_examinations", force: :cascade do |t|
@@ -120,6 +151,9 @@ ActiveRecord::Schema.define(version: 20170526184017) do
     t.datetime "updated_at",                            null: false
     t.boolean  "activate_proctochological_examination"
     t.boolean  "activate_inquinocrural_examination"
+    t.boolean  "activate_cervical_examination"
+    t.boolean  "activate_breast_exam"
+    t.boolean  "activate_skin_lesion"
   end
 
   create_table "proctochological_examinations", force: :cascade do |t|
@@ -153,6 +187,13 @@ ActiveRecord::Schema.define(version: 20170526184017) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["patient_id"], name: "index_relatives_on_patient_id", using: :btree
+  end
+
+  create_table "skin_lesion_exams", force: :cascade do |t|
+    t.integer  "physical_exam_id"
+    t.string   "skin_lesion_description"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "users", force: :cascade do |t|

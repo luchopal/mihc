@@ -84,24 +84,77 @@
             }
         });
 
+        if( $("#activateCervicalExaminationCheckBox").is(':checked')) {
+            $("#cervicalExaminationDiv").show();
+        } else {
+            $("#cervicalExaminationDiv").hide();
+        }
+
+        $("#activateCervicalExaminationCheckBox").click(function() {
+            if( $("#activateCervicalExaminationCheckBox").is(':checked')) {
+                $("#cervicalExaminationDiv").show();
+            } else {
+                $("#cervicalExaminationDiv").hide();
+            }
+        });
+
+        if( $("#activateBreastExamCheckBox").is(':checked')) {
+            $("#breastExamDiv").show();
+        } else {
+            $("#breastExamDiv").hide();
+        }
+
+        $("#activateBreastExamCheckBox").click(function() {
+            if( $("#activateBreastExamCheckBox").is(':checked')) {
+                $("#breastExamDiv").show();
+            } else {
+                $("#breastExamDiv").hide();
+            }
+        });
+
+        if( $("#activateSkinLesionCheckBox").is(':checked')) {
+            $("#skinLesionDiv").show();
+        } else {
+            $("#skinLesionDiv").hide();
+        }
+
+        $("#activateSkinLesionCheckBox").click(function() {
+            if( $("#activateSkinLesionCheckBox").is(':checked')) {
+                $("#skinLesionDiv").show();
+            } else {
+                $("#skinLesionDiv").hide();
+            }
+        });
+
     });
 </script>
 
 <h1>Consulta</h1>
 <%= form_for @medical_consultation do |f| %>
+    <div class="row">
+      <div class="col-md-1">
+        <label>Fecha </label>
+      </div>
+      <div class="col-md-3">
+        <%= f.date_select :date, {:start_year=>1930, order: [:day, :month, :year]}, {:class => "date-myselect form-control"} %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label>Motivo</label> <%= f.text_area :reason, class: 'form-control' %>
+      </div>
+    </div>
     <%= hidden_field_tag :patient_id , @patient_id %>
     <%= f.fields_for :physical_exam do |physical_exam| %>
       <div class="row">
-        <div class="col-md-1">
-          <label>Fecha </label>
-        </div>
-        <div class="col-md-3">
-            <%= f.date_select :date, {:start_year=>1930, order: [:day, :month, :year]}, {:class => "date-myselect form-control"} %>
+        <div class="col-md-12">
+          <h2><label>Examen Fisico </label></h2>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12">
-          <label>Motivo</label> <%= f.text_area :reason, class: 'form-control' %>
+        <div class="col-md-3">
+          <label for = "superficial_pain">Estado general</label>
+          <%= physical_exam.select :overall_status, PhysicalExam::OVERALL_STATUS_TYPE, {},{class: 'form-control'}  %>
         </div>
       </div>
       <div class="row">
@@ -407,7 +460,140 @@
           <% end %>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Examen Cervical  <%= physical_exam.check_box :activate_cervical_examination, id:"activateCervicalExaminationCheckBox" %> </h3>
+        </div>
+      </div>
+      <div class="row" id="cervicalExaminationDiv">
+        <div class="col-md-12">
+          <%= physical_exam.fields_for :cervical_examination do |cervical_examination| %>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for = "lateral_tumor">Tumor Lateral</label>
+                  <%= cervical_examination.check_box :lateral_tumor %>
+                </div>
+                <div class="col-md-3">
+                  <label for = "left_lateral_tumor">Derecho</label>
+                  <%= cervical_examination.check_box :left_lateral_tumor %>
+                </div>
+                <div class="col-md-3">
+                  <label for = "right_lateral_tumor">Derecho</label>
+                  <%= cervical_examination.check_box :right_lateral_tumor %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for = "tumor_description">Tumor Lateral</label>
+                  <%= cervical_examination.text_field :tumor_description %>
+                </div>
+                <div class="col-md-3">
+                  <label for = "central_tumor">Derecho</label>
+                  <%= cervical_examination.check_box :central_tumor %>
+                </div>
+                <div class="col-md-3">
+                  <label for = "central_tumor_description">Derecho</label>
+                  <%= cervical_examination.text_field :central_tumor_description %>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Examen Mamario  <%= physical_exam.check_box :activate_breast_exam, id:"activateBreastExamCheckBox" %> </h3>
+        </div>
+      </div>
+      <div class="row" id="breastExamDiv">
+        <div class="col-md-12">
+          <%= physical_exam.fields_for :breast_exam do |breast_exam| %>
+              <div class="row">
+                <div class="col-md-2">
+                  <label for = "left_breast_first_quadrant">Izquierdo Primer Cuadrante</label>
+                  <%= breast_exam.check_box :left_breast_first_quadrant %>
+                </div>
+                <div class="col-md-2">
+                  <label for = "left_breast_second_quadrant">Izquierdo Segundo Cuadrante</label>
+                  <%= breast_exam.check_box :left_breast_second_quadrant %>
+                </div>
+                <div class="col-md-2">
+                  <label for = "left_breast_third_quadrant">Izquierdo Tercer Cuadrante</label>
+                  <%= breast_exam.check_box :left_breast_third_quadrant %>
+                </div>
+                <div class="col-md-2">
+                  <label for = "left_breast_fourth_quadrant">Izquierdo Cuarto Cuadrante</label>
+                  <%= breast_exam.check_box :left_breast_fourth_quadrant %>
+                </div>
+                <div class="col-md-2">
+                  <label for = "left_breast_center">Izquierdo Centro</label>
+                  <%= breast_exam.check_box :left_breast_center %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">
+                  <label for = "right_breast_first_quadrant">Derecho Primer Cuadrante</label>
+                  <%= breast_exam.check_box :right_breast_first_quadrant %>
+                </div>
+                <div class="col-md-2">
+                  <label for = "right_breast_second_quadrant">Derecho Segundo Cuadrante</label>
+                  <%= breast_exam.check_box :right_breast_second_quadrant %>
+                </div>
+                <div class="col-md-2">
+                  <label for = "right_breast_third_quadrant">Derecho Tercer Cuadrante</label>
+                  <%= breast_exam.check_box :right_breast_third_quadrant %>
+                </div>
+                <div class="col-md-2">
+                  <label for = "right_breast_fourth_quadrant">Derecho Cuarto Cuadrante</label>
+                  <%= breast_exam.check_box :right_breast_fourth_quadrant %>
+                </div>
+                <div class="col-md-2">
+                  <label for = "right_breast_center">Derecho Centro</label>
+                  <%= breast_exam.check_box :right_breast_center %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for = "breast_description">Descripcion</label>
+                  <%= breast_exam.text_field :breast_description %>
+                </div>
+                <div class="col-md-3">
+                  <label for = "right_armpit">Axila Derecha</label>
+                  <%= breast_exam.check_box :right_armpit %>
+                </div>
+                <div class="col-md-3">
+                  <label for = "left_armpit">Axila Izquierda</label>
+                  <%= breast_exam.text_field :left_armpit %>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Lesion de Piel <%= physical_exam.check_box :activate_skin_lesion, id:"activateSkinLesionCheckBox" %> </h3>
+        </div>
+      </div>
+      <div class="row" id="skinLesionDiv">
+        <div class="col-md-12">
+          <%= physical_exam.fields_for :skin_lesion_exam do |skin_lesion_exam| %>
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Motivo</label> <%= skin_lesion_exam.text_area :skin_lesion_description, class: 'form-control' %>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      </div>
   <% end %>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2><label>Examenes Complementarios </label></h2>
+      </div>
+    </div>
 
   <br>
   <div class="row">

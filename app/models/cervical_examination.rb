@@ -1,0 +1,2 @@
+class CervicalExamination < ApplicationRecord
+end

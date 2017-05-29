@@ -1,0 +1,2 @@
+class BreastExam < ApplicationRecord
+end

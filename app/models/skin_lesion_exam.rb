@@ -1,0 +1,2 @@
+class SkinLesionExam < ApplicationRecord
+end
