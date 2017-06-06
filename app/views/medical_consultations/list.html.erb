@@ -1,0 +1,17 @@
+<h1>Consultas realizadas</h1>
+
+<div class="row">
+  <table class="table">
+    <tr>
+      <th>Fecha</th>
+      <th>Motivo</th>
+    </tr>
+    <% @medical_consultations.each do |data| %>
+        <tr>
+          <td><%= data.date %></td>
+          <td><%= data.reason %></td>
+        </tr>
+    <% end %>
+  </table>
+</div>
+<b> <%= link_to 'Nueva Consulta', new_medical_consultation_path(@patient_id) , method: :get , class: "btn btn-primary" %></b>

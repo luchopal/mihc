@@ -49,4 +49,11 @@ class MedicalConsultationsController < ApplicationController
     end
 
   end
+
+  def list
+    @patient_id = params[:format]
+    @medical_consultations = MedicalConsultation.where(:patient_id => @patient_id)
+
+  end
+
 end

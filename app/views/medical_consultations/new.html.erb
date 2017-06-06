@@ -1,133 +1,4 @@
-<script type="text/javascript">
-    $(document).ready(function() {
-        if( $("#abdomenCheckBox").is(':checked')) {
-            $("#abdomenDiv").show();
-        } else {
-            $("#abdomenDiv").hide();
-        }
-
-        $("#abdomenCheckBox").click(function() {
-            if( $("#abdomenCheckBox").is(':checked')) {
-                $("#abdomenDiv").show();
-            } else {
-                $("#abdomenDiv").hide();
-            }
-        });
-
-        if( $("#inspectionCheckBox").is(':checked')) {
-            $("#inspectionDiv").show();
-        } else {
-            $("#inspectionDiv").hide();
-        }
-
-        $("#inspectionCheckBox").click(function() {
-            if( $("#inspectionCheckBox").is(':checked')) {
-                $("#inspectionDiv").show();
-            } else {
-                $("#inspectionDiv").hide();
-            }
-        });
-
-        if( $("#palpationCheckBox").is(':checked')) {
-            $("#palpationDiv").show();
-        } else {
-            $("#palpationDiv").hide();
-        }
-
-        $("#palpationCheckBox").click(function() {
-            if( $("#palpationCheckBox").is(':checked')) {
-                $("#palpationDiv").show();
-            } else {
-                $("#palpationDiv").hide();
-            }
-        });
-
-        if( $("#percussionCheckBox").is(':checked')) {
-            $("#percussionDiv").show();
-        } else {
-            $("#percussionDiv").hide();
-        }
-
-        $("#percussionCheckBox").click(function() {
-            if( $("#percussionCheckBox").is(':checked')) {
-                $("#percussionDiv").show();
-            } else {
-                $("#percussionDiv").hide();
-            }
-        });
-
-        if( $("#activateProctochologicalExaminationCheckBox").is(':checked')) {
-            $("#proctochologicalExaminationDiv").show();
-        } else {
-            $("#proctochologicalExaminationDiv").hide();
-        }
-
-        $("#activateProctochologicalExaminationCheckBox").click(function() {
-            if( $("#activateProctochologicalExaminationCheckBox").is(':checked')) {
-                $("#proctochologicalExaminationDiv").show();
-            } else {
-                $("#proctochologicalExaminationDiv").hide();
-            }
-        });
-
-        if( $("#activateInguinocruralExaminationCheckBox").is(':checked')) {
-            $("#inguinocruralExaminationDiv").show();
-        } else {
-            $("#inguinocruralExaminationDiv").hide();
-        }
-
-        $("#activateInguinocruralExaminationCheckBox").click(function() {
-            if( $("#activateInguinocruralExaminationCheckBox").is(':checked')) {
-                $("#inguinocruralExaminationDiv").show();
-            } else {
-                $("#inguinocruralExaminationDiv").hide();
-            }
-        });
-
-        if( $("#activateCervicalExaminationCheckBox").is(':checked')) {
-            $("#cervicalExaminationDiv").show();
-        } else {
-            $("#cervicalExaminationDiv").hide();
-        }
-
-        $("#activateCervicalExaminationCheckBox").click(function() {
-            if( $("#activateCervicalExaminationCheckBox").is(':checked')) {
-                $("#cervicalExaminationDiv").show();
-            } else {
-                $("#cervicalExaminationDiv").hide();
-            }
-        });
-
-        if( $("#activateBreastExamCheckBox").is(':checked')) {
-            $("#breastExamDiv").show();
-        } else {
-            $("#breastExamDiv").hide();
-        }
-
-        $("#activateBreastExamCheckBox").click(function() {
-            if( $("#activateBreastExamCheckBox").is(':checked')) {
-                $("#breastExamDiv").show();
-            } else {
-                $("#breastExamDiv").hide();
-            }
-        });
-
-        if( $("#activateSkinLesionCheckBox").is(':checked')) {
-            $("#skinLesionDiv").show();
-        } else {
-            $("#skinLesionDiv").hide();
-        }
-
-        $("#activateSkinLesionCheckBox").click(function() {
-            if( $("#activateSkinLesionCheckBox").is(':checked')) {
-                $("#skinLesionDiv").show();
-            } else {
-                $("#skinLesionDiv").hide();
-            }
-        });
-
-    });
-</script>
+<%= javascript_include_tag 'medical_consultations', 'data-turbolinks-track': 'reload' %>
 
 <h1>Consulta</h1>
 <%= form_for @medical_consultation do |f| %>
@@ -408,54 +279,42 @@
         <div class="col-md-12">
           <%= physical_exam.fields_for :inguinocrural_examination do |inguinocrural_examination| %>
               <div class="row">
-                <div class="col-md-12">
-                  <h4>Hernia Inguinal</h4>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <label for = "left_reductible_inguinal_hernia">Reductible Izquierda</label>
-                  <%= inguinocrural_examination.check_box :left_reductible_inguinal_hernia %>
-                </div>
-                <div class="col-md-3">
-                  <label for = "right_reductible_inguinal_hernia">Reductible Derecha</label>
-                  <%= inguinocrural_examination.check_box :right_reductible_inguinal_hernia %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <label for = "left_coercible_inguinal_hernia">Coercible Izquierda</label>
-                  <%= inguinocrural_examination.check_box :left_coercible_inguinal_hernia %>
-                </div>
-                <div class="col-md-3">
-                  <label for = "right_coercible_inguinal_hernia">Coercible Derecha</label>
-                  <%= inguinocrural_examination.check_box :right_coercible_inguinal_hernia %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <h4>Hernia Crural</h4>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <label for = "left_reductible_crural_hernia">Coercible Izquierda</label>
-                  <%= inguinocrural_examination.check_box :left_reductible_crural_hernia %>
-                </div>
-                <div class="col-md-3">
-                  <label for = "right_reductible_crural_hernia">Coercible Derecha</label>
-                  <%= inguinocrural_examination.check_box :right_reductible_crural_hernia %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <label for = "left_coercible_crural_hernia">Coercible Izquierda</label>
-                  <%= inguinocrural_examination.check_box :left_coercible_crural_hernia %>
-                </div>
-                <div class="col-md-3">
-                  <label for = "right_coercible_crural_hernia">Coercible Derecha</label>
-                  <%= inguinocrural_examination.check_box :right_coercible_crural_hernia %>
-                </div>
+                <table class="table">
+                  <thead>
+                  <tr>
+                    <th style="text-align: center;">Derecha</th>
+                    <th style="text-align: center;">Hernia Iguinal</th>
+                    <th style="text-align: center;">Izquierda</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td align="center"><%= inguinocrural_examination.check_box :right_reductible_inguinal_hernia %></td>
+                    <td align="center">Reductible</td>
+                    <td align="center"><%= inguinocrural_examination.check_box :left_reductible_inguinal_hernia %></td>
+                  </tr>
+                  <tr>
+                    <td align="center"><%= inguinocrural_examination.check_box :right_coercible_inguinal_hernia %></td>
+                    <td align="center">Coercible</td>
+                    <td align="center"><%= inguinocrural_examination.check_box :left_coercible_inguinal_hernia %></td>
+                  </tr>
+                  <tr>
+                    <th style="text-align: center;">Derecha</th>
+                    <th style="text-align: center;">Hernia Crural</th>
+                    <th style="text-align: center;">Izquierda</th>
+                  </tr>
+                  <tr>
+                    <td align="center"><%= inguinocrural_examination.check_box :right_reductible_crural_hernia %></td>
+                    <td align="center">Reductible</td>
+                    <td align="center"><%= inguinocrural_examination.check_box :left_reductible_crural_hernia %></td>
+                  </tr>
+                  <tr>
+                    <td align="center"><%= inguinocrural_examination.check_box :right_coercible_crural_hernia %></td>
+                    <td align="center">Coercible</td>
+                    <td align="center"><%= inguinocrural_examination.check_box :left_coercible_crural_hernia %></td>
+                  </tr>
+                  </tbody>
+                </table>
               </div>
           <% end %>
         </div>
@@ -469,31 +328,31 @@
         <div class="col-md-12">
           <%= physical_exam.fields_for :cervical_examination do |cervical_examination| %>
               <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-2">
                   <label for = "lateral_tumor">Tumor Lateral</label>
                   <%= cervical_examination.check_box :lateral_tumor %>
                 </div>
-                <div class="col-md-3">
-                  <label for = "left_lateral_tumor">Derecho</label>
+                <div class="col-md-2">
+                  <label for = "left_lateral_tumor">Izquierdo</label>
                   <%= cervical_examination.check_box :left_lateral_tumor %>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                   <label for = "right_lateral_tumor">Derecho</label>
                   <%= cervical_examination.check_box :right_lateral_tumor %>
                 </div>
+                <div class="col-md-6">
+                  <label for = "tumor_description">Descripcion</label>
+                  <%= cervical_examination.text_field :tumor_description, class: 'form-control' %>
+                </div>
               </div>
               <div class="row">
-                <div class="col-md-3">
-                  <label for = "tumor_description">Tumor Lateral</label>
-                  <%= cervical_examination.text_field :tumor_description %>
-                </div>
-                <div class="col-md-3">
-                  <label for = "central_tumor">Derecho</label>
+                <div class="col-md-2">
+                  <label for = "central_tumor">Central</label>
                   <%= cervical_examination.check_box :central_tumor %>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-8">
                   <label for = "central_tumor_description">Derecho</label>
-                  <%= cervical_examination.text_field :central_tumor_description %>
+                  <%= cervical_examination.text_field :central_tumor_description, class: 'form-control' %>
                 </div>
               </div>
           <% end %>
@@ -604,7 +463,7 @@
   <br>
   <div class="row">
     <div class="col-md-4">
-      <%= f.submit "Dar la consulta", class: "btn btn-primary" %>
+      <%= f.submit "Guardar", class: "btn btn-primary" %>
     </div>
   </div>
 <% end %>
