@@ -32,8 +32,12 @@ class MedicalConsultationsController < ApplicationController
           breast_exam_attributes: [:left_breast_first_quadrant,:left_breast_second_quadrant,:left_breast_third_quadrant,:left_breast_fourth_quadrant,:left_breast_center,:right_breast_first_quadrant,
           :right_breast_second_quadrant,:right_breast_third_quadrant,:right_breast_fourth_quadrant, :right_breast_center, :breast_description, :right_armpit,:left_armpit],
 
-          sking_lesion_attributes: [:skin_lesion_description]
-    ])
+          sking_lesion_attributes: [:skin_lesion_description]],
+
+        complementary_exams_attributes: [:complementary_exam_type, :comment, :_destroy],
+
+        laboratories_attributes: [:laboratory_type, :date, :comment, :_destroy]
+    )
   end
 
   def create
