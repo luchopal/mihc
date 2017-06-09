@@ -126,13 +126,116 @@ $(document).ready(function() {
     });
 
     var stage = new Konva.Stage({
-        container: 'left_breast',
-        width: 300,
+        container: 'breast',
+        width: 800,
         height: 300
     });
     var layer = new Konva.Layer();
+
+    //---------------------------- Primer cuadrante pecho izquierdo -----------------------------------------------------
+    var right_breast_first_quadrant = new Konva.Wedge({
+        x: stage.getWidth() / 4,
+        y: stage.getHeight() / 2,
+        radius: 120,
+        angle: 90,
+        fill: 'white',
+        stroke: 'black',
+        strokeWidth: 4,
+        rotation: 180
+    });
+
+    right_breast_first_quadrant.on('click', function() {
+        this.fill(this.fill() == 'white' ? 'blue' : 'white');
+        var value = this.fill() == 'blue' ? 1 : 0;
+        document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_right_breast_first_quadrant').value = value;
+        layer.draw();
+    });
+    // add the shape to the layer
+    layer.add(right_breast_first_quadrant);
+
+    //---------------------------- Segundo cuadrante pecho izquierdo -----------------------------------------------------
+    var right_breast_second_quadrant = new Konva.Wedge({
+        x: stage.getWidth() / 4,
+        y: stage.getHeight() / 2,
+        radius: 120,
+        angle: 90,
+        fill: 'white',
+        stroke: 'black',
+        strokeWidth: 4,
+        rotation: 270
+    });
+
+    right_breast_second_quadrant.on('click', function() {
+        this.fill(this.fill() == 'white' ? 'blue' : 'white');
+        var value = this.fill() == 'blue' ? 1 : 0;
+        document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_right_breast_second_quadrant').value = value;
+        layer.draw();
+    });
+    layer.add(right_breast_second_quadrant);
+
+    //---------------------------- Primer cuadrante pecho izquierdo -----------------------------------------------------
+    var right_breast_third_quadrant = new Konva.Wedge({
+        x: stage.getWidth() / 4,
+        y: stage.getHeight() / 2,
+        radius: 120,
+        angle: 90,
+        fill: 'white',
+        stroke: 'black',
+        strokeWidth: 4,
+        rotation: 90
+    });
+
+    right_breast_third_quadrant.on('click', function() {
+        this.fill(this.fill() == 'white' ? 'blue' : 'white');
+        var value = this.fill() == 'blue' ? 1 : 0;
+        document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_right_breast_third_quadrant').value = value;
+        layer.draw();
+    });
+    layer.add(right_breast_third_quadrant);
+
+    //---------------------------- Cuarto cuadrante pecho izquierdo -----------------------------------------------------
+    var right_breast_fourth_quadrant = new Konva.Wedge({
+        x: stage.getWidth() / 4,
+        y: stage.getHeight() / 2,
+        radius: 120,
+        angle: 90,
+        fill: 'white',
+        stroke: 'black',
+        strokeWidth: 4,
+        rotation: 0
+    });
+
+    right_breast_fourth_quadrant.on('click', function() {
+        this.fill(this.fill() == 'white' ? 'blue' : 'white');
+        var value = this.fill() == 'blue' ? 1 : 0;
+        document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_right_breast_fourth_quadrant').value = value;
+        layer.draw();
+    });
+    layer.add(right_breast_fourth_quadrant);
+
+
+    //---------------------------- Centro pecho izquierdo -----------------------------------------------------
+    var left_breast_center = new Konva.Circle({
+        x: stage.getWidth() / 4,
+        y: stage.getHeight() / 2,
+        radius: 30,
+        fill: 'white',
+        stroke: 'black',
+        strokeWidth: 4
+    });
+
+    left_breast_center.on('click', function() {
+        this.fill(this.fill() == 'white' ? 'blue' : 'white');
+        var value = this.fill() == 'blue' ? 1 : 0;
+        document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_left_breast_center').value = value;
+        layer.draw();
+    });
+
+    layer.add(left_breast_center);
+
+    //---------------------------- Primer cuadrante pecho izquierdo -----------------------------------------------------
     var left_breast_first_quadrant = new Konva.Wedge({
-        x: stage.getWidth() / 2,
+        x: stage.getWidth()*3 / 4,
         y: stage.getHeight() / 2,
         radius: 120,
         angle: 90,
@@ -143,16 +246,17 @@ $(document).ready(function() {
     });
 
     left_breast_first_quadrant.on('click', function() {
-        this.fill(this.fill() == 'white' ? 'red' : 'white');
-        var value = this.fill() == 'red' ? 1 : 0;
+        this.fill(this.fill() == 'white' ? 'blue' : 'white');
+        var value = this.fill() == 'blue' ? 1 : 0;
         document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_left_breast_first_quadrant').value = value;
         layer.draw();
     });
     // add the shape to the layer
     layer.add(left_breast_first_quadrant);
 
+    //---------------------------- Segundo cuadrante pecho izquierdo -----------------------------------------------------
     var left_breast_second_quadrant = new Konva.Wedge({
-        x: stage.getWidth() / 2,
+        x: stage.getWidth()*3 / 4,
         y: stage.getHeight() / 2,
         radius: 120,
         angle: 90,
@@ -163,16 +267,57 @@ $(document).ready(function() {
     });
 
     left_breast_second_quadrant.on('click', function() {
-        this.fill(this.fill() == 'white' ? 'red' : 'white');
-        var value = this.fill() == 'red' ? 1 : 0;
+        this.fill(this.fill() == 'white' ? 'blue' : 'white');
+        var value = this.fill() == 'blue' ? 1 : 0;
         document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_left_breast_second_quadrant').value = value;
         layer.draw();
     });
-    // add the shape to the layer
     layer.add(left_breast_second_quadrant);
 
-    var circle = new Konva.Circle({
-        x: stage.getWidth() / 2,
+    //---------------------------- Primer cuadrante pecho izquierdo -----------------------------------------------------
+    var left_breast_third_quadrant = new Konva.Wedge({
+        x: stage.getWidth()*3 / 4,
+        y: stage.getHeight() / 2,
+        radius: 120,
+        angle: 90,
+        fill: 'white',
+        stroke: 'black',
+        strokeWidth: 4,
+        rotation: 90
+    });
+
+    left_breast_third_quadrant.on('click', function() {
+        this.fill(this.fill() == 'white' ? 'blue' : 'white');
+        var value = this.fill() == 'blue' ? 1 : 0;
+        document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_left_breast_third_quadrant').value = value;
+        layer.draw();
+    });
+    layer.add(left_breast_third_quadrant);
+
+    //---------------------------- Cuarto cuadrante pecho izquierdo -----------------------------------------------------
+    var left_breast_fourth_quadrant = new Konva.Wedge({
+        x: stage.getWidth()*3 / 4,
+        y: stage.getHeight() / 2,
+        radius: 120,
+        angle: 90,
+        fill: 'white',
+        stroke: 'black',
+        strokeWidth: 4,
+        rotation: 0
+    });
+
+    left_breast_fourth_quadrant.on('click', function() {
+        this.fill(this.fill() == 'white' ? 'blue' : 'white');
+        var value = this.fill() == 'blue' ? 1 : 0;
+        document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_left_breast_fourth_quadrant').value = value;
+        layer.draw();
+    });
+    layer.add(left_breast_fourth_quadrant);
+
+
+    //---------------------------- Centro pecho izquierdo -----------------------------------------------------
+    var left_breast_center = new Konva.Circle({
+        x: stage.getWidth()*3 / 4,
         y: stage.getHeight() / 2,
         radius: 30,
         fill: 'white',
@@ -180,7 +325,14 @@ $(document).ready(function() {
         strokeWidth: 4
     });
 
-    layer.add(circle);
+    left_breast_center.on('click', function() {
+        this.fill(this.fill() == 'white' ? 'blue' : 'white');
+        var value = this.fill() == 'blue' ? 1 : 0;
+        document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_left_breast_center').value = value;
+        layer.draw();
+    });
+
+    layer.add(left_breast_center);
     // add the layer to the stage
     stage.add(layer);
 });

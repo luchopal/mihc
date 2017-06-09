@@ -368,61 +368,43 @@
         <div class="col-md-12">
           <%= physical_exam.fields_for :breast_exam do |breast_exam| %>
               <div class="row">
-                <div id="left_breast"></div>
-                <div class="col-md-2">
-                  <%= breast_exam.hidden_field :left_breast_first_quadrant, value: 0 %>
+                <div class="col-md-6">
+                  <h4>Derecho</h4>
                 </div>
-                <div class="col-md-2">
-                  <label for = "left_breast_second_quadrant">Izquierdo Segundo Cuadrante</label>
-                  <%= breast_exam.check_box :left_breast_second_quadrant %>
-                </div>
-                <div class="col-md-2">
-                  <label for = "left_breast_third_quadrant">Izquierdo Tercer Cuadrante</label>
-                  <%= breast_exam.check_box :left_breast_third_quadrant %>
-                </div>
-                <div class="col-md-2">
-                  <label for = "left_breast_fourth_quadrant">Izquierdo Cuarto Cuadrante</label>
-                  <%= breast_exam.check_box :left_breast_fourth_quadrant %>
-                </div>
-                <div class="col-md-2">
-                  <label for = "left_breast_center">Izquierdo Centro</label>
-                  <%= breast_exam.check_box :left_breast_center %>
+                <div class="col-md-6">
+                  <h4>Izquierdo</h4>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-2">
-                  <label for = "right_breast_first_quadrant">Derecho Primer Cuadrante</label>
-                  <%= breast_exam.check_box :right_breast_first_quadrant %>
-                </div>
-                <div class="col-md-2">
-                  <label for = "right_breast_second_quadrant">Derecho Segundo Cuadrante</label>
-                  <%= breast_exam.check_box :right_breast_second_quadrant %>
-                </div>
-                <div class="col-md-2">
-                  <label for = "right_breast_third_quadrant">Derecho Tercer Cuadrante</label>
-                  <%= breast_exam.check_box :right_breast_third_quadrant %>
-                </div>
-                <div class="col-md-2">
-                  <label for = "right_breast_fourth_quadrant">Derecho Cuarto Cuadrante</label>
-                  <%= breast_exam.check_box :right_breast_fourth_quadrant %>
-                </div>
-                <div class="col-md-2">
-                  <label for = "right_breast_center">Derecho Centro</label>
-                  <%= breast_exam.check_box :right_breast_center %>
-                </div>
+                <div id="breast"></div>
+                <%= breast_exam.hidden_field :left_breast_first_quadrant, value: 0 %>
+                <%= breast_exam.hidden_field :left_breast_second_quadrant, value: 0 %>
+                <%= breast_exam.hidden_field :left_breast_third_quadrant, value: 0 %>
+                <%= breast_exam.hidden_field :left_breast_fourth_quadrant, value: 0 %>
+                <%= breast_exam.hidden_field :left_breast_center, value: 0 %>
+
+                <%= breast_exam.hidden_field :right_breast_first_quadrant, value: 0 %>
+                <%= breast_exam.hidden_field :right_breast_second_quadrant, value: 0 %>
+                <%= breast_exam.hidden_field :right_breast_third_quadrant, value: 0 %>
+                <%= breast_exam.hidden_field :right_breast_fourth_quadrant, value: 0 %>
+                <%= breast_exam.hidden_field :right_breast_center, value: 0 %>
               </div>
               <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-12">
                   <label for = "breast_description">Descripcion</label>
-                  <%= breast_exam.text_field :breast_description %>
+                  <%= breast_exam.text_field :breast_description, class: 'form-control'  %>
                 </div>
-                <div class="col-md-3">
+              </div>
+              <div class="row">
+                <div class="col-md-4">
                   <label for = "right_armpit">Axila Derecha</label>
                   <%= breast_exam.check_box :right_armpit %>
                 </div>
-                <div class="col-md-3">
+              </div>
+              <div class="row">
+                <div class="col-md-4">
                   <label for = "left_armpit">Axila Izquierda</label>
-                  <%= breast_exam.text_field :left_armpit %>
+                  <%= breast_exam.check_box :left_armpit%>
                 </div>
               </div>
           <% end %>
@@ -459,7 +441,7 @@
       <br>
 
       <div class="links">
-        <%= link_to_add_association 'Agregar relacion', f, :complementary_exams, class: "btn btn-primary" %>
+        <%= link_to_add_association 'Agregar examen', f, :complementary_exams, class: "btn btn-primary" %>
       </div>
 
     <div class="row">
@@ -473,12 +455,12 @@
     <br>
 
     <div class="links">
-      <%= link_to_add_association 'Agregar relacion', f, :laboratories, class: "btn btn-primary" %>
+      <%= link_to_add_association 'Agregar examen', f, :laboratories, class: "btn btn-primary" %>
     </div>
 
   <br>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 col-md-offset-10">
       <%= f.submit "Guardar", class: "btn btn-primary" %>
     </div>
   </div>
