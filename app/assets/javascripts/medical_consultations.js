@@ -125,14 +125,62 @@ $(document).ready(function() {
         }
     });
 
-    $("#check").click(function() {
-        if( $("#check").is(':checked')) {
-            $('#check').attr('src', whiteLogoPath);
-        } else {
-            $('#check').attr('src', blueLogoPath);
-        }
+    var stage = new Konva.Stage({
+        container: 'left_breast',
+        width: 300,
+        height: 300
     });
-    var checked =  " <%= asset_path('checked.png') %>  ";
-    var uncheck = " <%= asset_path('uncheck.png') %> ";
+    var layer = new Konva.Layer();
+    var left_breast_first_quadrant = new Konva.Wedge({
+        x: stage.getWidth() / 2,
+        y: stage.getHeight() / 2,
+        radius: 120,
+        angle: 90,
+        fill: 'white',
+        stroke: 'black',
+        strokeWidth: 4,
+        rotation: 180
+    });
 
+    left_breast_first_quadrant.on('click', function() {
+        this.fill(this.fill() == 'white' ? 'red' : 'white');
+        var value = this.fill() == 'red' ? 1 : 0;
+        document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_left_breast_first_quadrant').value = value;
+        layer.draw();
+    });
+    // add the shape to the layer
+    layer.add(left_breast_first_quadrant);
+
+    var left_breast_second_quadrant = new Konva.Wedge({
+        x: stage.getWidth() / 2,
+        y: stage.getHeight() / 2,
+        radius: 120,
+        angle: 90,
+        fill: 'white',
+        stroke: 'black',
+        strokeWidth: 4,
+        rotation: 270
+    });
+
+    left_breast_second_quadrant.on('click', function() {
+        this.fill(this.fill() == 'white' ? 'red' : 'white');
+        var value = this.fill() == 'red' ? 1 : 0;
+        document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_left_breast_second_quadrant').value = value;
+        layer.draw();
+    });
+    // add the shape to the layer
+    layer.add(left_breast_second_quadrant);
+
+    var circle = new Konva.Circle({
+        x: stage.getWidth() / 2,
+        y: stage.getHeight() / 2,
+        radius: 30,
+        fill: 'white',
+        stroke: 'black',
+        strokeWidth: 4
+    });
+
+    layer.add(circle);
+    // add the layer to the stage
+    stage.add(layer);
 });

@@ -1,4 +1,4 @@
-<%= javascript_include_tag 'medical_consultations', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'medical_consultations', 'data-turbolinks-track': 'true' %>
 
 <h1>Consulta</h1>
 <%= form_for @medical_consultation do |f| %>
@@ -368,9 +368,9 @@
         <div class="col-md-12">
           <%= physical_exam.fields_for :breast_exam do |breast_exam| %>
               <div class="row">
+                <div id="left_breast"></div>
                 <div class="col-md-2">
-                  <label for = "left_breast_first_quadrant">Izquierdo Primer Cuadrante</label>
-                  <%= breast_exam.check_box :left_breast_first_quadrant %>
+                  <%= breast_exam.hidden_field :left_breast_first_quadrant, value: 0 %>
                 </div>
                 <div class="col-md-2">
                   <label for = "left_breast_second_quadrant">Izquierdo Segundo Cuadrante</label>
