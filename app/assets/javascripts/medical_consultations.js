@@ -125,6 +125,70 @@ $(document).ready(function() {
         }
     });
 
+    if( $("#activateScarCheckBox").is(':checked')) {
+        $("#scarsDiv").show();
+    } else {
+        $("#scarsDiv").hide();
+    }
+
+    $("#activateScarCheckBox").click(function() {
+        if( $("#activateScarCheckBox").is(':checked')) {
+            $("#scarsDiv").show();
+        } else {
+            $("#scarsDiv").hide();
+        }
+    });
+
+    if( $("#activatePainfulCheckBox").is(':checked')) {
+        $("#painfulDiv").show();
+    } else {
+        $("#painfulDiv").hide();
+    }
+
+    $("#activatePainfulCheckBox").click(function() {
+        if( $("#activatePainfulCheckBox").is(':checked')) {
+            $("#painfulDiv").show();
+        } else {
+            $("#painfulDiv").hide();
+        }
+    });
+
+    if( $("#auscultationCheckBox").is(':checked')) {
+        $("#auscultationDiv").show();
+    } else {
+        $("#auscultationDiv").hide();
+    }
+
+    $("#auscultationCheckBox").click(function() {
+        if( $("#auscultationCheckBox").is(':checked')) {
+            $("#auscultationDiv").show();
+        } else {
+            $("#auscultationDiv").hide();
+        }
+    });
+    $("#occupiedRectalAmpouleDiv").hide();
+    $('#medical_consultation_physical_exam_attributes_proctochological_examination_attributes_rectal_ampoule').on('change', function() {
+        if(this.value == "OCUPADA"){
+            $("#occupiedRectalAmpouleDiv").show();
+        }else{
+            $("#occupiedRectalAmpouleDiv").hide();
+        }
+    })
+
+    if( $("#formationCheckBox").is(':checked')) {
+        $("#formationPositionDiv").show();
+    } else {
+        $("#formationPositionDiv").hide();
+    }
+
+    $("#formationCheckBox").click(function() {
+        if( $("#formationCheckBox").is(':checked')) {
+            $("#formationPositionDiv").show();
+        } else {
+            $("#formationPositionDiv").hide();
+        }
+    });
+
     var stage = new Konva.Stage({
         container: 'breast',
         width: 800,

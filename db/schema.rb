@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607141602) do
+ActiveRecord::Schema.define(version: 20170612135501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20170607141602) do
     t.string   "auscultation_location"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.string   "auscultation_type"
   end
 
   create_table "breast_exams", force: :cascade do |t|
@@ -194,6 +195,7 @@ ActiveRecord::Schema.define(version: 20170607141602) do
     t.boolean  "formation"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "formation_position"
   end
 
   create_table "relatives", force: :cascade do |t|
