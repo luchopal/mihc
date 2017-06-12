@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   resources :patients do
   end
 
-  get 'medical_consultations/list'
   resources :medical_consultations do
   end
 

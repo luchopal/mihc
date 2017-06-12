@@ -17,10 +17,6 @@ class PatientsController < ApplicationController
     @patient = Patient.new
   end
 
-  def list
-    @patients = Patient.all
-  end
-
   def create
 
     @patient = Patient.new(patient_params)

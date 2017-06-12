@@ -54,10 +54,9 @@ class MedicalConsultationsController < ApplicationController
 
   end
 
-  def list
+  def index
     @patient_id = params[:format]
-    @medical_consultations = MedicalConsultation.where(:patient_id => @patient_id)
-
+    @medical_consultations = MedicalConsultation.search(@patient_id, params[:page])
   end
 
 end

@@ -1,0 +1,21 @@
+<h1>Consultas realizadas</h1>
+
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>Fecha</th>
+        <th>Motivo</th>
+      </tr>
+      <% @medical_consultations.each do |data| %>
+          <tr>
+            <td><%= data.date %></td>
+            <td><%= data.reason %></td>
+          </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<%= will_paginate @medical_consultations %>
