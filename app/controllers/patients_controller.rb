@@ -43,6 +43,9 @@ class PatientsController < ApplicationController
     end
   end
 
+  def index
+    @patients = Patient.search(params[:term], params[:page])
+  end
 
   def edit
     @patient = Patient.find(params[:id])
