@@ -1,6 +1,6 @@
 <h1>Consultas realizadas</h1>
 
-<br>
+
 <div class="row">
   <div class="col-md-12">
     <table class="table">
@@ -15,7 +15,7 @@
           </tr>
       <% end %>
     </table>
+    <%= will_paginate @medical_consultations %>
   </div>
 </div>
-
-<%= will_paginate @medical_consultations %>
+<p><%= link_to 'Nueva Consulta', new_medical_consultation_path(@patient_id) , method: :get , class: "btn btn-primary" %></p>

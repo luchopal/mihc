@@ -52,5 +52,6 @@
     </table>
   </div>
 </div>
-
 <%= will_paginate @patients %>
+
+<p><%= link_to "Agregar nuevo paciente", {:action => 'new' }, class: "btn btn-primary"%></p>
