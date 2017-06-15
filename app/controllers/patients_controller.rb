@@ -10,7 +10,7 @@ class PatientsController < ApplicationController
                                     :ischemic_heart_disease, :arteriopathy, :arterial_hypertension, :stroke, :diabetes,
                                     :dyslipidemia,:renal_insufficiency,:liver_disease,:ulcer_disease, :hematological_disease,
                                     :tuberculosis, :aids, :do_drugs, :alcoholism, :smoking, :allergies, :others, :others_description,
-                                    :medicines, :surgical_history, relatives_attributes: [:status, :bond, :observation, :_destroy])
+                                    :medicines, :surgical_history, relatives_attributes: [:id, :status, :bond, :observation, :_destroy])
   end
 
   def show
@@ -37,7 +37,7 @@ class PatientsController < ApplicationController
     @patient = Patient.find(params[:id])
 
     if @patient.update_attributes(patient_params)
-      redirect_to :action => 'list'
+      redirect_to :action => 'index'
     else
       render :action => 'edit'
     end
