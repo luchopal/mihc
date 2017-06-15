@@ -1,5 +1,9 @@
 class MedicalConsultationsController < ApplicationController
 
+  include SessionsHelper
+
+  before_action :require_login
+
   def new
     @medical_consultation = MedicalConsultation.new
     @medical_consultation.physical_exam = PhysicalExam.new

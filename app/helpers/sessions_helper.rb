@@ -21,4 +21,10 @@ module SessionsHelper
     @current_user = nil
   end
 
+  def require_login
+    unless logged_in?
+      flash[:error] = "Debes iniciar sesion para poder acceder"
+      redirect_to login_path # halts request cycle
+    end
+  end
 end

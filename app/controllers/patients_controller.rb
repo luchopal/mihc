@@ -1,5 +1,9 @@
 class PatientsController < ApplicationController
 
+  include SessionsHelper
+
+  before_action :require_login
+
   def patient_params
     params.require(:patient).permit(:name, :surname, :document_number,:associate_number, :birth_date, :sex, :country_code,
                                     :marital_status, :city, :phone, :close_person_phone, :job, :asthma, :hearth_failure,
