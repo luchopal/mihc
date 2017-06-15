@@ -21,7 +21,7 @@ class PatientsController < ApplicationController
 
     @patient = Patient.new(patient_params)
     if @patient.save
-      redirect_to '/patients/list'
+      redirect_to '/patients/'
     else
       flash[:error] = "Error al generar paciente."
       render 'new'

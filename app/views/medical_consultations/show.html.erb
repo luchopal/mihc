@@ -1,0 +1,631 @@
+<h1>Consulta</h1>
+<div class="row">
+  <div class="col-md-1">
+    <label>Fecha </label>
+  </div>
+  <div class="col-md-3">
+    <p><%= @medical_consultation.date %></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <label>Motivo</label> <%= @medical_consultation.reason %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h2><label>Examen Fisico </label></h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3">
+    <label for = "superficial_pain">Estado general</label>
+    <%= @medical_consultation.physical_exam.overall_status %>
+  </div>
+</div>
+
+<% if @medical_consultation.physical_exam.activate_abdomen %>
+<h3>Abdomen </h3>
+<div class="row">
+  <div class="col-md-12">
+  <% if @medical_consultation.physical_exam.abdomen.inspection %>
+    <h3><label>Inspeccion </label></h3>
+    <div class="row">
+      <% if @medical_consultation.physical_exam.abdomen.plane %>
+      <div class="col-md-2">
+       <h4><span class="label label-primary">Plano</span></h4>
+      </div>
+      <% end %>
+      <% if @medical_consultation.physical_exam.abdomen.spherical %>
+          <div class="col-md-2">
+            <h4><span class="label label-primary">Globoso</span></h4>
+          </div>
+      <% end %>
+      <% if @medical_consultation.physical_exam.abdomen.relaxed %>
+          <div class="col-md-2">
+            <h4><span class="label label-primary">Distendido</span></h4>
+          </div>
+      <% end %>
+      <% if @medical_consultation.physical_exam.abdomen.asymmetric %>
+          <div class="col-md-2">
+            <h4><span class="label label-primary">Asimetrico</span></h4>
+          </div>
+      <% end %>
+    </div>
+    <div class="row">
+      <% if @medical_consultation.physical_exam.abdomen.umbilical_hernia %>
+          <div class="col-md-2">
+            <h4><span class="label label-primary">Hernia Umbilical </span></h4>
+          </div>
+      <% end %>
+      <% if @medical_consultation.physical_exam.abdomen.eventration %>
+          <div class="col-md-2">
+            <h4><span class="label label-primary">Eventracion </span></h4>
+          </div>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label for = "location">Localizacion: </label>
+        <%= @medical_consultation.physical_exam.abdomen.location%>
+      </div>
+      <div class="col-md-6">
+        <label for = "size">Tamaño: </label>
+        <%= @medical_consultation.physical_exam.abdomen.size%>
+      </div>
+    </div>
+    <% end %>
+    <br>
+    <% if @medical_consultation.physical_exam.abdomen.scar %>
+      <label>Cicatrices </label>
+      <div class="row">
+        <% if @medical_consultation.physical_exam.abdomen.msu %>
+            <div class="col-md-1">
+              <h4><span class="label label-primary">MSU </span></h4>
+            </div>
+        <% end %>
+        <% if @medical_consultation.physical_exam.abdomen.miu %>
+            <div class="col-md-1">
+              <h4><span class="label label-primary">MIU </span></h4>
+            </div>
+        <% end %>
+        <% if @medical_consultation.physical_exam.abdomen.xp %>
+            <div class="col-md-1">
+              <h4><span class="label label-primary">XP </span></h4>
+            </div>
+        <% end %>
+        <% if @medical_consultation.physical_exam.abdomen.mc_burney %>
+            <div class="col-md-1">
+              <h4><span class="label label-primary">MC Burney </span></h4>
+            </div>
+        <% end %>
+        <% if @medical_consultation.physical_exam.abdomen.kocher %>
+            <div class="col-md-1">
+              <h4><span class="label label-primary">Kocher </span></h4>
+            </div>
+        <% end %>
+        <% if @medical_consultation.physical_exam.abdomen.pfannenstiel %>
+            <div class="col-md-1">
+              <h4><span class="label label-primary">Pfannenstiel </span></h4>
+            </div>
+        <% end %>
+        <% if @medical_consultation.physical_exam.abdomen.others %>
+            <div class="col-md-1">
+              <h4><span class="label label-primary">Otras </span></h4>
+            </div>
+        <% end %>
+      </div>
+      <% if @medical_consultation.physical_exam.abdomen.others %>
+        <div class="row">
+          <div class="col-md-12">
+            <label for = "others_description">Aclaracion </label>
+            <%= @medical_consultation.physical_exam.abdomen.others_description %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <% if @medical_consultation.physical_exam.abdomen.palpation %>
+      <h3><label>Palpacion </label></h3>
+      <div class="row">
+        <% if @medical_consultation.physical_exam.abdomen.soft %>
+            <div class="col-md-1">
+              <h4><span class="label label-primary">Blando </span></h4>
+            </div>
+        <% end %>
+        <% if @medical_consultation.physical_exam.abdomen.uptight %>
+            <div class="col-md-1">
+              <h4><span class="label label-primary">Tenso </span></h4>
+            </div>
+        <% end %>
+        <% if @medical_consultation.physical_exam.abdomen.painful %>
+            <div class="col-md-1">
+              <h4><span class="label label-primary">Doloroso </span></h4>
+            </div>
+        <% end %>
+      </div>
+      <% if @medical_consultation.physical_exam.abdomen.painful %>
+        <div class="row">
+          <div class="col-md-3">
+            <label for = "superficial_pain">Dolor Superficial</label>
+            <%= @medical_consultation.physical_exam.abdomen.superficial_pain %>
+          </div>
+          <div class="col-md-3">
+            <label for = "deep_pain">Dolor Profundo </label>
+            <%= @medical_consultation.physical_exam.abdomen.deep_pain %>
+          </div>
+          <div class="col-md-3">
+            <label for = "defence">Defensa </label>
+            <%= @medical_consultation.physical_exam.abdomen.defence  %>
+          </div>
+          <div class="col-md-3">
+            <label for = "peritoneal_reaction">Reaccion Peritoneal </label>
+            <%= @medical_consultation.physical_exam.abdomen.peritoneal_reaction %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+    <% if @medical_consultation.physical_exam.abdomen.percussion %>
+      <h3><label>Percusion</label></h3>
+      <div class="row">
+        <div class="col-md-3">
+          <label for = "bloat">Timpanismo</label>
+          <%= @medical_consultation.physical_exam.abdomen.bloat %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h3><label>Auscultacion </label></h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label for = "bloat">Ruidos Hidroaereos</label>
+          <%= @medical_consultation.physical_exam.abdomen.auscultation_type %>
+        </div>
+        <div class="col-md-6">
+          <label for="auscultation_location">Localizacion de la anormalidad:</label>
+          <%= @medical_consultation.physical_exam.abdomen.auscultation_location  %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <% end %>
+  <% if @medical_consultation.physical_exam.activate_proctochological_examination %>
+    <h3>Examen Proctologico</h3>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-3">
+            <label for = "sking_lesion">Lesion de piel</label>
+            <%= @medical_consultation.physical_exam.proctochological_examination.sking_lesion %>
+          </div>
+          <div class="col-md-3">
+            <label for = "hematoma">Hematoma</label>
+            <%= @medical_consultation.physical_exam.proctochological_examination.hematoma %>
+          </div>
+          <div class="col-md-3">
+            <label for="traumatic_injury">Lesion Traumatica</label>
+            <%= @medical_consultation.physical_exam.proctochological_examination.traumatic_injury  %>
+          </div>
+          <div class="col-md-3">
+            <label for="uncomplicated_hemorrhoids">Hemorroides no complicada</label>
+            <%= @medical_consultation.physical_exam.proctochological_examination.uncomplicated_hemorrhoids %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <label for = "acute_fissure">Fisura aguda</label>
+            <%= @medical_consultation.physical_exam.proctochological_examination.acute_fissure %>
+          </div>
+          <div class="col-md-3">
+            <label for = "chronic_fissure">Fisura cronica</label>
+            <%= @medical_consultation.physical_exam.proctochological_examination.chronic_fissure %>
+          </div>
+          <div class="col-md-3">
+            <label for="fistulous_orifice">Orificio fistuloso</label>
+            <%= @medical_consultation.physical_exam.proctochological_examination.fistulous_orifice %>
+          </div>
+          <div class="col-md-3">
+            <label for="bulging">Abombamiento</label>
+            <%= @medical_consultation.physical_exam.proctochological_examination.bulging %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <label for = "plicoma">Plicoma</label>
+            <%= @medical_consultation.physical_exam.proctochological_examination.plicoma %>
+          </div>
+          <div class="col-md-3">
+            <label for = "redness">Enrojecimiento</label>
+            <%= @medical_consultation.physical_exam.proctochological_examination.redness %>
+          </div>
+          <div class="col-md-3">
+            <label for="thrombosis_hemorrhoids">Hemorroides Complicada, Trombosis</label>
+            <%= @medical_consultation.physical_exam.proctochological_examination.thrombosis_hemorrhoids %>
+          </div>
+          <div class="col-md-3">
+            <label for="fluxion_hemorrhoids">Hemorroides Complicada, Fluxion</label>
+            <%= @medical_consultation.physical_exam.proctochological_examination.fluxion_hemorrhoids %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <label for="hemorrhage_hemorrhoids">Hemorroides Complicada, Hemorragia</label>
+            <%= @medical_consultation.physical_exam.proctochological_examination.hemorrhage_hemorrhoids %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <label for="anal_sphincter_tonicity">Tonicidad del esfinter anal</label>
+            <%= @medical_consultation.physical_exam.proctochological_examination.anal_sphincter_tonicity %>
+          </div>
+          <div class="col-md-3">
+            <label for="rectal_ampoule">Ampolla Rectal</label>
+            <%= @medical_consultation.physical_exam.proctochological_examination.rectal_ampoule %>
+          </div>
+          <div class="col-md-3" id="occupiedRectalAmpouleDiv">
+            <label for="occupied_rectal_ampoule">Ampolla Rectal Ocupada:</label>
+            <%= @medical_consultation.physical_exam.proctochological_examination.occupied_rectal_ampoule %>
+          </div>
+        </div>
+        <% if @medical_consultation.physical_exam.proctochological_examination.formation %>
+          <div class="row">
+            <div class="col-md-2">
+              <h4><label for = "formation">Formacion </label></h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <label for = "formation_position">Ubicacion </label>
+              <%= @medical_consultation.physical_exam.proctochological_examination.formation_position %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+  <% end %>
+
+  <% if @medical_consultation.physical_exam.activate_inquinocrural_examination %>
+    <h3>Examen Inguinocrural</h3>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <table class="table">
+            <thead>
+            <tr>
+              <th style="text-align: center;">Derecha</th>
+              <th style="text-align: center;">Hernia Iguinal</th>
+              <th style="text-align: center;">Izquierda</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.right_reductible_inguinal_hernia %></td>
+              <td align="center">Reductible</td>
+              <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.left_reductible_inguinal_hernia %></td>
+            </tr>
+            <tr>
+              <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.right_coercible_inguinal_hernia %></td>
+              <td align="center">Coercible</td>
+              <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.left_coercible_inguinal_hernia %></td>
+            </tr>
+            <tr>
+              <th style="text-align: center;">Derecha</th>
+              <th style="text-align: center;">Hernia Crural</th>
+              <th style="text-align: center;">Izquierda</th>
+            </tr>
+            <tr>
+              <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.right_reductible_crural_hernia %></td>
+              <td align="center">Reductible</td>
+              <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.left_reductible_crural_hernia %></td>
+            </tr>
+            <tr>
+              <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.right_coercible_crural_hernia %></td>
+              <td align="center">Coercible</td>
+              <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.left_coercible_crural_hernia %></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% if @medical_consultation.physical_exam.activate_cervical_examination %>
+    <h3>Examen Cervical</h3>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-2">
+            <label for = "lateral_tumor">Tumor Lateral</label>
+            <%= @medical_consultation.physical_exam.cervical_examination.lateral_tumor %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <label for = "left_lateral_tumor">Izquierdo</label>
+            <%= @medical_consultation.physical_exam.cervical_examination.left_lateral_tumor %>
+          </div>
+          <div class="col-md-2">
+            <label for = "right_lateral_tumor">Derecho</label>
+            <%= @medical_consultation.physical_exam.cervical_examination.right_lateral_tumor %>
+          </div>
+          <div class="col-md-8">
+            <label for = "tumor_description">Descripcion</label>
+            <%= @medical_consultation.physical_exam.cervical_examination.tumor_description %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <label for = "central_tumor">Central</label>
+            <%= @medical_consultation.physical_exam.cervical_examination.central_tumor %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <label for = "central_tumor_description">Descripcion</label>
+            <%= @medical_consultation.physical_exam.cervical_examination.central_tumor_description %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% if @medical_consultation.physical_exam.activate_breast_exam %>
+    <h3>Examen Mamario</h3>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6">
+            <h4>Derecho</h4>
+          </div>
+          <div class="col-md-6">
+            <h4>Izquierdo</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div id="show_breast"></div>
+          <input id="left_breast_first_quadrant" hidden value="<%= @medical_consultation.physical_exam.breast_exam.left_breast_first_quadrant %>"/>
+          <input id="left_breast_second_quadrant" hidden value="<%= @medical_consultation.physical_exam.breast_exam.left_breast_second_quadrant %>"/>
+          <input id="left_breast_third_quadrant" hidden value="<%= @medical_consultation.physical_exam.breast_exam.left_breast_third_quadrant %>"/>
+          <input id="left_breast_fourth_quadrant" hidden value="<%= @medical_consultation.physical_exam.breast_exam.left_breast_fourth_quadrant %>"/>
+          <input id="left_breast_center" hidden value="<%= @medical_consultation.physical_exam.breast_exam.left_breast_center %>"/>
+
+          <input id="right_breast_first_quadrant" hidden value="<%= @medical_consultation.physical_exam.breast_exam.right_breast_first_quadrant %>"/>
+          <input id="right_breast_second_quadrant" hidden value="<%= @medical_consultation.physical_exam.breast_exam.right_breast_second_quadrant %>"/>
+          <input id="right_breast_third_quadrant" hidden value="<%= @medical_consultation.physical_exam.breast_exam.right_breast_third_quadrant %>"/>
+          <input id="right_breast_fourth_quadrant" hidden value="<%= @medical_consultation.physical_exam.breast_exam.right_breast_fourth_quadrant %>"/>
+          <input id="right_breast_center" hidden value="<%= @medical_consultation.physical_exam.breast_exam.right_breast_center %>"/>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <label for = "breast_description">Descripcion</label>
+            <%= @medical_consultation.physical_exam.breast_exam.breast_description  %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <label for = "right_armpit">Axila Derecha</label>
+            <%= @medical_consultation.physical_exam.breast_exam.right_armpit %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <label for = "left_armpit">Axila Izquierda</label>
+            <%= @medical_consultation.physical_exam.breast_exam.left_armpit%>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <% if @medical_consultation.physical_exam.activate_skin_lesion %>
+    <h3>Lesion de Piel</h3>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h2><label>Examenes Complementarios </label></h2>
+  </div>
+</div>
+
+<% @medical_consultation.complementary_exams.each do |complementary_exam| %>
+    <div class="row">
+      <div class="col-md-2">
+        <label>Tipo </label>
+        <%= complementary_exam.complementary_exam_type%>
+      </div>
+      <div class="col-md-8">
+        <label>Observacion </label>
+        <%= complementary_exam.comment %>
+      </div>
+    </div>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12">
+    <h2><label>Laboratorio </label></h2>
+  </div>
+</div>
+
+<% @medical_consultation.laboratories.each do |laboratory| %>
+    <div class="row">
+      <div class="col-md-2">
+        <label>Tipo </label>
+        <%= laboratory.laboratory_type%>
+      </div>
+      <div class="col-md-2">
+        <label>Fecha </label>
+        <%= laboratory.date %>
+      </div>
+      <div class="col-md-8">
+        <label>Observacion </label>
+        <%= laboratory.comment %>
+      </div>
+    </div>
+<% end %>
+
+<script>
+    $(document).ready(function() {
+
+        var left_breast_first_quadrant_value = $("#left_breast_first_quadrant").val();
+        var left_breast_second_quadrant_value = $("#left_breast_second_quadrant").val();
+        var left_breast_third_quadrant_value = $("#left_breast_third_quadrant").val();
+        var left_breast_fourth_quadrant_value = $("#left_breast_fourth_quadrant").val();
+        var left_breast_center_value = $("#left_breast_center").val();
+
+        var right_breast_first_quadrant_value = $("#right_breast_first_quadrant").val();
+        var right_breast_second_quadrant_value = $("#right_breast_second_quadrant").val();
+        var right_breast_third_quadrant_value = $("#right_breast_third_quadrant").val();
+        var right_breast_fourth_quadrant_value = $("#right_breast_fourth_quadrant").val();
+        var right_breast_center_value = $("#right_breast_center").val();
+
+        var stage = new Konva.Stage({
+            container: 'show_breast',
+            width: 800,
+            height: 300
+        });
+        var layer = new Konva.Layer();
+
+        //---------------------------- Primer cuadrante pecho Derecho -----------------------------------------------------
+        var right_breast_first_quadrant = new Konva.Wedge({
+            x: stage.getWidth() / 4,
+            y: stage.getHeight() / 2,
+            radius: 120,
+            angle: 90,
+            fill: right_breast_first_quadrant_value == 'true' ? 'blue' : 'white',
+            stroke: 'black',
+            strokeWidth: 4,
+            rotation: 180
+        });
+        layer.add(right_breast_first_quadrant);
+
+        //---------------------------- Segundo cuadrante pecho derecho -----------------------------------------------------
+        var right_breast_second_quadrant = new Konva.Wedge({
+            x: stage.getWidth() / 4,
+            y: stage.getHeight() / 2,
+            radius: 120,
+            angle: 90,
+            fill: right_breast_second_quadrant_value == 'true' ? 'blue' : 'white',
+            stroke: 'black',
+            strokeWidth: 4,
+            rotation: 270
+        });
+        layer.add(right_breast_second_quadrant);
+
+        //---------------------------- Primer cuadrante pecho izquierdo -----------------------------------------------------
+        var right_breast_third_quadrant = new Konva.Wedge({
+            x: stage.getWidth() / 4,
+            y: stage.getHeight() / 2,
+            radius: 120,
+            angle: 90,
+            fill: right_breast_third_quadrant_value == 'true' ? 'blue' : 'white',
+            stroke: 'black',
+            strokeWidth: 4,
+            rotation: 90
+        });
+        layer.add(right_breast_third_quadrant);
+
+        //---------------------------- Cuarto cuadrante pecho izquierdo -----------------------------------------------------
+        var right_breast_fourth_quadrant = new Konva.Wedge({
+            x: stage.getWidth() / 4,
+            y: stage.getHeight() / 2,
+            radius: 120,
+            angle: 90,
+            fill: right_breast_fourth_quadrant_value == 'true' ? 'blue' : 'white',
+            stroke: 'black',
+            strokeWidth: 4,
+            rotation: 0
+        });
+        layer.add(right_breast_fourth_quadrant);
+
+        //---------------------------- Centro pecho izquierdo -----------------------------------------------------
+        var right_breast_center = new Konva.Circle({
+            x: stage.getWidth() / 4,
+            y: stage.getHeight() / 2,
+            radius: 30,
+            fill: right_breast_center_value == 'true' ? 'blue' : 'white',
+            stroke: 'black',
+            strokeWidth: 4
+        });
+        layer.add(right_breast_center);
+
+        //---------------------------- Primer cuadrante pecho izquierdo -----------------------------------------------------
+        var left_breast_first_quadrant = new Konva.Wedge({
+            x: stage.getWidth()*3 / 4,
+            y: stage.getHeight() / 2,
+            radius: 120,
+            angle: 90,
+            fill: left_breast_first_quadrant_value == 'true' ? 'blue' : 'white',
+            stroke: 'black',
+            strokeWidth: 4,
+            rotation: 180
+        });
+        layer.add(left_breast_first_quadrant);
+
+        //---------------------------- Segundo cuadrante pecho izquierdo -----------------------------------------------------
+        var left_breast_second_quadrant = new Konva.Wedge({
+            x: stage.getWidth()*3 / 4,
+            y: stage.getHeight() / 2,
+            radius: 120,
+            angle: 90,
+            fill: left_breast_second_quadrant_value == 'true' ? 'blue' : 'white',
+            stroke: 'black',
+            strokeWidth: 4,
+            rotation: 270
+        });
+        layer.add(left_breast_second_quadrant);
+
+        //---------------------------- Primer cuadrante pecho izquierdo -----------------------------------------------------
+        var left_breast_third_quadrant = new Konva.Wedge({
+            x: stage.getWidth()*3 / 4,
+            y: stage.getHeight() / 2,
+            radius: 120,
+            angle: 90,
+            fill: left_breast_third_quadrant_value == 'true' ? 'blue' : 'white',
+            stroke: 'black',
+            strokeWidth: 4,
+            rotation: 90
+        });
+
+        layer.add(left_breast_third_quadrant);
+
+        //---------------------------- Cuarto cuadrante pecho izquierdo -----------------------------------------------------
+        var left_breast_fourth_quadrant = new Konva.Wedge({
+            x: stage.getWidth()*3 / 4,
+            y: stage.getHeight() / 2,
+            radius: 120,
+            angle: 90,
+            fill: left_breast_fourth_quadrant_value == 'true' ? 'blue' : 'white',
+            stroke: 'black',
+            strokeWidth: 4,
+            rotation: 0
+        });
+
+        layer.add(left_breast_fourth_quadrant);
+
+        //---------------------------- Centro pecho izquierdo -----------------------------------------------------
+        var left_breast_center = new Konva.Circle({
+            x: stage.getWidth()*3 / 4,
+            y: stage.getHeight() / 2,
+            radius: 30,
+            fill: left_breast_center_value == 'true' ? 'blue' : 'white',
+            stroke: 'black',
+            strokeWidth: 4
+        });
+
+        layer.add(left_breast_center);
+        // add the layer to the stage
+        stage.add(layer);
+    });
+</script>

@@ -45,7 +45,7 @@ class MedicalConsultationsController < ApplicationController
     @medical_consultation = MedicalConsultation.new(medical_consultation_params)
     @medical_consultation.patient = Patient.find(params[:patient_id])
     if @medical_consultation.save
-      redirect_to '/patients/list'
+      redirect_to '/patients/'
     else
       flash[:error] = "Error al generar paciente."
       puts @medical_consultation.errors
@@ -57,6 +57,11 @@ class MedicalConsultationsController < ApplicationController
   def index
     @patient_id = params[:format]
     @medical_consultations = MedicalConsultation.search(@patient_id, params[:page])
+  end
+
+  def show
+    @medical_consultation_id = params[:id]
+    @medical_consultation = MedicalConsultation.find(@medical_consultation_id)
   end
 
 end
