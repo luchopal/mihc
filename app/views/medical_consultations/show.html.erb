@@ -24,179 +24,195 @@
 
   <% if @medical_consultation.physical_exam.activate_abdomen %>
     <div class="panel panel-info">
-      <div class="panel-heading">Abdomen </div>
+      <div class="panel-heading"><label>Abdomen </label> </div>
       <div class="panel-body">
         <div class="row">
           <div class="col-md-12">
           <% if @medical_consultation.physical_exam.abdomen.inspection %>
-            <h3><label>Inspeccion </label></h3>
-            <div class="row">
-              <% if @medical_consultation.physical_exam.abdomen.plane %>
-              <div class="col-md-2">
-               <h4><span class="label label-primary">Plano</span></h4>
-              </div>
-              <% end %>
-              <% if @medical_consultation.physical_exam.abdomen.spherical %>
-                  <div class="col-md-2">
-                    <h4><span class="label label-primary">Globoso</span></h4>
-                  </div>
-              <% end %>
-              <% if @medical_consultation.physical_exam.abdomen.relaxed %>
-                  <div class="col-md-2">
-                    <h4><span class="label label-primary">Distendido</span></h4>
-                  </div>
-              <% end %>
-              <% if @medical_consultation.physical_exam.abdomen.asymmetric %>
-                  <div class="col-md-2">
-                    <h4><span class="label label-primary">Asimetrico</span></h4>
-                  </div>
-              <% end %>
-            </div>
-            <div class="row">
-              <% if @medical_consultation.physical_exam.abdomen.umbilical_hernia %>
-                  <div class="col-md-2">
-                    <h4><span class="label label-primary">Hernia Umbilical </span></h4>
-                  </div>
-              <% end %>
-              <% if @medical_consultation.physical_exam.abdomen.eventration %>
-                  <div class="col-md-2">
-                    <h4><span class="label label-primary">Eventracion </span></h4>
-                  </div>
-              <% end %>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label for = "location">Localizacion: </label>
-                <%= @medical_consultation.physical_exam.abdomen.location%>
-              </div>
-              <div class="col-md-6">
-                <label for = "size">Tamaño: </label>
-                <%= @medical_consultation.physical_exam.abdomen.size%>
-              </div>
-            </div>
-            <% end %>
-            <br>
-            <% if @medical_consultation.physical_exam.abdomen.scar %>
-              <label>Cicatrices </label>
-              <div class="row">
-                <% if @medical_consultation.physical_exam.abdomen.msu %>
-                    <div class="col-md-1">
-                      <h4><span class="label label-primary">MSU </span></h4>
-                    </div>
-                <% end %>
-                <% if @medical_consultation.physical_exam.abdomen.miu %>
-                    <div class="col-md-1">
-                      <h4><span class="label label-primary">MIU </span></h4>
-                    </div>
-                <% end %>
-                <% if @medical_consultation.physical_exam.abdomen.xp %>
-                    <div class="col-md-1">
-                      <h4><span class="label label-primary">XP </span></h4>
-                    </div>
-                <% end %>
-                <% if @medical_consultation.physical_exam.abdomen.mc_burney %>
-                    <div class="col-md-1">
-                      <h4><span class="label label-primary">MC Burney </span></h4>
-                    </div>
-                <% end %>
-                <% if @medical_consultation.physical_exam.abdomen.kocher %>
-                    <div class="col-md-1">
-                      <h4><span class="label label-primary">Kocher </span></h4>
-                    </div>
-                <% end %>
-                <% if @medical_consultation.physical_exam.abdomen.pfannenstiel %>
-                    <div class="col-md-1">
-                      <h4><span class="label label-primary">Pfannenstiel </span></h4>
-                    </div>
-                <% end %>
-                <% if @medical_consultation.physical_exam.abdomen.others %>
-                    <div class="col-md-1">
-                      <h4><span class="label label-primary">Otras </span></h4>
-                    </div>
-                <% end %>
-              </div>
-              <% if @medical_consultation.physical_exam.abdomen.others %>
+            <div class="panel panel-success">
+              <div class="panel-heading"><label>Inspeccion </label></div>
+              <div class="panel-body">
                 <div class="row">
-                  <div class="col-md-12">
-                    <label for = "others_description">Aclaracion </label>
-                    <%= @medical_consultation.physical_exam.abdomen.others_description %>
+                  <% if @medical_consultation.physical_exam.abdomen.plane %>
+                  <div class="col-md-2">
+                   <h4><span class="label label-primary">Plano</span></h4>
+                  </div>
+                  <% end %>
+                  <% if @medical_consultation.physical_exam.abdomen.spherical %>
+                      <div class="col-md-2">
+                        <h4><span class="label label-primary">Globoso</span></h4>
+                      </div>
+                  <% end %>
+                  <% if @medical_consultation.physical_exam.abdomen.relaxed %>
+                      <div class="col-md-2">
+                        <h4><span class="label label-primary">Distendido</span></h4>
+                      </div>
+                  <% end %>
+                  <% if @medical_consultation.physical_exam.abdomen.asymmetric %>
+                      <div class="col-md-2">
+                        <h4><span class="label label-primary">Asimetrico</span></h4>
+                      </div>
+                  <% end %>
+                </div>
+                <div class="row">
+                  <% if @medical_consultation.physical_exam.abdomen.umbilical_hernia %>
+                      <div class="col-md-2">
+                        <h4><span class="label label-primary">Hernia Umbilical </span></h4>
+                      </div>
+                  <% end %>
+                  <% if @medical_consultation.physical_exam.abdomen.eventration %>
+                      <div class="col-md-2">
+                        <h4><span class="label label-primary">Eventracion </span></h4>
+                      </div>
+                  <% end %>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for = "location">Localizacion: </label>
+                    <%= @medical_consultation.physical_exam.abdomen.location%>
+                  </div>
+                  <div class="col-md-6">
+                    <label for = "size">Tamaño: </label>
+                    <%= @medical_consultation.physical_exam.abdomen.size%>
                   </div>
                 </div>
-              <% end %>
-            <% end %>
+                <% end %>
+                <br>
+                <% if @medical_consultation.physical_exam.abdomen.scar %>
+                  <label>Cicatrices </label>
+                  <div class="row">
+                    <% if @medical_consultation.physical_exam.abdomen.msu %>
+                        <div class="col-md-1">
+                          <h4><span class="label label-primary">MSU </span></h4>
+                        </div>
+                    <% end %>
+                    <% if @medical_consultation.physical_exam.abdomen.miu %>
+                        <div class="col-md-1">
+                          <h4><span class="label label-primary">MIU </span></h4>
+                        </div>
+                    <% end %>
+                    <% if @medical_consultation.physical_exam.abdomen.xp %>
+                        <div class="col-md-1">
+                          <h4><span class="label label-primary">XP </span></h4>
+                        </div>
+                    <% end %>
+                    <% if @medical_consultation.physical_exam.abdomen.mc_burney %>
+                        <div class="col-md-1">
+                          <h4><span class="label label-primary">MC Burney </span></h4>
+                        </div>
+                    <% end %>
+                    <% if @medical_consultation.physical_exam.abdomen.kocher %>
+                        <div class="col-md-1">
+                          <h4><span class="label label-primary">Kocher </span></h4>
+                        </div>
+                    <% end %>
+                    <% if @medical_consultation.physical_exam.abdomen.pfannenstiel %>
+                        <div class="col-md-1">
+                          <h4><span class="label label-primary">Pfannenstiel </span></h4>
+                        </div>
+                    <% end %>
+                    <% if @medical_consultation.physical_exam.abdomen.others %>
+                        <div class="col-md-1">
+                          <h4><span class="label label-primary">Otras </span></h4>
+                        </div>
+                    <% end %>
+                  </div>
+                  <% if @medical_consultation.physical_exam.abdomen.others %>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <label for = "others_description">Aclaracion </label>
+                        <%= @medical_consultation.physical_exam.abdomen.others_description %>
+                      </div>
+                    </div>
+                  <% end %>
+                <% end %>
+                </div>
+            </div>
+
             <% if @medical_consultation.physical_exam.abdomen.palpation %>
-              <h3><label>Palpacion </label></h3>
-              <div class="row">
-                <% if @medical_consultation.physical_exam.abdomen.soft %>
-                    <div class="col-md-1">
-                      <h4><span class="label label-primary">Blando </span></h4>
+              <div class="panel panel-success">
+                <div class="panel-heading"><label>Palpacion </label></div>
+                <div class="panel-body">
+                  <div class="row">
+                    <% if @medical_consultation.physical_exam.abdomen.soft %>
+                        <div class="col-md-1">
+                          <h4><span class="label label-primary">Blando </span></h4>
+                        </div>
+                    <% end %>
+                    <% if @medical_consultation.physical_exam.abdomen.uptight %>
+                        <div class="col-md-1">
+                          <h4><span class="label label-primary">Tenso </span></h4>
+                        </div>
+                    <% end %>
+                    <% if @medical_consultation.physical_exam.abdomen.painful %>
+                        <div class="col-md-1">
+                          <h4><span class="label label-primary">Doloroso </span></h4>
+                        </div>
+                    <% end %>
+                  </div>
+                  <% if @medical_consultation.physical_exam.abdomen.painful %>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for = "superficial_pain">Dolor Superficial</label>
+                        <%= @medical_consultation.physical_exam.abdomen.superficial_pain %>
+                      </div>
+                      <div class="col-md-3">
+                        <label for = "deep_pain">Dolor Profundo </label>
+                        <%= @medical_consultation.physical_exam.abdomen.deep_pain %>
+                      </div>
+                      <div class="col-md-3">
+                        <label for = "defence">Defensa </label>
+                        <%= @medical_consultation.physical_exam.abdomen.defence  %>
+                      </div>
+                      <div class="col-md-3">
+                        <label for = "peritoneal_reaction">Reaccion Peritoneal </label>
+                        <%= @medical_consultation.physical_exam.abdomen.peritoneal_reaction %>
+                      </div>
                     </div>
-                <% end %>
-                <% if @medical_consultation.physical_exam.abdomen.uptight %>
-                    <div class="col-md-1">
-                      <h4><span class="label label-primary">Tenso </span></h4>
-                    </div>
-                <% end %>
-                <% if @medical_consultation.physical_exam.abdomen.painful %>
-                    <div class="col-md-1">
-                      <h4><span class="label label-primary">Doloroso </span></h4>
-                    </div>
-                <% end %>
-              </div>
-              <% if @medical_consultation.physical_exam.abdomen.painful %>
-                <div class="row">
-                  <div class="col-md-3">
-                    <label for = "superficial_pain">Dolor Superficial</label>
-                    <%= @medical_consultation.physical_exam.abdomen.superficial_pain %>
-                  </div>
-                  <div class="col-md-3">
-                    <label for = "deep_pain">Dolor Profundo </label>
-                    <%= @medical_consultation.physical_exam.abdomen.deep_pain %>
-                  </div>
-                  <div class="col-md-3">
-                    <label for = "defence">Defensa </label>
-                    <%= @medical_consultation.physical_exam.abdomen.defence  %>
-                  </div>
-                  <div class="col-md-3">
-                    <label for = "peritoneal_reaction">Reaccion Peritoneal </label>
-                    <%= @medical_consultation.physical_exam.abdomen.peritoneal_reaction %>
-                  </div>
+                  <% end %>
                 </div>
-              <% end %>
+              </div>
             <% end %>
 
+
             <% if @medical_consultation.physical_exam.abdomen.percussion %>
-              <h3><label>Percusion</label></h3>
-              <div class="row">
-                <div class="col-md-3">
-                  <label for = "bloat">Timpanismo</label>
-                  <%= @medical_consultation.physical_exam.abdomen.bloat %>
+              <div class="panel panel-success">
+                <div class="panel-heading"><label>Percusion </label></div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <label for = "bloat">Timpanismo</label>
+                      <%= @medical_consultation.physical_exam.abdomen.bloat %>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <h3><label>Auscultacion </label></h3>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <label for = "bloat">Ruidos Hidroaereos</label>
-                  <%= @medical_consultation.physical_exam.abdomen.auscultation_type %>
-                </div>
-                <div class="col-md-6">
-                  <label for="auscultation_location">Localizacion de la anormalidad:</label>
-                  <%= @medical_consultation.physical_exam.abdomen.auscultation_location  %>
-                </div>
-              </div>
-            </div>
             <% end %>
+            <% if @medical_consultation.physical_exam.abdomen.auscultation %>
+              <div class="panel panel-success">
+                <div class="panel-heading"><label>Auscultacion </label></div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <label for = "bloat">Ruidos Hidroaereos</label>
+                      <%= @medical_consultation.physical_exam.abdomen.auscultation_type %>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="auscultation_location">Localizacion de la anormalidad:</label>
+                      <%= @medical_consultation.physical_exam.abdomen.auscultation_location  %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
           </div>
         </div>
       </div>
     <% end %>
     <% if @medical_consultation.physical_exam.activate_proctochological_examination %>
       <div class="panel panel-info">
-        <div class="panel-heading">Examen Proctologico </div>
+        <div class="panel-heading"><label>Examen Proctologico</label>  </div>
         <div class="panel-body">
           <div class="row">
             <div class="col-md-12">
@@ -295,7 +311,7 @@
 
     <% if @medical_consultation.physical_exam.activate_inquinocrural_examination %>
       <div class="panel panel-info">
-        <div class="panel-heading">Examen Inguinocrural </div>
+        <div class="panel-heading"><label>Examen Inguinocrural</label>  </div>
         <div class="panel-body">
           <div class="row">
             <div class="col-md-12">
@@ -310,14 +326,14 @@
                   </thead>
                   <tbody>
                   <tr>
-                    <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.right_reductible_inguinal_hernia %></td>
+                    <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.right_reductible_inguinal_hernia ? "Si" : "No" %></td>
                     <td align="center">Reductible</td>
-                    <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.left_reductible_inguinal_hernia %></td>
+                    <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.left_reductible_inguinal_hernia ? "Si" : "No" %></td>
                   </tr>
                   <tr>
-                    <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.right_coercible_inguinal_hernia %></td>
+                    <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.right_coercible_inguinal_hernia ? "Si" : "No" %></td>
                     <td align="center">Coercible</td>
-                    <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.left_coercible_inguinal_hernia %></td>
+                    <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.left_coercible_inguinal_hernia ? "Si" : "No" %></td>
                   </tr>
                   <tr>
                     <th style="text-align: center;">Derecha</th>
@@ -325,14 +341,14 @@
                     <th style="text-align: center;">Izquierda</th>
                   </tr>
                   <tr>
-                    <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.right_reductible_crural_hernia %></td>
+                    <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.right_reductible_crural_hernia ? "Si" : "No" %></td>
                     <td align="center">Reductible</td>
-                    <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.left_reductible_crural_hernia %></td>
+                    <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.left_reductible_crural_hernia ? "Si" : "No" %></td>
                   </tr>
                   <tr>
-                    <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.right_coercible_crural_hernia %></td>
+                    <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.right_coercible_crural_hernia ? "Si" : "No" %></td>
                     <td align="center">Coercible</td>
-                    <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.left_coercible_crural_hernia %></td>
+                    <td align="center"><%= @medical_consultation.physical_exam.inguinocrural_examination.left_coercible_crural_hernia ? "Si" : "No" %></td>
                   </tr>
                   </tbody>
                 </table>
@@ -344,42 +360,46 @@
     <% end %>
     <% if @medical_consultation.physical_exam.activate_cervical_examination %>
         <div class="panel panel-info">
-          <div class="panel-heading">Examen Cervical </div>
+          <div class="panel-heading"><label>Examen Cervical </label></div>
           <div class="panel-body">
             <div class="row">
               <div class="col-md-12">
-                <div class="row">
-                  <div class="col-md-2">
-                    <label for = "lateral_tumor">Tumor Lateral</label>
-                    <%= @medical_consultation.physical_exam.cervical_examination.lateral_tumor %>
+                <% if @medical_consultation.physical_exam.cervical_examination.lateral_tumor %>
+                  <div class="row">
+                    <div class="col-md-2">
+                      <label for = "lateral_tumor">Tumor Lateral</label>
+                    </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-2">
-                    <label for = "left_lateral_tumor">Izquierdo</label>
-                    <%= @medical_consultation.physical_exam.cervical_examination.left_lateral_tumor %>
+                  <div class="row">
+                    <% if @medical_consultation.physical_exam.cervical_examination.left_lateral_tumor %>
+                      <div class="col-md-2">
+                        <label for = "left_lateral_tumor">Izquierdo</label>
+                      </div>
+                    <% end %>
+                    <% if @medical_consultation.physical_exam.cervical_examination.right_lateral_tumor %>
+                      <div class="col-md-2">
+                        <label for = "right_lateral_tumor">Derecho</label>
+                      </div>
+                    <% end %>
+                    <div class="col-md-8">
+                      <label for = "tumor_description">Descripcion</label>
+                      <%= @medical_consultation.physical_exam.cervical_examination.tumor_description %>
+                    </div>
                   </div>
-                  <div class="col-md-2">
-                    <label for = "right_lateral_tumor">Derecho</label>
-                    <%= @medical_consultation.physical_exam.cervical_examination.right_lateral_tumor %>
+                <% end %>
+                <% if @medical_consultation.physical_exam.cervical_examination.central_tumor %>
+                  <div class="row">
+                    <div class="col-md-2">
+                      <label for = "central_tumor">Central</label>
+                    </div>
                   </div>
-                  <div class="col-md-8">
-                    <label for = "tumor_description">Descripcion</label>
-                    <%= @medical_consultation.physical_exam.cervical_examination.tumor_description %>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label for = "central_tumor_description">Descripcion</label>
+                      <%= @medical_consultation.physical_exam.cervical_examination.central_tumor_description %>
+                    </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-2">
-                    <label for = "central_tumor">Central</label>
-                    <%= @medical_consultation.physical_exam.cervical_examination.central_tumor %>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <label for = "central_tumor_description">Descripcion</label>
-                    <%= @medical_consultation.physical_exam.cervical_examination.central_tumor_description %>
-                  </div>
-                </div>
+                <% end %>
               </div>
             </div>
           </div>
@@ -387,7 +407,7 @@
     <% end %>
     <% if @medical_consultation.physical_exam.activate_breast_exam %>
       <div class="panel panel-info">
-        <div class="panel-heading">Examen Mamario </div>
+        <div class="panel-heading"><label>Examen Mamario </label> </div>
         <div class="panel-body">
           <div class="row">
             <div class="col-md-12">
@@ -420,16 +440,18 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-4">
-                  <label for = "right_armpit">Axila Derecha</label>
-                  <%= @medical_consultation.physical_exam.breast_exam.right_armpit %>
-                </div>
+                <% if @medical_consultation.physical_exam.breast_exam.right_armpit %>
+                  <div class="col-md-4">
+                    <label for = "right_armpit">Axila Derecha</label>
+                  </div>
+                <% end %>
               </div>
               <div class="row">
-                <div class="col-md-4">
-                  <label for = "left_armpit">Axila Izquierda</label>
-                  <%= @medical_consultation.physical_exam.breast_exam.left_armpit%>
-                </div>
+                <% if @medical_consultation.physical_exam.breast_exam.right_armpit %>
+                  <div class="col-md-4">
+                    <label for = "left_armpit">Axila Izquierda</label>
+                  </div>
+                <% end %>
               </div>
             </div>
           </div>
@@ -440,12 +462,13 @@
 
     <% if @medical_consultation.physical_exam.activate_skin_lesion %>
       <div class="panel panel-info">
-        <div class="panel-heading">Lesion de Piel </div>
+        <div class="panel-heading"><label>Lesion de Piel</label>  </div>
         <div class="panel-body">
           <div class="row">
             <div class="col-md-12">
               <div class="row">
                 <div class="col-md-12">
+                  <%= @medical_consultation.physical_exam.skin_lesion_exam.skin_lesion_description %>
                 </div>
               </div>
             </div>
@@ -458,7 +481,7 @@
 
 
 <div class="panel panel-primary">
-  <div class="panel-heading">Examenes Complementarios </div>
+  <div class="panel-heading"><label>Examenes Complementarios</label>  </div>
   <div class="panel-body">
     <% @medical_consultation.complementary_exams.each do |complementary_exam| %>
         <div class="row">
@@ -478,7 +501,7 @@
 
 
 <div class="panel panel-primary">
-  <div class="panel-heading">Examenes Complementarios </div>
+  <div class="panel-heading"><label>Examenes Complementarios </label> </div>
   <div class="panel-body">
     <% @medical_consultation.laboratories.each do |laboratory| %>
         <div class="row">
