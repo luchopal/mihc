@@ -41,6 +41,7 @@ gem 'cocoon'
 
 gem 'will_paginate', '>= 3.1'
 gem 'will_paginate-bootstrap'
+gem 'bootstrap-toggle-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
