@@ -1,4 +1,8 @@
-<h1>Consulta</h1>
+<div class="row">
+  <div class="col-md-12">
+    <h1>Consulta</h1>
+  </div>
+</div>
 <div class="row">
   <div class="col-md-1">
     <label>Fecha </label>
@@ -521,7 +525,11 @@
     <% end %>
   </div>
 </div>
-
+<div class="row">
+  <div class="col-md-2">
+    <p><%= link_to 'Volver', medical_consultations_path(@patient_id) , method: :get , class: "btn btn-primary btn-block" %></p>
+  </div>
+</div>
 
 <script>
     $(document).ready(function() {

@@ -4,20 +4,24 @@
 <div class="row">
   <div class="col-md-12">
     <table class="table">
+      <thead>
       <tr>
         <th>Fecha</th>
         <th>Motivo</th>
         <th>Ver</th>
       </tr>
+      </thead>
+      <tbody>
       <% @medical_consultations.each do |data| %>
           <tr>
             <td><%= data.date %></td>
             <td><%= data.reason %></td>
-            <td><b> <%= link_to ('<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>').html_safe, medical_consultation_path(data) , method: :get %></b></td>
+            <td><%= link_to ('<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>').html_safe, medical_consultation_path(data, @patient_id) , method: :get %></td>
           </tr>
       <% end %>
+      </tbody>
     </table>
-    <%= will_paginate @medical_consultations %>
+    <%= will_paginate @medical_consultations, renderer: BootstrapPagination::Rails %>
   </div>
 </div>
 <p><%= link_to 'Nueva Consulta', new_medical_consultation_path(@patient_id) , method: :get , class: "btn btn-primary" %></p>

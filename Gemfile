@@ -40,6 +40,7 @@ gem 'country_select'
 gem 'cocoon'
 
 gem 'will_paginate', '>= 3.1'
+gem 'will_paginate-bootstrap'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

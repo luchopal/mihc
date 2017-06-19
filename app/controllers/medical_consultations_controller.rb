@@ -65,6 +65,7 @@ class MedicalConsultationsController < ApplicationController
 
   def show
     @medical_consultation_id = params[:id]
+    @patientId = params[:format]
     @medical_consultation = MedicalConsultation.find(@medical_consultation_id)
   end
 
