@@ -4,18 +4,18 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-1">
+  <div class="col-md-2">
     <label>Fecha </label>
-  </div>
-  <div class="col-md-3">
-    <p><%= @medical_consultation.date %></p>
+    <input value="<%= @medical_consultation.date.strftime("%d/%m/%Y") %>" disabled  class="form-control" />
   </div>
 </div>
 <div class="row">
   <div class="col-md-12">
-    <label>Motivo</label> <%= @medical_consultation.reason %>
+    <label>Motivo</label>
+    <textarea class="form-control" disabled > <%= @medical_consultation.reason %></textarea>
   </div>
 </div>
+<br>
 <div class="panel panel-primary">
   <div class="panel-heading">Examen Fisico </div>
   <div class="panel-body">
@@ -515,7 +515,7 @@
           </div>
           <div class="col-md-2">
             <label>Fecha </label>
-            <%= laboratory.date %>
+            <%= laboratory.date.strftime("%d/%m/%Y") %>
           </div>
           <div class="col-md-8">
             <label>Observacion </label>
