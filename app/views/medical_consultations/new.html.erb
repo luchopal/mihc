@@ -1,5 +1,3 @@
-<%= javascript_include_tag 'medical_consultation/medical_consultations', 'data-turbolinks-track': 'true' %>
-
 <h1><label>Consulta</label></h1>
 <%= form_for @medical_consultation do |f| %>
     <div class="row">
@@ -35,35 +33,35 @@
                   <div class="col-md-12">
                     <%= physical_exam.fields_for :abdomen do |abdomen| %>
                           <div class="panel panel-success">
-                            <div class="panel-heading"><label>Inspeccion</label> <%= abdomen.check_box :inspection, id: "inspectionCheckBox" %> </div>
+                            <div class="panel-heading"><label>Inspeccion</label> <%= abdomen.check_box :inspection, id: "inspectionCheckBox",  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %> </div>
                             <div class="panel-body">
                                 <div id="inspectionDiv">
                                   <div class="row">
                                     <div class="col-md-2">
                                       <label for = "plane">Plano </label>
-                                      <%= abdomen.check_box :plane %>
+                                      <%= abdomen.check_box :plane,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                                     </div>
                                     <div class="col-md-2">
                                       <label for = "spherical">Globoso </label>
-                                      <%= abdomen.check_box :spherical %>
+                                      <%= abdomen.check_box :spherical,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                                     </div>
                                     <div class="col-md-2">
                                       <label for = "relaxed">Distendido </label>
-                                      <%= abdomen.check_box :relaxed %>
+                                      <%= abdomen.check_box :relaxed,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                                     </div>
                                     <div class="col-md-2">
                                       <label for = "asymmetric">Asimetrico </label>
-                                      <%= abdomen.check_box :asymmetric %>
+                                      <%= abdomen.check_box :asymmetric,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                                     </div>
                                   </div>
                                   <div class="row">
                                     <div class="col-md-2">
                                       <label for = "umbilical_hernia">Hernia Umbilical </label>
-                                      <%= abdomen.check_box :umbilical_hernia %>
+                                      <%= abdomen.check_box :umbilical_hernia,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                                     </div>
                                     <div class="col-md-2">
                                       <label for = "eventration">Eventracion </label>
-                                      <%= abdomen.check_box :eventration %>
+                                      <%= abdomen.check_box :eventration,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                                     </div>
                                   </div>
                                   <div class="row">
@@ -80,38 +78,38 @@
                                   <div class="row">
                                     <div class="col-md-2">
                                       <label for = "scar">Cicatrices </label>
-                                      <%= abdomen.check_box :scar, id:"activateScarCheckBox"  %>
+                                      <%= abdomen.check_box :scar, id:"activateScarCheckBox",  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' }  %>
                                     </div>
                                   </div>
                                   <div id="scarsDiv">
                                     <div class="row">
                                       <div class="col-md-1">
                                         <label for = "msu">MSU </label>
-                                        <%= abdomen.check_box :msu %>
+                                        <%= abdomen.check_box :msu,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                                       </div>
                                       <div class="col-md-1">
                                         <label for = "miu">MIU </label>
-                                        <%= abdomen.check_box :miu %>
+                                        <%= abdomen.check_box :miu,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                                       </div>
                                       <div class="col-md-1">
                                         <label for = "xp">XP </label>
-                                        <%= abdomen.check_box :xp %>
+                                        <%= abdomen.check_box :xp ,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' }%>
                                       </div>
                                       <div class="col-md-2">
                                         <label for = "mc_burney">MC Burney </label>
-                                        <%= abdomen.check_box :mc_burney %>
+                                        <%= abdomen.check_box :mc_burney ,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' }%>
                                       </div>
                                       <div class="col-md-2">
                                         <label for = "kocher">Kocher </label>
-                                        <%= abdomen.check_box :kocher %>
+                                        <%= abdomen.check_box :kocher,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                                       </div>
                                       <div class="col-md-2">
                                         <label for = "pfannenstiel">Pfannenstiel </label>
-                                        <%= abdomen.check_box :pfannenstiel %>
+                                        <%= abdomen.check_box :pfannenstiel,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                                       </div>
                                       <div class="col-md-1">
                                         <label for = "others">Otras </label>
-                                        <%= abdomen.check_box :others %>
+                                        <%= abdomen.check_box :others,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                                       </div>
                                     </div>
                                     <div class="row">
@@ -126,21 +124,21 @@
                         </div>
 
                         <div class="panel panel-success">
-                          <div class="panel-heading"><label>Palpacion</label> <%= abdomen.check_box :palpation, id: "palpationCheckBox" %> </div>
+                          <div class="panel-heading"><label>Palpacion</label> <%= abdomen.check_box :palpation, id: "palpationCheckBox",  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %> </div>
                           <div class="panel-body">
                             <div id="palpationDiv">
                               <div class="row">
                                 <div class="col-md-2">
                                   <label for = "soft">Blando </label>
-                                  <%= abdomen.check_box :soft %>
+                                  <%= abdomen.check_box :soft,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                                 </div>
                                 <div class="col-md-2">
                                   <label for = "uptight">Tenso </label>
-                                  <%= abdomen.check_box :uptight %>
+                                  <%= abdomen.check_box :uptight,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                                 </div>
                                 <div class="col-md-6">
                                   <label for = "painful">Doloroso </label>
-                                  <%= abdomen.check_box :painful, id:"activatePainfulCheckBox" %>
+                                  <%= abdomen.check_box :painful, id:"activatePainfulCheckBox" ,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' }%>
                                 </div>
                               </div>
                               <div class="row" id="painfulDiv">
@@ -166,7 +164,7 @@
                         </div>
 
                         <div class="panel panel-success">
-                          <div class="panel-heading"><label>Percusion</label> <%= abdomen.check_box :percussion, id:"percussionCheckBox" %> </div>
+                          <div class="panel-heading"><label>Percusion</label> <%= abdomen.check_box :percussion, id:"percussionCheckBox",  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %> </div>
                           <div class="panel-body">
                           <div id="percussionDiv">
                             <div class="row">
@@ -180,7 +178,7 @@
                         </div>
 
                         <div class="panel panel-success">
-                          <div class="panel-heading"><label>Auscultacion</label>  <%= abdomen.check_box :auscultation, id:"auscultationCheckBox" %> </div>
+                          <div class="panel-heading"><label>Auscultacion</label>  <%= abdomen.check_box :auscultation, id:"auscultationCheckBox",  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %> </div>
                           <div class="panel-body">
                             <div class="row" id="auscultationDiv">
                               <div class="col-md-3">
@@ -201,7 +199,7 @@
 
           <% end %>
           <div class="panel panel-info">
-            <div class="panel-heading"><label>Examen Proctologico</label>  <%= physical_exam.check_box :activate_proctochological_examination, id:"activateProctochologicalExaminationCheckBox" %></div>
+            <div class="panel-heading"><label>Examen Proctologico</label>  <%= physical_exam.check_box :activate_proctochological_examination, id:"activateProctochologicalExaminationCheckBox",  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %></div>
             <div class="panel-body">
               <div class="row" id="proctochologicalExaminationDiv">
                 <div class="col-md-12">
@@ -283,7 +281,7 @@
                     <div class="row">
                       <div class="col-md-2">
                         <label for = "formation">Formacion </label>
-                        <%= proctochological_examination.check_box :formation, id:"formationCheckBox" %>
+                        <%= proctochological_examination.check_box :formation, id:"formationCheckBox",  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                       </div>
                     </div>
                     <div class="row" id="formationPositionDiv">
@@ -299,7 +297,7 @@
           </div>
 
           <div class="panel panel-info">
-            <div class="panel-heading"><label>Examen Inguinocrural</label>  <%= physical_exam.check_box :activate_inquinocrural_examination, id:"activateInguinocruralExaminationCheckBox" %> </div>
+            <div class="panel-heading"><label>Examen Inguinocrural</label>  <%= physical_exam.check_box :activate_inquinocrural_examination, id:"activateInguinocruralExaminationCheckBox",  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %> </div>
               <div class="panel-body">
                 <div class="row" id="inguinocruralExaminationDiv">
                   <div class="col-md-12">
@@ -315,14 +313,14 @@
                             </thead>
                             <tbody>
                             <tr>
-                              <td align="center"><%= inguinocrural_examination.check_box :right_reductible_inguinal_hernia %></td>
+                              <td align="center"><%= inguinocrural_examination.check_box :right_reductible_inguinal_hernia,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %></td>
                               <td align="center">Reductible</td>
-                              <td align="center"><%= inguinocrural_examination.check_box :left_reductible_inguinal_hernia %></td>
+                              <td align="center"><%= inguinocrural_examination.check_box :left_reductible_inguinal_hernia,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %></td>
                             </tr>
                             <tr>
-                              <td align="center"><%= inguinocrural_examination.check_box :right_coercible_inguinal_hernia %></td>
+                              <td align="center"><%= inguinocrural_examination.check_box :right_coercible_inguinal_hernia,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %></td>
                               <td align="center">Coercible</td>
-                              <td align="center"><%= inguinocrural_examination.check_box :left_coercible_inguinal_hernia %></td>
+                              <td align="center"><%= inguinocrural_examination.check_box :left_coercible_inguinal_hernia,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %></td>
                             </tr>
                             <tr>
                               <th style="text-align: center;">Derecha</th>
@@ -330,14 +328,14 @@
                               <th style="text-align: center;">Izquierda</th>
                             </tr>
                             <tr>
-                              <td align="center"><%= inguinocrural_examination.check_box :right_reductible_crural_hernia %></td>
+                              <td align="center"><%= inguinocrural_examination.check_box :right_reductible_crural_hernia,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %></td>
                               <td align="center">Reductible</td>
-                              <td align="center"><%= inguinocrural_examination.check_box :left_reductible_crural_hernia %></td>
+                              <td align="center"><%= inguinocrural_examination.check_box :left_reductible_crural_hernia,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %></td>
                             </tr>
                             <tr>
-                              <td align="center"><%= inguinocrural_examination.check_box :right_coercible_crural_hernia %></td>
+                              <td align="center"><%= inguinocrural_examination.check_box :right_coercible_crural_hernia,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %></td>
                               <td align="center">Coercible</td>
-                              <td align="center"><%= inguinocrural_examination.check_box :left_coercible_crural_hernia %></td>
+                              <td align="center"><%= inguinocrural_examination.check_box :left_coercible_crural_hernia,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %></td>
                             </tr>
                             </tbody>
                           </table>
@@ -348,7 +346,7 @@
             </div>
           </div>
           <div class="panel panel-info">
-            <div class="panel-heading"><label>Examen Cervical </label>  <%= physical_exam.check_box :activate_cervical_examination, id:"activateCervicalExaminationCheckBox" %>  </div>
+            <div class="panel-heading"><label>Examen Cervical </label>  <%= physical_exam.check_box :activate_cervical_examination, id:"activateCervicalExaminationCheckBox",  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>  </div>
             <div class="panel-body">
               <div class="row" id="cervicalExaminationDiv">
                 <div class="col-md-12">
@@ -356,17 +354,17 @@
                       <div class="row">
                         <div class="col-md-2">
                           <label for = "lateral_tumor">Tumor Lateral</label>
-                          <%= cervical_examination.check_box :lateral_tumor %>
+                          <%= cervical_examination.check_box :lateral_tumor,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-md-2">
                           <label for = "left_lateral_tumor">Izquierdo</label>
-                          <%= cervical_examination.check_box :left_lateral_tumor %>
+                          <%= cervical_examination.check_box :left_lateral_tumor,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                         </div>
                         <div class="col-md-2">
                           <label for = "right_lateral_tumor">Derecho</label>
-                          <%= cervical_examination.check_box :right_lateral_tumor %>
+                          <%= cervical_examination.check_box :right_lateral_tumor,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                         </div>
                         <div class="col-md-8">
                           <label for = "tumor_description">Descripcion</label>
@@ -376,7 +374,7 @@
                       <div class="row">
                         <div class="col-md-2">
                           <label for = "central_tumor">Central</label>
-                          <%= cervical_examination.check_box :central_tumor %>
+                          <%= cervical_examination.check_box :central_tumor,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                         </div>
                       </div>
                       <div class="row">
@@ -392,7 +390,7 @@
           </div>
 
           <div class="panel panel-info">
-            <div class="panel-heading"><label>Examen Mamario </label>  <%= physical_exam.check_box :activate_breast_exam, id:"activateBreastExamCheckBox" %>  </div>
+            <div class="panel-heading"><label>Examen Mamario </label>  <%= physical_exam.check_box :activate_breast_exam, id:"activateBreastExamCheckBox",  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>  </div>
             <div class="panel-body">
               <div class="row" id="breastExamDiv">
                 <div class="col-md-12">
@@ -428,13 +426,13 @@
                       <div class="row">
                         <div class="col-md-4">
                           <label for = "right_armpit">Axila Derecha</label>
-                          <%= breast_exam.check_box :right_armpit %>
+                          <%= breast_exam.check_box :right_armpit,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-md-4">
                           <label for = "left_armpit">Axila Izquierda</label>
-                          <%= breast_exam.check_box :left_armpit%>
+                          <%= breast_exam.check_box :left_armpit,  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' }%>
                         </div>
                       </div>
                   <% end %>
@@ -444,7 +442,7 @@
           </div>
 
           <div class="panel panel-info">
-            <div class="panel-heading"><label>Lesion de Piel </label>  <%= physical_exam.check_box :activate_skin_lesion, id:"activateSkinLesionCheckBox" %>  </div>
+            <div class="panel-heading"><label>Lesion de Piel </label>  <%= physical_exam.check_box :activate_skin_lesion, id:"activateSkinLesionCheckBox",  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' } %>  </div>
             <div class="panel-body">
               <div class="row" id="skinLesionDiv">
                 <div class="col-md-12">
@@ -498,174 +496,123 @@
 
 
 <script>
-    $(document).ready(function() {
-        if( $("#abdomenCheckBox").is(':checked')) {
-            $("#abdomenDiv").show();
-        } else {
-            $("#abdomenDiv").hide();
-        }
 
-        $("#abdomenCheckBox").click(function() {
-            if( $("#abdomenCheckBox").is(':checked')) {
+    $(document).ready(function() {
+        $("#abdomenDiv").hide();
+        $('#abdomenCheckBox').change(function() {
+            if($(this).prop('checked')){
                 $("#abdomenDiv").show();
-            } else {
+            }else{
                 $("#abdomenDiv").hide();
             }
-        });
+        })
 
-        if( $("#inspectionCheckBox").is(':checked')) {
-            $("#inspectionDiv").show();
-        } else {
-            $("#inspectionDiv").hide();
-        }
-
-        $("#inspectionCheckBox").click(function() {
-            if( $("#inspectionCheckBox").is(':checked')) {
+        $('#inspectionCheckBox').change(function() {
+            if($(this).prop('checked')){
                 $("#inspectionDiv").show();
-            } else {
+            }else{
                 $("#inspectionDiv").hide();
             }
-        });
+        })
 
-        if( $("#palpationCheckBox").is(':checked')) {
-            $("#palpationDiv").show();
-        } else {
-            $("#palpationDiv").hide();
-        }
+        $("#inspectionDiv").hide();
 
-        $("#palpationCheckBox").click(function() {
-            if( $("#palpationCheckBox").is(':checked')) {
+        $('#palpationCheckBox').change(function() {
+            if($(this).prop('checked')){
                 $("#palpationDiv").show();
-            } else {
+            }else{
                 $("#palpationDiv").hide();
             }
-        });
+        })
 
-        if( $("#percussionCheckBox").is(':checked')) {
-            $("#percussionDiv").show();
-        } else {
-            $("#percussionDiv").hide();
-        }
-
-        $("#percussionCheckBox").click(function() {
-            if( $("#percussionCheckBox").is(':checked')) {
+        $("#palpationDiv").hide();
+        $('#percussionCheckBox').change(function() {
+            if($(this).prop('checked')){
                 $("#percussionDiv").show();
-            } else {
+            }else{
                 $("#percussionDiv").hide();
             }
-        });
+        })
+        $("#percussionDiv").hide();
 
-        if( $("#activateProctochologicalExaminationCheckBox").is(':checked')) {
-            $("#proctochologicalExaminationDiv").show();
-        } else {
-            $("#proctochologicalExaminationDiv").hide();
-        }
 
-        $("#activateProctochologicalExaminationCheckBox").click(function() {
-            if( $("#activateProctochologicalExaminationCheckBox").is(':checked')) {
+        $('#activateProctochologicalExaminationCheckBox').change(function() {
+            if($(this).prop('checked')){
                 $("#proctochologicalExaminationDiv").show();
-            } else {
+            }else{
                 $("#proctochologicalExaminationDiv").hide();
             }
-        });
+        })
+        $("#proctochologicalExaminationDiv").hide();
 
-        if( $("#activateInguinocruralExaminationCheckBox").is(':checked')) {
-            $("#inguinocruralExaminationDiv").show();
-        } else {
-            $("#inguinocruralExaminationDiv").hide();
-        }
 
-        $("#activateInguinocruralExaminationCheckBox").click(function() {
-            if( $("#activateInguinocruralExaminationCheckBox").is(':checked')) {
+        $('#activateInguinocruralExaminationCheckBox').change(function() {
+            if($(this).prop('checked')){
                 $("#inguinocruralExaminationDiv").show();
-            } else {
+            }else{
                 $("#inguinocruralExaminationDiv").hide();
             }
-        });
+        })
+        $("#inguinocruralExaminationDiv").hide();
 
-        if( $("#activateCervicalExaminationCheckBox").is(':checked')) {
-            $("#cervicalExaminationDiv").show();
-        } else {
-            $("#cervicalExaminationDiv").hide();
-        }
 
-        $("#activateCervicalExaminationCheckBox").click(function() {
-            if( $("#activateCervicalExaminationCheckBox").is(':checked')) {
+        $('#activateCervicalExaminationCheckBox').change(function() {
+            if($(this).prop('checked')){
                 $("#cervicalExaminationDiv").show();
-            } else {
+            }else{
                 $("#cervicalExaminationDiv").hide();
             }
-        });
+        })
+        $("#cervicalExaminationDiv").hide();
 
-        if( $("#activateBreastExamCheckBox").is(':checked')) {
-            $("#breastExamDiv").show();
-        } else {
-            $("#breastExamDiv").hide();
-        }
 
-        $("#activateBreastExamCheckBox").click(function() {
-            if( $("#activateBreastExamCheckBox").is(':checked')) {
+        $('#activateBreastExamCheckBox').change(function() {
+            if($(this).prop('checked')){
                 $("#breastExamDiv").show();
-            } else {
+            }else{
                 $("#breastExamDiv").hide();
             }
-        });
+        })
+        $("#breastExamDiv").hide();
 
-        if( $("#activateSkinLesionCheckBox").is(':checked')) {
-            $("#skinLesionDiv").show();
-        } else {
-            $("#skinLesionDiv").hide();
-        }
 
-        $("#activateSkinLesionCheckBox").click(function() {
-            if( $("#activateSkinLesionCheckBox").is(':checked')) {
+        $('#activateSkinLesionCheckBox').change(function() {
+            if($(this).prop('checked')){
                 $("#skinLesionDiv").show();
-            } else {
+            }else{
                 $("#skinLesionDiv").hide();
             }
-        });
+        })
+        $("#skinLesionDiv").hide();
 
-        if( $("#activateScarCheckBox").is(':checked')) {
-            $("#scarsDiv").show();
-        } else {
-            $("#scarsDiv").hide();
-        }
-
-        $("#activateScarCheckBox").click(function() {
-            if( $("#activateScarCheckBox").is(':checked')) {
+        $('#activateScarCheckBox').change(function() {
+            if($(this).prop('checked')){
                 $("#scarsDiv").show();
-            } else {
+            }else{
                 $("#scarsDiv").hide();
             }
-        });
+        })
+        $("#scarsDiv").hide();
 
-        if( $("#activatePainfulCheckBox").is(':checked')) {
-            $("#painfulDiv").show();
-        } else {
-            $("#painfulDiv").hide();
-        }
 
-        $("#activatePainfulCheckBox").click(function() {
-            if( $("#activatePainfulCheckBox").is(':checked')) {
+        $('#activatePainfulCheckBox').change(function() {
+            if($(this).prop('checked')){
                 $("#painfulDiv").show();
-            } else {
+            }else{
                 $("#painfulDiv").hide();
             }
-        });
+        })
+        $("#painfulDiv").hide();
 
-        if( $("#auscultationCheckBox").is(':checked')) {
-            $("#auscultationDiv").show();
-        } else {
-            $("#auscultationDiv").hide();
-        }
-
-        $("#auscultationCheckBox").click(function() {
-            if( $("#auscultationCheckBox").is(':checked')) {
+        $('#auscultationCheckBox').change(function() {
+            if($(this).prop('checked')){
                 $("#auscultationDiv").show();
-            } else {
+            }else{
                 $("#auscultationDiv").hide();
             }
-        });
+        })
+        $("#auscultationDiv").hide();
+
         $("#occupiedRectalAmpouleDiv").hide();
         $('#medical_consultation_physical_exam_attributes_proctochological_examination_attributes_rectal_ampoule').on('change', function() {
             if(this.value == "OCUPADA"){
@@ -675,19 +622,14 @@
             }
         })
 
-        if( $("#formationCheckBox").is(':checked')) {
-            $("#formationPositionDiv").show();
-        } else {
-            $("#formationPositionDiv").hide();
-        }
-
-        $("#formationCheckBox").click(function() {
-            if( $("#formationCheckBox").is(':checked')) {
+        $('#formationCheckBox').change(function() {
+            if($(this).prop('checked')){
                 $("#formationPositionDiv").show();
-            } else {
+            }else{
                 $("#formationPositionDiv").hide();
             }
-        });
+        })
+        $("#formationPositionDiv").hide();
 
         var stage = new Konva.Stage({
             container: 'breast',
