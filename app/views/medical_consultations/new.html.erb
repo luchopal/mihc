@@ -29,7 +29,7 @@
           </div>
           <br>
           <div class="panel panel-info">
-            <div class="panel-heading"><label>Abdomen </label>  <%= physical_exam.check_box :activate_abdomen, id:"abdomenCheckBox",  :data => { :toggle => 'toggle' }  %></div>
+            <div class="panel-heading"><label>Abdomen </label>  <%= physical_exam.check_box :activate_abdomen, id:"abdomenCheckBox",  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No' }  %></div>
               <div class="panel-body">
                 <div class="row" id="abdomenDiv">
                   <div class="col-md-12">
