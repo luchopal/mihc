@@ -475,14 +475,33 @@
 
 
     <div class="panel panel-primary">
-      <div class="panel-heading"><label>Laboratorio </label></div>
+      <div class="panel-heading"><label>Laboratorio </label> </div>
       <div class="panel-body">
-        <%= f.fields_for :laboratories do |laboratoties| %>
-            <%= render 'laboratory_fields', f: laboratoties %>
-        <% end %>
-        <div class="links">
-          <%= link_to_add_association 'Agregar examen', f, :complementary_exams, class: "btn btn-primary" %>
-        </div>
+        <table class="table">
+          <thead>
+          <tr>
+            <th style="text-align: center;">Tipo</th>
+            <th style="text-align: center;">Fecha</th>
+            <th style="text-align: center;">Observacion</th>
+          </tr>
+          </thead>
+          <tbody>
+            <%= f.fields_for :laboratories do |laboratory| %>
+              <tr>
+                <td>
+                <%= laboratory.text_field :laboratory_type, class: 'form-control', disabled: true %>
+                <%= laboratory.hidden_field :laboratory_type %>
+                </td>
+                <td>
+                <%= laboratory.date_select :date, {:start_year=>1930, order: [:day, :month, :year]}, {:class => "date-myselect form-control"} %>
+                </td>
+                <td>
+                <%= laboratory.text_field :comment,{class: 'form-control'}  %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
     </div>
 

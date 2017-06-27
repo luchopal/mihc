@@ -13,6 +13,15 @@ class MedicalConsultationsController < ApplicationController
     @medical_consultation.physical_exam.cervical_examination = CervicalExamination.new
     @medical_consultation.physical_exam.breast_exam = BreastExam.new
     @medical_consultation.physical_exam.skin_lesion_exam = SkinLesionExam.new
+
+    laboratories = Array.new
+    Laboratory::TYPE.each do |type|
+      laboratory = Laboratory.new
+      laboratory.laboratory_type = type
+      laboratories.push(laboratory)
+    end
+    @medical_consultation.laboratories = laboratories
+
     @patient_id = params[:format]
   end
 

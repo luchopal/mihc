@@ -502,29 +502,36 @@
   </div>
 </div>
 
-
-
 <div class="panel panel-primary">
-  <div class="panel-heading"><label>Examenes Complementarios </label> </div>
+  <div class="panel-heading"><label>Laboratorio </label> </div>
   <div class="panel-body">
-    <% @medical_consultation.laboratories.each do |laboratory| %>
-        <div class="row">
-          <div class="col-md-2">
-            <label>Tipo </label>
-            <%= laboratory.laboratory_type%>
-          </div>
-          <div class="col-md-2">
-            <label>Fecha </label>
-            <%= laboratory.date.strftime("%d/%m/%Y") %>
-          </div>
-          <div class="col-md-8">
-            <label>Observacion </label>
-            <%= laboratory.comment %>
-          </div>
-        </div>
-    <% end %>
+    <table class="table">
+      <thead>
+      <tr>
+        <th style="text-align: center;">Tipo</th>
+        <th style="text-align: center;">Fecha</th>
+        <th style="text-align: center;">Observacion</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @medical_consultation.laboratories.each do |laboratory| %>
+          <tr>
+            <td>
+              <%= laboratory.laboratory_type%>
+            </td>
+            <td>
+              <%= laboratory.date.strftime("%d/%m/%Y") %>
+            </td>
+            <td>
+              <%= laboratory.comment %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
+
 <div class="row">
   <div class="col-md-2">
     <p><%= link_to 'Volver', medical_consultations_path(@patient_id) , method: :get , class: "btn btn-primary btn-block" %></p>
