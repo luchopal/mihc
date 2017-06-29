@@ -475,33 +475,46 @@
     <div class="panel panel-primary">
       <div class="panel-heading"><label>Laboratorio </label> </div>
       <div class="panel-body">
-        <table class="table">
-          <thead>
-          <tr>
-            <th style="text-align: center;">Tipo</th>
-            <th style="text-align: center;">Fecha</th>
-            <th style="text-align: center;">Observacion</th>
-          </tr>
-          </thead>
-          <tbody>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Tipo</p>
+              <p>Hto</p>
+              <p>Hb</p>
+              <p>GB</p>
+              <p>Gluc</p>
+              <p>Urea</p>
+              <p>Creat</p>
+              <p>TGO</p>
+              <p>TGP</p>
+              <p>FAL</p>
+              <p>Amilasa</p>
+              <p>BT</p>
+              <p>BD</p>
+              <p>Prot. Tot.</p>
+              <p>Alb</p>
+              <p>NA+</p>
+              <p>K+</p>
+              <p>Plaq</p>
+              <p>Conc. PT</p>
+              <p>CEA</p>
+              <p>CA199</p>
+              <p>CA124</p>
+            </div>
+            <div class="col-md-3">
+              <div class="links">
+                <%= link_to_add_association 'Agregar examen', f, :laboratories, class: "btn btn-primary" %>
+              </div>
+            </div>
             <%= f.fields_for :laboratories do |laboratory| %>
-              <tr>
-                <td>
-                <%= laboratory.text_field :laboratory_type, class: 'form-control', disabled: true %>
-                <%= laboratory.hidden_field :laboratory_type %>
-                </td>
-                <td>
-                <%= laboratory.date_select :date, {:start_year=>1930, order: [:day, :month, :year]}, {:class => "date-myselect form-control"} %>
-                </td>
-                <td>
-                <%= laboratory.text_field :comment,{class: 'form-control'}  %>
-                </td>
-              </tr>
+                <div class="col-md-3">
+                  <%= render 'laboratory_fields', f: laboratory %>
+                </div>
             <% end %>
-          </tbody>
+          </div>
         </table>
       </div>
     </div>
+
 
   <br>
   <div class="row">

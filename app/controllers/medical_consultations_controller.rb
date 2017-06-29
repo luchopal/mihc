@@ -14,14 +14,6 @@ class MedicalConsultationsController < ApplicationController
     @medical_consultation.physical_exam.breast_exam = BreastExam.new
     @medical_consultation.physical_exam.skin_lesion_exam = SkinLesionExam.new
 
-    laboratories = Array.new
-    Laboratory::TYPE.each do |type|
-      laboratory = Laboratory.new
-      laboratory.laboratory_type = type
-      laboratories.push(laboratory)
-    end
-    @medical_consultation.laboratories = laboratories
-
     @patient_id = params[:format]
   end
 
@@ -49,7 +41,7 @@ class MedicalConsultationsController < ApplicationController
 
         complementary_exams_attributes: [:complementary_exam_type, :comment, :_destroy],
 
-        laboratories_attributes: [:laboratory_type, :date, :comment, :_destroy]
+        laboratories_attributes: [:hto,:hb,:gb,:gluc,:urea,:creat,:tgo,:tgp,:fal,:amilasa,:bt,:bd,:prot_tot,:alb,:na,:k,:plaq,:conc_pt,:cea,:ca199,:ca124,:date,:_destroy]
     )
   end
 
