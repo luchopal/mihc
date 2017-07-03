@@ -244,17 +244,4 @@ ActiveRecord::Schema.define(version: 20170629221812) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
-  create_table "will_filter_filters", force: :cascade do |t|
-    t.string   "type"
-    t.string   "name"
-    t.text     "data"
-    t.integer  "user_id"
-    t.integer  "project_id"
-    t.string   "model_class_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["project_id"], name: "index_will_filter_filters_on_project_id", using: :btree
-    t.index ["user_id"], name: "index_will_filter_filters_on_user_id", using: :btree
-  end
-
 end

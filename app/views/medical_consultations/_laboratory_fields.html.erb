@@ -1,69 +1,69 @@
-<div class="nested-fields">
-    <p><%= f.date_select :date, {:start_year=>1930, order: [:day, :month, :year]}, {:class => "date-myselect form-control"} %></p>
-    <p>
-      <%= f.text_field :hto, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :hb, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :gb, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :gluc, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :urea, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :creat, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :tgo, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :tgp, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :fal, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :amilasa, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :bt, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :bd, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :prot_tot, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :alb, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :na, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :k, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :plaq, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :conc_pt, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :cea, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :ca199, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.text_field :ca124, class: 'form-control' %>
-    </p>
-  <div class="col-md-2 form-margin">
+<div class="col-md-4 nested-fields">
+    <tr><td><%= f.date_select :date, {:start_year=>1930, order: [:day, :month, :year]}, {:class => "date-myselect form-control"} %></td></tr>
+    <tr><td>
+      <%= f.text_field :hto, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :hb, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :gb, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :gluc, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :urea, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :creat, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :tgo, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :tgp, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :fal, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :amilasa, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :bt, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :bd, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :prot_tot, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :alb, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :na, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :k, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :plaq, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :conc_pt, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :cea, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :ca199, class: 'form-control input-margin' %>
+    </tr></td>
+    <tr><td>
+      <%= f.text_field :ca124, class: 'form-control input-margin' %>
+    </tr></td>
+  <div class="col-md-6 form-margin">
     <%= link_to_remove_association "Eliminar", f , class: "btn btn-danger btn-block"%>
   </div>
 </div>

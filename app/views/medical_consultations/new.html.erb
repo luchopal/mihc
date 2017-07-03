@@ -476,42 +476,47 @@
       <div class="panel-heading"><label>Laboratorio </label> </div>
       <div class="panel-body">
           <div class="row">
-            <div class="col-md-3">
-              <p>Tipo</p>
-              <p>Hto</p>
-              <p>Hb</p>
-              <p>GB</p>
-              <p>Gluc</p>
-              <p>Urea</p>
-              <p>Creat</p>
-              <p>TGO</p>
-              <p>TGP</p>
-              <p>FAL</p>
-              <p>Amilasa</p>
-              <p>BT</p>
-              <p>BD</p>
-              <p>Prot. Tot.</p>
-              <p>Alb</p>
-              <p>NA+</p>
-              <p>K+</p>
-              <p>Plaq</p>
-              <p>Conc. PT</p>
-              <p>CEA</p>
-              <p>CA199</p>
-              <p>CA124</p>
+            <div class="col-md-2">
+              <table class="table">
+                <tbody>
+                  <tr><th>Tipo</th></tr>
+                  <tr><th>Hto</th></tr>
+                  <tr><th>Hb</th></tr>
+                  <tr><th>GB</th></tr>
+                  <tr><th>Gluc</th></tr>
+                  <tr><th>Urea</th></tr>
+                  <tr><th>Creat</th></tr>
+                  <tr><th>TGO</th></tr>
+                  <tr><th>TGP</th></tr>
+                  <tr><th>FAL</th></tr>
+                  <tr><th>Amilasa</th></tr>
+                  <tr><th>BT</th></tr>
+                  <tr><th>BD</th></tr>
+                  <tr><th>Prot. Tot.</th></tr>
+                  <tr><th>Alb</th></tr>
+                  <tr><th>NA+</th></tr>
+                  <tr><th>K+</th></tr>
+                  <tr><th>Plaq</th></tr>
+                  <tr><th>Conc. PT</th></tr>
+                  <tr><th>CEA</th></tr>
+                  <tr><th>CA199</th></tr>
+                  <tr><th>CA124</th></tr>
+                </tbody>
+              </table>
             </div>
-            <div class="col-md-3">
-              <div class="links">
-                <%= link_to_add_association 'Agregar examen', f, :laboratories, class: "btn btn-primary" %>
-              </div>
+            <div class="col-md-9">
+              <table class="table">
+                <tbody>
+                  <div class="links">
+                    <%= link_to_add_association 'Agregar examen', f, :laboratories, class: "btn btn-primary" %>
+                  </div>
+                </tbody>
+              </table>
             </div>
             <%= f.fields_for :laboratories do |laboratory| %>
-                <div class="col-md-3">
                   <%= render 'laboratory_fields', f: laboratory %>
-                </div>
             <% end %>
           </div>
-        </table>
       </div>
     </div>
 
