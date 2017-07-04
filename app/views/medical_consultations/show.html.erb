@@ -33,105 +33,105 @@
         <div class="row">
           <div class="col-md-12">
           <% if @medical_consultation.physical_exam.abdomen.inspection %>
-            <div class="panel panel-success">
-              <div class="panel-heading"><label>Inspeccion </label></div>
-              <div class="panel-body">
-                <div class="row">
-                  <% if @medical_consultation.physical_exam.abdomen.plane %>
-                  <div class="col-md-2">
-                   <h4><span class="label label-primary">Plano</span></h4>
-                  </div>
-                  <% end %>
-                  <% if @medical_consultation.physical_exam.abdomen.spherical %>
-                      <div class="col-md-2">
-                        <h4><span class="label label-primary">Globoso</span></h4>
-                      </div>
-                  <% end %>
-                  <% if @medical_consultation.physical_exam.abdomen.relaxed %>
-                      <div class="col-md-2">
-                        <h4><span class="label label-primary">Distendido</span></h4>
-                      </div>
-                  <% end %>
-                  <% if @medical_consultation.physical_exam.abdomen.asymmetric %>
-                      <div class="col-md-2">
-                        <h4><span class="label label-primary">Asimetrico</span></h4>
-                      </div>
-                  <% end %>
-                </div>
-                <div class="row">
-                  <% if @medical_consultation.physical_exam.abdomen.umbilical_hernia %>
-                      <div class="col-md-2">
-                        <h4><span class="label label-primary">Hernia Umbilical </span></h4>
-                      </div>
-                  <% end %>
-                  <% if @medical_consultation.physical_exam.abdomen.eventration %>
-                      <div class="col-md-2">
-                        <h4><span class="label label-primary">Eventracion </span></h4>
-                      </div>
-                  <% end %>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <label for = "location">Localizacion: </label>
-                    <%= @medical_consultation.physical_exam.abdomen.location%>
-                  </div>
-                  <div class="col-md-6">
-                    <label for = "size">Tamaño: </label>
-                    <%= @medical_consultation.physical_exam.abdomen.size%>
-                  </div>
-                </div>
-                <% end %>
-                <br>
-                <% if @medical_consultation.physical_exam.abdomen.scar %>
-                  <label>Cicatrices </label>
+              <div class="panel panel-success">
+                <div class="panel-heading"><label>Inspeccion </label></div>
+                <div class="panel-body">
                   <div class="row">
-                    <% if @medical_consultation.physical_exam.abdomen.msu %>
-                        <div class="col-md-1">
-                          <h4><span class="label label-primary">MSU </span></h4>
+                    <% if @medical_consultation.physical_exam.abdomen.plane %>
+                    <div class="col-md-2">
+                     <h4><span class="label label-primary">Plano</span></h4>
+                    </div>
+                    <% end %>
+                    <% if @medical_consultation.physical_exam.abdomen.spherical %>
+                        <div class="col-md-2">
+                          <h4><span class="label label-primary">Globoso</span></h4>
                         </div>
                     <% end %>
-                    <% if @medical_consultation.physical_exam.abdomen.miu %>
-                        <div class="col-md-1">
-                          <h4><span class="label label-primary">MIU </span></h4>
+                    <% if @medical_consultation.physical_exam.abdomen.relaxed %>
+                        <div class="col-md-2">
+                          <h4><span class="label label-primary">Distendido</span></h4>
                         </div>
                     <% end %>
-                    <% if @medical_consultation.physical_exam.abdomen.xp %>
-                        <div class="col-md-1">
-                          <h4><span class="label label-primary">XP </span></h4>
-                        </div>
-                    <% end %>
-                    <% if @medical_consultation.physical_exam.abdomen.mc_burney %>
-                        <div class="col-md-1">
-                          <h4><span class="label label-primary">MC Burney </span></h4>
-                        </div>
-                    <% end %>
-                    <% if @medical_consultation.physical_exam.abdomen.kocher %>
-                        <div class="col-md-1">
-                          <h4><span class="label label-primary">Kocher </span></h4>
-                        </div>
-                    <% end %>
-                    <% if @medical_consultation.physical_exam.abdomen.pfannenstiel %>
-                        <div class="col-md-1">
-                          <h4><span class="label label-primary">Pfannenstiel </span></h4>
-                        </div>
-                    <% end %>
-                    <% if @medical_consultation.physical_exam.abdomen.others %>
-                        <div class="col-md-1">
-                          <h4><span class="label label-primary">Otras </span></h4>
+                    <% if @medical_consultation.physical_exam.abdomen.asymmetric %>
+                        <div class="col-md-2">
+                          <h4><span class="label label-primary">Asimetrico</span></h4>
                         </div>
                     <% end %>
                   </div>
-                  <% if @medical_consultation.physical_exam.abdomen.others %>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <label for = "others_description">Aclaracion </label>
-                        <%= @medical_consultation.physical_exam.abdomen.others_description %>
-                      </div>
+                  <div class="row">
+                    <% if @medical_consultation.physical_exam.abdomen.umbilical_hernia %>
+                        <div class="col-md-2">
+                          <h4><span class="label label-primary">Hernia Umbilical </span></h4>
+                        </div>
+                    <% end %>
+                    <% if @medical_consultation.physical_exam.abdomen.eventration %>
+                        <div class="col-md-2">
+                          <h4><span class="label label-primary">Eventracion </span></h4>
+                        </div>
+                    <% end %>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label for = "location">Localizacion: </label>
+                      <%= @medical_consultation.physical_exam.abdomen.location%>
                     </div>
+                    <div class="col-md-6">
+                      <label for = "size">Tamaño: </label>
+                      <%= @medical_consultation.physical_exam.abdomen.size%>
+                    </div>
+                  </div>
+                  <br>
+                  <% if @medical_consultation.physical_exam.abdomen.scar %>
+                    <label>Cicatrices </label>
+                    <div class="row">
+                      <% if @medical_consultation.physical_exam.abdomen.msu %>
+                          <div class="col-md-1">
+                            <h4><span class="label label-primary">MSU </span></h4>
+                          </div>
+                      <% end %>
+                      <% if @medical_consultation.physical_exam.abdomen.miu %>
+                          <div class="col-md-1">
+                            <h4><span class="label label-primary">MIU </span></h4>
+                          </div>
+                      <% end %>
+                      <% if @medical_consultation.physical_exam.abdomen.xp %>
+                          <div class="col-md-1">
+                            <h4><span class="label label-primary">XP </span></h4>
+                          </div>
+                      <% end %>
+                      <% if @medical_consultation.physical_exam.abdomen.mc_burney %>
+                          <div class="col-md-1">
+                            <h4><span class="label label-primary">MC Burney </span></h4>
+                          </div>
+                      <% end %>
+                      <% if @medical_consultation.physical_exam.abdomen.kocher %>
+                          <div class="col-md-1">
+                            <h4><span class="label label-primary">Kocher </span></h4>
+                          </div>
+                      <% end %>
+                      <% if @medical_consultation.physical_exam.abdomen.pfannenstiel %>
+                          <div class="col-md-1">
+                            <h4><span class="label label-primary">Pfannenstiel </span></h4>
+                          </div>
+                      <% end %>
+                      <% if @medical_consultation.physical_exam.abdomen.others %>
+                          <div class="col-md-1">
+                            <h4><span class="label label-primary">Otras </span></h4>
+                          </div>
+                      <% end %>
+                    </div>
+                    <% if @medical_consultation.physical_exam.abdomen.others %>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <label for = "others_description">Aclaracion </label>
+                          <%= @medical_consultation.physical_exam.abdomen.others_description %>
+                        </div>
+                      </div>
+                    <% end %>
                   <% end %>
-                <% end %>
-                </div>
-            </div>
+                  </div>
+              </div>
+            <% end %>
 
             <% if @medical_consultation.physical_exam.abdomen.palpation %>
               <div class="panel panel-success">
@@ -221,64 +221,90 @@
           <div class="row">
             <div class="col-md-12">
               <div class="row">
-                <div class="col-md-3">
-                  <label for = "sking_lesion">Lesion de piel</label>
-                  <%= @medical_consultation.physical_exam.proctochological_examination.sking_lesion %>
-                </div>
-                <div class="col-md-3">
-                  <label for = "hematoma">Hematoma</label>
-                  <%= @medical_consultation.physical_exam.proctochological_examination.hematoma %>
-                </div>
-                <div class="col-md-3">
-                  <label for="traumatic_injury">Lesion Traumatica</label>
-                  <%= @medical_consultation.physical_exam.proctochological_examination.traumatic_injury  %>
-                </div>
-                <div class="col-md-3">
-                  <label for="uncomplicated_hemorrhoids">Hemorroides no complicada</label>
-                  <%= @medical_consultation.physical_exam.proctochological_examination.uncomplicated_hemorrhoids %>
-                </div>
+                <% if @medical_consultation.physical_exam.proctochological_examination.sking_lesion != ProctochologicalExamination::HOUR.first %>
+                  <div class="col-md-3">
+                    <label for = "sking_lesion">Lesion de piel</label>
+                    <%= @medical_consultation.physical_exam.proctochological_examination.sking_lesion %>
+                  </div>
+                <% end %>
+                <% if @medical_consultation.physical_exam.proctochological_examination.hematoma != ProctochologicalExamination::HOUR.first %>
+                  <div class="col-md-3">
+                    <label for = "hematoma">Hematoma</label>
+                    <%= @medical_consultation.physical_exam.proctochological_examination.hematoma %>
+                  </div>
+                <% end %>
+                <% if @medical_consultation.physical_exam.proctochological_examination.traumatic_injury != ProctochologicalExamination::HOUR.first %>
+                  <div class="col-md-3">
+                    <label for="traumatic_injury">Lesion Traumatica</label>
+                    <%= @medical_consultation.physical_exam.proctochological_examination.traumatic_injury  %>
+                  </div>
+                <% end %>
+                <% if @medical_consultation.physical_exam.proctochological_examination.uncomplicated_hemorrhoids != ProctochologicalExamination::HOUR.first %>
+                  <div class="col-md-3">
+                    <label for="uncomplicated_hemorrhoids">Hemorroides no complicada</label>
+                    <%= @medical_consultation.physical_exam.proctochological_examination.uncomplicated_hemorrhoids %>
+                  </div>
+                <% end %>
               </div>
               <div class="row">
-                <div class="col-md-3">
-                  <label for = "acute_fissure">Fisura aguda</label>
-                  <%= @medical_consultation.physical_exam.proctochological_examination.acute_fissure %>
-                </div>
-                <div class="col-md-3">
-                  <label for = "chronic_fissure">Fisura cronica</label>
-                  <%= @medical_consultation.physical_exam.proctochological_examination.chronic_fissure %>
-                </div>
-                <div class="col-md-3">
-                  <label for="fistulous_orifice">Orificio fistuloso</label>
-                  <%= @medical_consultation.physical_exam.proctochological_examination.fistulous_orifice %>
-                </div>
-                <div class="col-md-3">
-                  <label for="bulging">Abombamiento</label>
-                  <%= @medical_consultation.physical_exam.proctochological_examination.bulging %>
-                </div>
+                <% if @medical_consultation.physical_exam.proctochological_examination.acute_fissure != ProctochologicalExamination::HOUR.first %>
+                  <div class="col-md-3">
+                    <label for = "acute_fissure">Fisura aguda</label>
+                    <%= @medical_consultation.physical_exam.proctochological_examination.acute_fissure %>
+                  </div>
+                <% end %>
+                <% if @medical_consultation.physical_exam.proctochological_examination.chronic_fissure != ProctochologicalExamination::HOUR.first %>
+                  <div class="col-md-3">
+                    <label for = "chronic_fissure">Fisura cronica</label>
+                    <%= @medical_consultation.physical_exam.proctochological_examination.chronic_fissure %>
+                  </div>
+                <% end %>
+                <% if @medical_consultation.physical_exam.proctochological_examination.fistulous_orifice != ProctochologicalExamination::HOUR.first %>
+                  <div class="col-md-3">
+                    <label for="fistulous_orifice">Orificio fistuloso</label>
+                    <%= @medical_consultation.physical_exam.proctochological_examination.fistulous_orifice %>
+                  </div>
+                <% end %>
+                <% if @medical_consultation.physical_exam.proctochological_examination.bulging != ProctochologicalExamination::HOUR.first %>
+                  <div class="col-md-3">
+                    <label for="bulging">Abombamiento</label>
+                    <%= @medical_consultation.physical_exam.proctochological_examination.bulging %>
+                  </div>
+                <% end %>
               </div>
               <div class="row">
-                <div class="col-md-3">
-                  <label for = "plicoma">Plicoma</label>
-                  <%= @medical_consultation.physical_exam.proctochological_examination.plicoma %>
-                </div>
-                <div class="col-md-3">
-                  <label for = "redness">Enrojecimiento</label>
-                  <%= @medical_consultation.physical_exam.proctochological_examination.redness %>
-                </div>
-                <div class="col-md-3">
-                  <label for="thrombosis_hemorrhoids">Hemorroides Complicada, Trombosis</label>
-                  <%= @medical_consultation.physical_exam.proctochological_examination.thrombosis_hemorrhoids %>
-                </div>
-                <div class="col-md-3">
-                  <label for="fluxion_hemorrhoids">Hemorroides Complicada, Fluxion</label>
-                  <%= @medical_consultation.physical_exam.proctochological_examination.fluxion_hemorrhoids %>
-                </div>
+                <% if @medical_consultation.physical_exam.proctochological_examination.plicoma != ProctochologicalExamination::HOUR.first %>
+                  <div class="col-md-3">
+                    <label for = "plicoma">Plicoma</label>
+                    <%= @medical_consultation.physical_exam.proctochological_examination.plicoma %>
+                  </div>
+                <% end %>
+                <% if @medical_consultation.physical_exam.proctochological_examination.redness != ProctochologicalExamination::HOUR.first %>
+                  <div class="col-md-3">
+                    <label for = "redness">Enrojecimiento</label>
+                    <%= @medical_consultation.physical_exam.proctochological_examination.redness %>
+                  </div>
+                <% end %>
+                <% if @medical_consultation.physical_exam.proctochological_examination.thrombosis_hemorrhoids != ProctochologicalExamination::HOUR.first %>
+                  <div class="col-md-3">
+                    <label for="thrombosis_hemorrhoids">Hemorroides Complicada, Trombosis</label>
+                    <%= @medical_consultation.physical_exam.proctochological_examination.thrombosis_hemorrhoids %>
+                  </div>
+                <% end %>
+                <% if @medical_consultation.physical_exam.proctochological_examination.fluxion_hemorrhoids != ProctochologicalExamination::HOUR.first %>
+                  <div class="col-md-3">
+                    <label for="fluxion_hemorrhoids">Hemorroides Complicada, Fluxion</label>
+                    <%= @medical_consultation.physical_exam.proctochological_examination.fluxion_hemorrhoids %>
+                  </div>
+                <% end %>
               </div>
               <div class="row">
-                <div class="col-md-3">
-                  <label for="hemorrhage_hemorrhoids">Hemorroides Complicada, Hemorragia</label>
-                  <%= @medical_consultation.physical_exam.proctochological_examination.hemorrhage_hemorrhoids %>
-                </div>
+                <% if @medical_consultation.physical_exam.proctochological_examination.hemorrhage_hemorrhoids != ProctochologicalExamination::HOUR.first %>
+                  <div class="col-md-3">
+                    <label for="hemorrhage_hemorrhoids">Hemorroides Complicada, Hemorragia</label>
+                    <%= @medical_consultation.physical_exam.proctochological_examination.hemorrhage_hemorrhoids %>
+                  </div>
+                <% end %>
               </div>
               <div class="row">
                 <div class="col-md-3">
@@ -289,10 +315,12 @@
                   <label for="rectal_ampoule">Ampolla Rectal</label>
                   <%= @medical_consultation.physical_exam.proctochological_examination.rectal_ampoule %>
                 </div>
-                <div class="col-md-3" id="occupiedRectalAmpouleDiv">
-                  <label for="occupied_rectal_ampoule">Ampolla Rectal Ocupada:</label>
-                  <%= @medical_consultation.physical_exam.proctochological_examination.occupied_rectal_ampoule %>
-                </div>
+                <% if @medical_consultation.physical_exam.proctochological_examination.rectal_ampoule != ProctochologicalExamination::RECTAL_AMPOULE_TYPE.first %>
+                  <div class="col-md-3" id="occupiedRectalAmpouleDiv">
+                    <label for="occupied_rectal_ampoule">Ampolla Rectal Ocupada:</label>
+                    <%= @medical_consultation.physical_exam.proctochological_examination.occupied_rectal_ampoule %>
+                  </div>
+                <% end %>
               </div>
               <% if @medical_consultation.physical_exam.proctochological_examination.formation %>
                 <div class="row">
@@ -529,8 +557,8 @@
           <tr><th>Plaq</th></tr>
           <tr><th>Conc. PT</th></tr>
           <tr><th>CEA</th></tr>
-          <tr><th>CA199</th></tr>
-          <tr><th>CA124</th></tr>
+          <tr><th>CA 19-9</th></tr>
+          <tr><th>CA 125</th></tr>
           </tbody>
         </table>
       </div>
