@@ -1,0 +1,223 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        if( $("#patient_others").is(':checked')) {
+            $("#others_descrip").show();
+        } else {
+            $("#others_descrip").hide();
+        }
+
+        $("#patient_others").click(function() {
+            if( $("#patient_others").is(':checked')) {
+                $("#others_descrip").show();
+            } else {
+                $("#others_descrip").hide();
+            }
+        });
+    });
+</script>
+
+<%= form_for @patient do |f| %>
+    <div class="row">
+      <div class="col-md-12">
+        <% if @patient.errors.any? %>
+            <% @patient.errors.full_messages.each do |message| %>
+                <div class="alert alert-danger">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>ERROR</strong> <%= message %>
+                </div>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <p><label for = "name">Nombre</label>:</p>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="col-md-4">
+        <p><label for = "surname">Apellido</label>:</p>
+        <%= f.text_field :surname, class: 'form-control' %>
+      </div>
+      <div class="col-md-4">
+        <p><label for = "document_number">DNI</label>:</p>
+        <%= f.text_field :document_number, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <p><label for = "associate_number">Obra Social/Num.</label>:</p>
+        <%= f.text_field :associate_number, class: 'form-control' %>
+      </div>
+      <div class="col-md-4">
+        <p><label for = "birth_date">Fecha de Nacimiento</label>:</p>
+        <%= f.date_select :birth_date, {:start_year=>1930, order: [:day, :month, :year]}, {:class => "date-select form-control"} %>
+      </div>
+      <div class="col-md-4">
+        <p><label for = "sex">Sexo</label>:</p>
+        <%= f.select :sex, Patient::SEX, {},{class: 'form-control'}  %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <p><label for = "country_code">Nacionalidad</label>:</p>
+        <%= f.country_select :country_code, {},{ class: 'form-control' }%>
+      </div>
+      <div class="col-md-4">
+        <p><label for = "marital_status">Estado Civil</label>:</p>
+        <%= f.select :marital_status, Patient::MARITAL_STATUS, {},{class: 'form-control'}  %>
+      </div>
+      <div class="col-md-4">
+        <p><label for = "city">Ciudad</label>:</p>
+        <%= f.text_field :city, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <p><label for = "phone">Tel&eacutefono</label>:</p>
+        <%= f.text_field :phone, class: 'form-control' %>
+      </div>
+      <div class="col-md-4">
+        <p><label for = "close_person_phone">Tel. Allegado/Familiar</label>:</p>
+        <%= f.text_field :close_person_phone, class: 'form-control' %>
+      </div>
+      <div class="col-md-4">
+        <p><label for = "job">Ocupaci&oacuten</label>:</p>
+        <%= f.text_field :job, class: 'form-control' %>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <h2>ANAMNESIS</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <table class="table">
+          <tr>
+            <td><label for = "asthma">ASMA/EPOC</label></td>
+            <td><%= f.check_box :asthma %></td>
+          </tr>
+          <tr>
+            <td><label for = "hearth_failure">I.CARDÍACA</label></td>
+            <td><%= f.check_box :hearth_failure %></td>
+          </tr>
+          <tr>
+            <td><label for = "ischemic_heart_disease">C. ISQUÉMICA</label></td>
+            <td><%= f.check_box :ischemic_heart_disease %></td>
+          </tr>
+          <tr>
+            <td><label for = "arteriopathy">ARTERIOPATÍA</label></td>
+            <td><%= f.check_box :arteriopathy %></td>
+          </tr>
+          <tr>
+            <td><label for = "arterial_hypertension">HTA</label></td>
+            <td><%= f.check_box :arterial_hypertension %></td>
+          </tr>
+          <tr>
+            <td><label for = "stroke">ACV</label></td>
+            <td><%= f.check_box :stroke %></td>
+          </tr>
+          <tr>
+            <td><label for = "diabetes">DBT</label></td>
+            <td><%= f.check_box :diabetes %></td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-4">
+        <table class="table">
+          <tr>
+            <td><label for = "dyslipidemia">DISLIPEMIA</label></td>
+            <td><%= f.check_box :dyslipidemia %></td>
+          </tr>
+          <tr>
+            <td><label for = "renal_insufficiency">I. RENAL </label></td>
+            <td><%= f.check_box :renal_insufficiency %></td>
+          </tr>
+          <tr>
+            <td><label for = "liver_disease">HEPATOPATIA </label></td>
+            <td><%= f.check_box :liver_disease %></td>
+          </tr>
+          <tr>
+            <td><label for = "ulcer_disease">ENF. ULCEROSA </label></td>
+            <td><%= f.check_box :ulcer_disease %></td>
+          </tr>
+          <tr>
+            <td><label for = "hematological_disease">ENF. HEMATOLOGICA  </label></td>
+            <td><%= f.check_box :hematological_disease %></td>
+          </tr>
+          <tr>
+            <td><label for = "tuberculosis">TBC </label></td>
+            <td><%= f.check_box :tuberculosis %></td>
+          </tr>
+          <tr>
+            <td><label for = "aids">HIV </label></td>
+            <td><%= f.check_box :aids %></td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-4">
+        <table class="table">
+          <tr>
+            <td><label for = "do_drugs">CONSUMO DE DROGAS </label></td>
+            <td><%= f.check_box :do_drugs %></td>
+          </tr>
+          <tr>
+            <td><label for = "alcoholism">ALCOHOLISMO </label></td>
+            <td><%= f.check_box :alcoholism %></td>
+          </tr>
+          <tr>
+            <td><label for = "smoking">TABAQUISMO </label></td>
+            <td><%= f.check_box :smoking %></td>
+          </tr>
+          <tr>
+            <td><label for = "allergies">ALERGIAS </label></td>
+            <td><%= f.check_box :allergies %></td>
+          </tr>
+          <tr>
+            <td><label for = "others">OTROS </label></td>
+            <td><%= f.check_box :others %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="row" id="others_descrip">
+      <div class="col-md-12">
+        <label for = "others_description">Otros aclaraci&oacuten </label>
+        <%= f.text_field :others_description, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p><label for = "medicines">Medicaci&oacuten que recibe actualmente</label>:</p>
+        <%= f.text_area :medicines, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p><label for = "surgical_history">Antecedentes quir&uacutergicos</label>:</p>
+        <%= f.text_area :surgical_history, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <h2>ANTECEDENTES HEREDOFAMILIARES</h2>
+    </div>
+
+
+    <%= f.fields_for :relatives do |relatives| %>
+        <%= render 'relative_fields', f: relatives %>
+    <% end %>
+    <br>
+
+    <div class="links">
+      <%= link_to_add_association 'Agregar relacion', f, :relatives, class: "btn btn-primary" %>
+    </div>
+
+    <br>
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.submit "Confirmar", class: "btn btn-primary" %>
+      </div>
+    </div>
+<% end %>
