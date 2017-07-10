@@ -16,7 +16,8 @@
           <tr>
             <td><%= data.date %></td>
             <td><%= data.reason %></td>
-            <td><%= link_to ('<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>').html_safe, medical_consultation_path(data, @patient_id) , method: :get %></td>
+            <td><%= link_to ('<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>').html_safe, medical_consultation_path(data, @patient_id) , method: :get %>
+            <%= link_to ('<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>').html_safe, edit_medical_consultation_path(data, @patient_id) , method: :get %></td>
           </tr>
       <% end %>
       </tbody>

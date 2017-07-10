@@ -66,6 +66,17 @@ class MedicalConsultationsController < ApplicationController
 
   end
 
+  def edit
+    @medical_consultation_id = params[:id]
+    @medical_consultation = MedicalConsultation.find(@medical_consultation_id)
+    @patient_id = params[:format]
+    @laboratories = Laboratory.get_laboratories(@patient_id)
+    if @laboratories.nil?
+      @laboratories = Array.new
+    end
+
+  end
+
   def index
     @patient_id = params[:format]
     @medical_consultations = MedicalConsultation.search(@patient_id, params[:page])
