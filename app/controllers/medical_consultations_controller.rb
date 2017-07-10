@@ -18,6 +18,10 @@ class MedicalConsultationsController < ApplicationController
 
     @laboratories = Laboratory.get_laboratories(@patient_id)
 
+    if @laboratories.nil?
+      @laboratories = Array.new
+    end
+
   end
 
   def medical_consultation_params
