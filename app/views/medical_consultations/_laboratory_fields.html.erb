@@ -1,4 +1,4 @@
-<div class="col-md-4 nested-fields">
+<div class="col-md-10 nested-fields">
     <tr><td><%= f.date_select :date, {:start_year=>1930, order: [:day, :month, :year]}, {:class => "date-myselect form-control"} %></td></tr>
     <tr><td>
       <%= f.text_field :hto, class: 'form-control input-margin' %>
@@ -63,7 +63,7 @@
     <tr><td>
       <%= f.text_field :ca124, class: 'form-control input-margin' %>
     </tr></td>
-  <div class="col-md-6 form-margin">
+  <div class="col-md-12 form-margin">
     <%= link_to_remove_association "Eliminar", f , class: "btn btn-danger btn-block"%>
   </div>
 </div>

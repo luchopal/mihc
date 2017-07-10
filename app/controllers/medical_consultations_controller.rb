@@ -15,6 +15,9 @@ class MedicalConsultationsController < ApplicationController
     @medical_consultation.physical_exam.skin_lesion_exam = SkinLesionExam.new
 
     @patient_id = params[:format]
+
+    @laboratories = Laboratory.get_laboratories(@patient_id)
+
   end
 
   def medical_consultation_params

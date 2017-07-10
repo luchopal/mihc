@@ -5,9 +5,9 @@ class MedicalConsultation < ApplicationRecord
   has_many :laboratories, inverse_of: :medical_consultation
   accepts_nested_attributes_for :physical_exam, :complementary_exams,:laboratories
 
-  def self.search(patient_id, page)
-    if patient_id
-      @patients = MedicalConsultation.where("patient_id = #{patient_id}").paginate(page: page, per_page: 5).order('id DESC')
+  def self.search(medical_consultation_id, page)
+    if medical_consultation_id
+      @patients = MedicalConsultation.where("patient_id = #{medical_consultation_id}").paginate(page: page, per_page: 5).order('id DESC')
     else
       paginate(page: page, per_page: 5).order('id DESC')
     end

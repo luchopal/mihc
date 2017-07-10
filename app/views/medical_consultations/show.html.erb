@@ -568,7 +568,7 @@
       <% @medical_consultation.laboratories.each do |laboratory| %>
             <tr style="height: 37px;"><td><%= laboratory.date %></td></tr>
             <tr style="height: 37px;"><td>
-              <%= laboratory.hto != "" ? laboratory.hto : " " %>
+              <%= laboratory.hto %>
             </tr></td>
             <tr style="height: 37px;"><td>
               <%= laboratory.hb %>
