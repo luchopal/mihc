@@ -566,7 +566,7 @@
         <table class="table">
           <tbody>
       <% @medical_consultation.laboratories.each do |laboratory| %>
-            <tr style="height: 37px;"><td><%= laboratory.date %></td></tr>
+            <tr style="height: 37px;"><td><%= laboratory.date.strftime("%d/%m/%Y") %></td></tr>
             <tr style="height: 37px;"><td>
               <%= laboratory.hto %>
             </tr></td>

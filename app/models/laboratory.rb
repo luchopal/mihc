@@ -4,7 +4,7 @@ class Laboratory < ApplicationRecord
 
   def self.get_laboratories(patient_id)
     if patient_id
-      @laboratories = Laboratory.joins(:medical_consultation).where("patient_id = #{patient_id}").last(3)
+      @laboratories = Laboratory.joins(:medical_consultation).where("patient_id = #{patient_id}").last(5)
     end
   end
 end

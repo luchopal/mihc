@@ -476,7 +476,7 @@
       <div class="panel-heading"><label>Laboratorio </label> </div>
       <div class="panel-body">
           <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-1">
               <table class="table">
                 <tbody>
                   <tr><th>Tipo</th></tr>
@@ -492,12 +492,12 @@
                   <tr><th>Amilasa</th></tr>
                   <tr><th>BT</th></tr>
                   <tr><th>BD</th></tr>
-                  <tr><th>Prot. Tot.</th></tr>
+                  <tr><th>Prot.T.</th></tr>
                   <tr><th>Alb</th></tr>
                   <tr><th>NA+</th></tr>
                   <tr><th>K+</th></tr>
                   <tr><th>Plaq</th></tr>
-                  <tr><th>Conc. PT</th></tr>
+                  <tr><th>Conc.PT</th></tr>
                   <tr><th>CEA</th></tr>
                   <tr><th>CA 19-9</th></tr>
                   <tr><th>CA 125</th></tr>
@@ -506,10 +506,10 @@
             </div>
 
             <% @laboratories.each do |laboratory| %>
-            <div class="col-md-2">
+            <div class="col-md-1">
               <table class="table">
                 <tbody>
-                <tr style="height: 37px;"><td><%= laboratory.date %></td></tr>
+                <tr style="height: 37px;"><td><%= laboratory.date.strftime("%d/%m/%Y") %></td></tr>
                 <tr style="height: 37px;"><td>
                   <%= laboratory.hto %>
                 </tr></td>
@@ -578,7 +578,7 @@
             </div>
             <% end %>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
               <table class="table">
                 <tbody>
                   <div class="links">
