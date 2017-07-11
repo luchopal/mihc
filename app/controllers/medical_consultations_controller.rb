@@ -14,7 +14,7 @@ class MedicalConsultationsController < ApplicationController
     @medical_consultation.physical_exam.breast_exam = BreastExam.new
     @medical_consultation.physical_exam.skin_lesion_exam = SkinLesionExam.new
 
-    @patient_id = params[:format]
+    @patient_id = params[:patient_id]
 
     @laboratories = Laboratory.get_laboratories(@patient_id)
 
@@ -89,13 +89,13 @@ class MedicalConsultationsController < ApplicationController
   end
 
   def index
-    @patient_id = params[:format]
+    @patient_id = params[:patient_id]
     @medical_consultations = MedicalConsultation.search(@patient_id, params[:page])
   end
 
   def show
     @medical_consultation_id = params[:id]
-    @patientId = params[:format]
+    @patient_id = params[:format]
     @medical_consultation = MedicalConsultation.find(@medical_consultation_id)
   end
 
