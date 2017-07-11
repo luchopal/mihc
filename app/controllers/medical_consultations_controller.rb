@@ -48,7 +48,7 @@ class MedicalConsultationsController < ApplicationController
 
         complementary_exams_attributes: [:complementary_exam_type, :comment, :_destroy],
 
-        laboratories_attributes: [:hto,:hb,:gb,:gluc,:urea,:creat,:tgo,:tgp,:fal,:amilasa,:bt,:bd,:prot_tot,:alb,:na,:k,:plaq,:conc_pt,:cea,:ca199,:ca124,:date,:_destroy]
+        laboratories_attributes: [:id,:hto,:hb,:gb,:gluc,:urea,:creat,:tgo,:tgp,:fal,:amilasa,:bt,:bd,:prot_tot,:alb,:na,:k,:plaq,:conc_pt,:cea,:ca199,:ca124,:date,:_destroy]
     )
   end
 
@@ -75,6 +75,17 @@ class MedicalConsultationsController < ApplicationController
       @laboratories = Array.new
     end
 
+  end
+
+  def update
+    @medical_consultation_id = params[:id]
+    @medical_consultation = MedicalConsultation.find(@medical_consultation_id)
+
+    if @medical_consultation.update_attributes(medical_consultation_params)
+      redirect_to :action => 'index'
+    else
+      render :action => 'edit'
+    end
   end
 
   def index

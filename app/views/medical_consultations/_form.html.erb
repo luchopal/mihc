@@ -404,17 +404,17 @@
                                 </div>
                                 <div class="row">
                                   <div id="breast"></div>
-                                  <%= breast_exam.hidden_field :left_breast_first_quadrant, value: 0 %>
-                                  <%= breast_exam.hidden_field :left_breast_second_quadrant, value: 0 %>
-                                  <%= breast_exam.hidden_field :left_breast_third_quadrant, value: 0 %>
-                                  <%= breast_exam.hidden_field :left_breast_fourth_quadrant, value: 0 %>
-                                  <%= breast_exam.hidden_field :left_breast_center, value: 0 %>
+                                  <%= breast_exam.hidden_field :left_breast_first_quadrant %>
+                                  <%= breast_exam.hidden_field :left_breast_second_quadrant %>
+                                  <%= breast_exam.hidden_field :left_breast_third_quadrant %>
+                                  <%= breast_exam.hidden_field :left_breast_fourth_quadrant %>
+                                  <%= breast_exam.hidden_field :left_breast_center %>
 
-                                  <%= breast_exam.hidden_field :right_breast_first_quadrant, value: 0 %>
-                                  <%= breast_exam.hidden_field :right_breast_second_quadrant, value: 0 %>
-                                  <%= breast_exam.hidden_field :right_breast_third_quadrant, value: 0 %>
-                                  <%= breast_exam.hidden_field :right_breast_fourth_quadrant, value: 0 %>
-                                  <%= breast_exam.hidden_field :right_breast_center, value: 0 %>
+                                  <%= breast_exam.hidden_field :right_breast_first_quadrant %>
+                                  <%= breast_exam.hidden_field :right_breast_second_quadrant %>
+                                  <%= breast_exam.hidden_field :right_breast_third_quadrant %>
+                                  <%= breast_exam.hidden_field :right_breast_fourth_quadrant %>
+                                  <%= breast_exam.hidden_field :right_breast_center %>
                                 </div>
                                 <div class="row">
                                   <div class="col-md-12">
@@ -615,6 +615,12 @@
             }
         })
 
+        if( $('#abdomenCheckBox').val() == '1') {
+            $("#abdomenDiv").show();
+        }else{
+            $("#abdomenDiv").hide();
+        }
+
         $('#inspectionCheckBox').change(function() {
             if($(this).prop('checked')){
                 $("#inspectionDiv").show();
@@ -623,7 +629,11 @@
             }
         })
 
-        $("#inspectionDiv").hide();
+        if( $('#inspectionCheckBox').val()) {
+            $("#inspectionDiv").show();
+        }else{
+            $("#inspectionDiv").hide();
+        }
 
         $('#palpationCheckBox').change(function() {
             if($(this).prop('checked')){
@@ -633,7 +643,12 @@
             }
         })
 
-        $("#palpationDiv").hide();
+        if( $('#palpationCheckBox').val()) {
+            $("#palpationDiv").show();
+        }else{
+            $("#palpationDiv").hide();
+        }
+
         $('#percussionCheckBox').change(function() {
             if($(this).prop('checked')){
                 $("#percussionDiv").show();
@@ -641,8 +656,11 @@
                 $("#percussionDiv").hide();
             }
         })
-        $("#percussionDiv").hide();
-
+        if( $('#percussionCheckBox').val()) {
+            $("#percussionDiv").show();
+        }else{
+            $("#percussionDiv").hide();
+        }
 
         $('#activateProctochologicalExaminationCheckBox').change(function() {
             if($(this).prop('checked')){
@@ -651,8 +669,11 @@
                 $("#proctochologicalExaminationDiv").hide();
             }
         })
-        $("#proctochologicalExaminationDiv").hide();
-
+        if( $('#activateProctochologicalExaminationCheckBox').val()) {
+            $("#proctochologicalExaminationDiv").show();
+        }else{
+            $("#proctochologicalExaminationDiv").hide();
+        }
 
         $('#activateInguinocruralExaminationCheckBox').change(function() {
             if($(this).prop('checked')){
@@ -661,8 +682,11 @@
                 $("#inguinocruralExaminationDiv").hide();
             }
         })
-        $("#inguinocruralExaminationDiv").hide();
-
+        if( $('#activateInguinocruralExaminationCheckBox').val()) {
+            $("#inguinocruralExaminationDiv").show();
+        }else{
+            $("#inguinocruralExaminationDiv").hide();
+        }
 
         $('#activateCervicalExaminationCheckBox').change(function() {
             if($(this).prop('checked')){
@@ -671,8 +695,12 @@
                 $("#cervicalExaminationDiv").hide();
             }
         })
-        $("#cervicalExaminationDiv").hide();
 
+        if( $('#activateCervicalExaminationCheckBox').val()) {
+            $("#cervicalExaminationDiv").show();
+        }else{
+            $("#cervicalExaminationDiv").hide();
+        }
 
         $('#activateBreastExamCheckBox').change(function() {
             if($(this).prop('checked')){
@@ -681,8 +709,11 @@
                 $("#breastExamDiv").hide();
             }
         })
-        $("#breastExamDiv").hide();
-
+        if( $('#activateBreastExamCheckBox').val()) {
+            $("#breastExamDiv").show();
+        }else{
+            $("#breastExamDiv").hide();
+        }
 
         $('#activateSkinLesionCheckBox').change(function() {
             if($(this).prop('checked')){
@@ -691,7 +722,11 @@
                 $("#skinLesionDiv").hide();
             }
         })
-        $("#skinLesionDiv").hide();
+        if( $('#activateSkinLesionCheckBox').val()) {
+            $("#skinLesionDiv").show();
+        }else{
+            $("#skinLesionDiv").hide();
+        }
 
         $('#activateScarCheckBox').change(function() {
             if($(this).prop('checked')){
@@ -700,8 +735,11 @@
                 $("#scarsDiv").hide();
             }
         })
-        $("#scarsDiv").hide();
-
+        if( $('#activateScarCheckBox').val()) {
+            $("#scarsDiv").show();
+        }else{
+            $("#scarsDiv").hide();
+        }
 
         $('#activatePainfulCheckBox').change(function() {
             if($(this).prop('checked')){
@@ -710,7 +748,12 @@
                 $("#painfulDiv").hide();
             }
         })
-        $("#painfulDiv").hide();
+
+        if( $('#activatePainfulCheckBox').val()) {
+            $("#painfulDiv").show();
+        }else{
+            $("#painfulDiv").hide();
+        }
 
         $('#auscultationCheckBox').change(function() {
             if($(this).prop('checked')){
@@ -719,9 +762,13 @@
                 $("#auscultationDiv").hide();
             }
         })
-        $("#auscultationDiv").hide();
 
-        $("#occupiedRectalAmpouleDiv").hide();
+        if( $('#auscultationCheckBox').val()) {
+            $("#auscultationDiv").show();
+        }else{
+            $("#auscultationDiv").hide();
+        }
+
         $('#medical_consultation_physical_exam_attributes_proctochological_examination_attributes_rectal_ampoule').on('change', function() {
             if(this.value == "OCUPADA"){
                 $("#occupiedRectalAmpouleDiv").show();
@@ -730,6 +777,12 @@
             }
         })
 
+        if( $('#medical_consultation_physical_exam_attributes_proctochological_examination_attributes_rectal_ampoule').val()) {
+            $("#occupiedRectalAmpouleDiv").show();
+        }else{
+            $("#occupiedRectalAmpouleDiv").hide();
+        }
+
         $('#formationCheckBox').change(function() {
             if($(this).prop('checked')){
                 $("#formationPositionDiv").show();
@@ -737,7 +790,12 @@
                 $("#formationPositionDiv").hide();
             }
         })
-        $("#formationPositionDiv").hide();
+
+        if( $('#formationCheckBox').val()) {
+            $("#formationPositionDiv").show();
+        }else{
+            $("#formationPositionDiv").hide();
+        }
 
         var stage = new Konva.Stage({
             container: 'breast',
@@ -767,6 +825,9 @@
         // add the shape to the layer
         layer.add(right_breast_first_quadrant);
 
+        if(document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_right_breast_first_quadrant').value == 'true'){
+            right_breast_first_quadrant.fill('blue');
+        }
         //---------------------------- Segundo cuadrante pecho izquierdo -----------------------------------------------------
         var right_breast_second_quadrant = new Konva.Wedge({
             x: stage.getWidth() / 4,
@@ -786,6 +847,9 @@
             layer.draw();
         });
         layer.add(right_breast_second_quadrant);
+        if(document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_right_breast_second_quadrant').value == 'true'){
+            right_breast_second_quadrant.fill('blue');
+        }
 
         //---------------------------- Primer cuadrante pecho izquierdo -----------------------------------------------------
         var right_breast_third_quadrant = new Konva.Wedge({
@@ -806,6 +870,9 @@
             layer.draw();
         });
         layer.add(right_breast_third_quadrant);
+        if(document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_right_breast_third_quadrant').value == 'true'){
+            right_breast_third_quadrant.fill('blue');
+        }
 
         //---------------------------- Cuarto cuadrante pecho izquierdo -----------------------------------------------------
         var right_breast_fourth_quadrant = new Konva.Wedge({
@@ -826,6 +893,9 @@
             layer.draw();
         });
         layer.add(right_breast_fourth_quadrant);
+        if(document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_right_breast_fourth_quadrant').value == 'true'){
+            right_breast_fourth_quadrant.fill('blue');
+        }
 
 
         //---------------------------- Centro pecho izquierdo -----------------------------------------------------
@@ -846,6 +916,10 @@
         });
 
         layer.add(right_breast_center);
+        if(document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_left_breast_center').value == 'true'){
+            right_breast_center.fill('blue');
+        }
+
 
         //---------------------------- Primer cuadrante pecho izquierdo -----------------------------------------------------
         var left_breast_first_quadrant = new Konva.Wedge({
@@ -867,6 +941,9 @@
         });
         // add the shape to the layer
         layer.add(left_breast_first_quadrant);
+        if(document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_left_breast_first_quadrant').value == 'true'){
+            left_breast_first_quadrant.fill('blue');
+        }
 
         //---------------------------- Segundo cuadrante pecho izquierdo -----------------------------------------------------
         var left_breast_second_quadrant = new Konva.Wedge({
@@ -887,6 +964,9 @@
             layer.draw();
         });
         layer.add(left_breast_second_quadrant);
+        if(document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_left_breast_second_quadrant').value == 'true'){
+            left_breast_second_quadrant.fill('blue');
+        }
 
         //---------------------------- Primer cuadrante pecho izquierdo -----------------------------------------------------
         var left_breast_third_quadrant = new Konva.Wedge({
@@ -907,6 +987,9 @@
             layer.draw();
         });
         layer.add(left_breast_third_quadrant);
+        if(document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_left_breast_third_quadrant').value == 'true'){
+            left_breast_third_quadrant.fill('blue');
+        }
 
         //---------------------------- Cuarto cuadrante pecho izquierdo -----------------------------------------------------
         var left_breast_fourth_quadrant = new Konva.Wedge({
@@ -927,6 +1010,9 @@
             layer.draw();
         });
         layer.add(left_breast_fourth_quadrant);
+        if(document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_left_breast_fourth_quadrant').value == 'true'){
+            left_breast_fourth_quadrant.fill('blue');
+        }
 
 
         //---------------------------- Centro pecho izquierdo -----------------------------------------------------
@@ -947,6 +1033,9 @@
         });
 
         layer.add(left_breast_center);
+        if(document.getElementById('medical_consultation_physical_exam_attributes_breast_exam_attributes_left_breast_center').value == 'true'){
+            left_breast_center.fill('blue');
+        }
         // add the layer to the stage
         stage.add(layer);
     });
