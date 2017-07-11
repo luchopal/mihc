@@ -14,7 +14,7 @@ class MedicalConsultationsController < ApplicationController
     @medical_consultation.physical_exam.breast_exam = BreastExam.new
     @medical_consultation.physical_exam.skin_lesion_exam = SkinLesionExam.new
 
-    @patient_id = params[:patient_id]
+    @patient_id = params[:format]
 
     @laboratories = Laboratory.get_laboratories(@patient_id)
 
@@ -56,8 +56,9 @@ class MedicalConsultationsController < ApplicationController
 
     @medical_consultation = MedicalConsultation.new(medical_consultation_params)
     @medical_consultation.patient = Patient.find(params[:patient_id])
+    @patient_id = params[:patient_id]
     if @medical_consultation.save
-      redirect_to '/patients/'
+      redirect_to controller: 'medical_consultations', action: 'index', patient_id: @patient_id
     else
       flash[:error] = "Error al generar paciente."
       puts @medical_consultation.errors
@@ -80,9 +81,10 @@ class MedicalConsultationsController < ApplicationController
   def update
     @medical_consultation_id = params[:id]
     @medical_consultation = MedicalConsultation.find(@medical_consultation_id)
+    @patient_id = params[:patient_id]
 
     if @medical_consultation.update_attributes(medical_consultation_params)
-      redirect_to :action => 'index'
+      redirect_to controller: 'medical_consultations', action: 'index', patient_id: @patient_id
     else
       render :action => 'edit'
     end

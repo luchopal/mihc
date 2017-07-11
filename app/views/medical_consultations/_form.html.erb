@@ -596,7 +596,10 @@
 
     <br>
     <div class="row">
-      <div class="col-md-2 col-md-offset-10">
+      <div class="col-md-2">
+        <p><%= link_to 'Volver',{:action => "index", :controller => 'medical_consultations', :patient_id => @patient_id  }, class: "btn btn-primary btn-block" %></p>
+      </div>
+      <div class="col-md-2 col-md-offset-8">
         <%= f.submit "Guardar", class: "btn btn-success btn-block" %>
       </div>
     </div>
@@ -606,7 +609,77 @@
 <script>
 
     $(document).ready(function() {
-        $("#abdomenDiv").hide();
+
+        <% if @medical_consultation_id != nil %>
+        if( $('#abdomenCheckBox:checked').val() == '1') {
+            $("#abdomenDiv").show();
+        }else{
+            $("#abdomenDiv").hide();
+        }
+
+        if( $('#inspectionCheckBox:checked').val()) {
+            $("#inspectionDiv").show();
+        }else{
+            $("#inspectionDiv").hide();
+        }
+        if( $('#palpationCheckBox:checked').val()) {
+            $("#palpationDiv").show();
+        }else{
+            $("#palpationDiv").hide();
+        }
+        if( $('#percussionCheckBox:checked').val()) {
+            $("#percussionDiv").show();
+        }else{
+            $("#percussionDiv").hide();
+        }
+        if( $('#activateProctochologicalExaminationCheckBox:checked').val()) {
+            $("#proctochologicalExaminationDiv").show();
+        }else{
+            $("#proctochologicalExaminationDiv").hide();
+        }
+        if( $('#activateInguinocruralExaminationCheckBox:checked').val()) {
+            $("#inguinocruralExaminationDiv").show();
+        }else{
+            $("#inguinocruralExaminationDiv").hide();
+        }
+
+        if( $('#activateCervicalExaminationCheckBox:checked').val()) {
+            $("#cervicalExaminationDiv").show();
+        }else{
+            $("#cervicalExaminationDiv").hide();
+        }
+        if( $('#activateBreastExamCheckBox:checked').val()) {
+            $("#breastExamDiv").show();
+        }else{
+            $("#breastExamDiv").hide();
+        }
+
+        if( $('#activateSkinLesionCheckBox:checked').val()) {
+            $("#skinLesionDiv").show();
+        }else{
+            $("#skinLesionDiv").hide();
+        }
+
+        if( $('#auscultationCheckBox:checked').val()) {
+            $("#auscultationDiv").show();
+        }else{
+            $("#auscultationDiv").hide();
+        }
+        <% else %>
+            $("#abdomenDiv").hide();
+            $("#inspectionDiv").hide();
+            $("#palpationDiv").hide();
+            $("#percussionDiv").hide();
+            $("#proctochologicalExaminationDiv").hide();
+            $("#inguinocruralExaminationDiv").hide();
+            $("#cervicalExaminationDiv").hide();
+            $("#breastExamDiv").hide();
+            $("#skinLesionDiv").hide();
+            $("#scarsDiv").hide();
+            $("#painfulDiv").hide();
+            $("#auscultationDiv").hide();
+            $("#formationPositionDiv").hide();
+        <% end %>
         $('#abdomenCheckBox').change(function() {
             if($(this).prop('checked')){
                 $("#abdomenDiv").show();
@@ -614,12 +687,6 @@
                 $("#abdomenDiv").hide();
             }
         })
-
-        if( $('#abdomenCheckBox').val() == '1') {
-            $("#abdomenDiv").show();
-        }else{
-            $("#abdomenDiv").hide();
-        }
 
         $('#inspectionCheckBox').change(function() {
             if($(this).prop('checked')){
@@ -629,11 +696,6 @@
             }
         })
 
-        if( $('#inspectionCheckBox').val()) {
-            $("#inspectionDiv").show();
-        }else{
-            $("#inspectionDiv").hide();
-        }
 
         $('#palpationCheckBox').change(function() {
             if($(this).prop('checked')){
@@ -643,12 +705,6 @@
             }
         })
 
-        if( $('#palpationCheckBox').val()) {
-            $("#palpationDiv").show();
-        }else{
-            $("#palpationDiv").hide();
-        }
-
         $('#percussionCheckBox').change(function() {
             if($(this).prop('checked')){
                 $("#percussionDiv").show();
@@ -656,11 +712,6 @@
                 $("#percussionDiv").hide();
             }
         })
-        if( $('#percussionCheckBox').val()) {
-            $("#percussionDiv").show();
-        }else{
-            $("#percussionDiv").hide();
-        }
 
         $('#activateProctochologicalExaminationCheckBox').change(function() {
             if($(this).prop('checked')){
@@ -669,11 +720,6 @@
                 $("#proctochologicalExaminationDiv").hide();
             }
         })
-        if( $('#activateProctochologicalExaminationCheckBox').val()) {
-            $("#proctochologicalExaminationDiv").show();
-        }else{
-            $("#proctochologicalExaminationDiv").hide();
-        }
 
         $('#activateInguinocruralExaminationCheckBox').change(function() {
             if($(this).prop('checked')){
@@ -682,11 +728,6 @@
                 $("#inguinocruralExaminationDiv").hide();
             }
         })
-        if( $('#activateInguinocruralExaminationCheckBox').val()) {
-            $("#inguinocruralExaminationDiv").show();
-        }else{
-            $("#inguinocruralExaminationDiv").hide();
-        }
 
         $('#activateCervicalExaminationCheckBox').change(function() {
             if($(this).prop('checked')){
@@ -696,12 +737,6 @@
             }
         })
 
-        if( $('#activateCervicalExaminationCheckBox').val()) {
-            $("#cervicalExaminationDiv").show();
-        }else{
-            $("#cervicalExaminationDiv").hide();
-        }
-
         $('#activateBreastExamCheckBox').change(function() {
             if($(this).prop('checked')){
                 $("#breastExamDiv").show();
@@ -709,12 +744,6 @@
                 $("#breastExamDiv").hide();
             }
         })
-        if( $('#activateBreastExamCheckBox').val()) {
-            $("#breastExamDiv").show();
-        }else{
-            $("#breastExamDiv").hide();
-        }
-
         $('#activateSkinLesionCheckBox').change(function() {
             if($(this).prop('checked')){
                 $("#skinLesionDiv").show();
@@ -722,11 +751,6 @@
                 $("#skinLesionDiv").hide();
             }
         })
-        if( $('#activateSkinLesionCheckBox').val()) {
-            $("#skinLesionDiv").show();
-        }else{
-            $("#skinLesionDiv").hide();
-        }
 
         $('#activateScarCheckBox').change(function() {
             if($(this).prop('checked')){
@@ -735,11 +759,6 @@
                 $("#scarsDiv").hide();
             }
         })
-        if( $('#activateScarCheckBox').val()) {
-            $("#scarsDiv").show();
-        }else{
-            $("#scarsDiv").hide();
-        }
 
         $('#activatePainfulCheckBox').change(function() {
             if($(this).prop('checked')){
@@ -749,12 +768,6 @@
             }
         })
 
-        if( $('#activatePainfulCheckBox').val()) {
-            $("#painfulDiv").show();
-        }else{
-            $("#painfulDiv").hide();
-        }
-
         $('#auscultationCheckBox').change(function() {
             if($(this).prop('checked')){
                 $("#auscultationDiv").show();
@@ -762,12 +775,6 @@
                 $("#auscultationDiv").hide();
             }
         })
-
-        if( $('#auscultationCheckBox').val()) {
-            $("#auscultationDiv").show();
-        }else{
-            $("#auscultationDiv").hide();
-        }
 
         $('#medical_consultation_physical_exam_attributes_proctochological_examination_attributes_rectal_ampoule').on('change', function() {
             if(this.value == "OCUPADA"){
@@ -790,12 +797,6 @@
                 $("#formationPositionDiv").hide();
             }
         })
-
-        if( $('#formationCheckBox').val()) {
-            $("#formationPositionDiv").show();
-        }else{
-            $("#formationPositionDiv").hide();
-        }
 
         var stage = new Konva.Stage({
             container: 'breast',
