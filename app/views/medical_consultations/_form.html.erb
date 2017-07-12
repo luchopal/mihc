@@ -576,7 +576,9 @@
                 </table>
               </div>
           <% end %>
-
+          <%= f.fields_for :laboratories do |laboratory| %>
+              <%= render 'laboratory_fields', f: laboratory %>
+          <% end %>
           <div class="col-md-6">
             <table class="table">
               <tbody>
@@ -586,9 +588,7 @@
               </tbody>
             </table>
           </div>
-          <%= f.fields_for :laboratories do |laboratory| %>
-              <%= render 'laboratory_fields', f: laboratory %>
-          <% end %>
+
         </div>
       </div>
     </div>
