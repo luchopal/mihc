@@ -533,6 +533,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading"><label>Laboratorio </label> </div>
   <div class="panel-body">
+    <% if @medical_consultation.activate_laboratory %>
     <div class="row">
       <div class="col-md-2">
         <table class="table">
@@ -635,6 +636,7 @@
       </table>
       </div>
     </div>
+    <% end %>
   </div>
 </div>
 
