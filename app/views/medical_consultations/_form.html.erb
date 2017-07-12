@@ -472,9 +472,9 @@
 
 
     <div class="panel panel-primary">
-      <div class="panel-heading"><label>Laboratorio </label> </div>
+      <div class="panel-heading"><label>Laboratorio <%= f.check_box :activate_laboratory, id:"activateLaboratoryCheckBox",  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No', :size => 'mini' } %> </label> </div>
       <div class="panel-body">
-        <div class="row">
+        <div class="row" id="laboratoryDiv">
           <div class="col-md-1">
             <table class="table">
               <tbody>
@@ -665,6 +665,12 @@
         }else{
             $("#auscultationDiv").hide();
         }
+
+        if( $('#activateLaboratoryCheckBox:checked').val()) {
+            $("#laboratoryDiv").show();
+        }else{
+            $("#laboratoryDiv").hide();
+        }
         <% else %>
             $("#abdomenDiv").hide();
             $("#inspectionDiv").hide();
@@ -679,6 +685,7 @@
             $("#painfulDiv").hide();
             $("#auscultationDiv").hide();
             $("#formationPositionDiv").hide();
+            $("#laboratoryDiv").hide();
         <% end %>
         $('#abdomenCheckBox').change(function() {
             if($(this).prop('checked')){
@@ -797,6 +804,16 @@
                 $("#formationPositionDiv").hide();
             }
         })
+
+        $('#activateLaboratoryCheckBox').change(function() {
+            if($(this).prop('checked')){
+                $("#laboratoryDiv").show();
+            }else{
+                $("#laboratoryDiv").hide();
+            }
+        })
+
+
 
         var stage = new Konva.Stage({
             container: 'breast',

@@ -25,7 +25,7 @@ class MedicalConsultationsController < ApplicationController
   end
 
   def medical_consultation_params
-    params.require(:medical_consultation).permit(:date, :reason, :patient_id,
+    params.require(:medical_consultation).permit(:date, :reason, :patient_id, :activate_laboratory,
          physical_exam_attributes: [:overall_status, :activate_abdomen, :activate_proctochological_examination, :activate_inquinocrural_examination,
           :activate_breast_exam,:activate_skin_lesion, :activate_cervical_examination,
           abdomen_attributes: [:inspection, :plane, :spherical, :relaxed, :asymmetric, :umbilical_hernia, :eventration, :location, :size,
@@ -48,7 +48,8 @@ class MedicalConsultationsController < ApplicationController
 
         complementary_exams_attributes: [:complementary_exam_type, :comment, :_destroy],
 
-        laboratories_attributes: [:id,:hto,:hb,:gb,:gluc,:urea,:creat,:tgo,:tgp,:fal,:amilasa,:bt,:bd,:prot_tot,:alb,:na,:k,:plaq,:conc_pt,:cea,:ca199,:ca124,:date,:_destroy]
+        laboratories_attributes: [:id,:hto,:hb,:gb,:gluc,:urea,:creat,:tgo,:tgp,:fal,:amilasa,:bt,:bd,:prot_tot,:alb,:na,:k,:plaq,:conc_pt,:cea,:ca199,:ca124,:date,:_destroy],
+
     )
   end
 
