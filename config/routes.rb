@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'main/index' => 'main#index'
+  get '/' => 'patients#index'
   root 'main#index'
 
   get 'sessions/new'
