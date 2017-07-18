@@ -1,3 +1,4 @@
+<%= render 'patient' %>
 <%= form_for @medical_consultation do |f| %>
     <div class="row">
       <div class="col-md-1">
@@ -10,6 +11,11 @@
     <div class="row">
       <div class="col-md-12">
         <label>Motivo</label> <%= f.text_area :reason, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label>Anamnesis</label> <%= f.text_area :anamnesis, class: 'form-control' %>
       </div>
     </div>
     <br>
@@ -593,6 +599,11 @@
       </div>
     </div>
 
+    <div class="row">
+      <div class="col-md-12">
+        <label>Evolucion/Pendiente</label> <%= f.text_area :medical_evolution, class: 'form-control' %>
+      </div>
+    </div>
 
     <br>
     <div class="row">

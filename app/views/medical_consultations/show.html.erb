@@ -3,6 +3,7 @@
     <h1>Consulta</h1>
   </div>
 </div>
+<%= render 'patient' %>
 <div class="row">
   <div class="col-md-2">
     <label>Fecha </label>
@@ -13,6 +14,12 @@
   <div class="col-md-12">
     <label>Motivo</label>
     <textarea class="form-control" disabled > <%= @medical_consultation.reason %></textarea>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <label>Anamnesis</label>
+    <textarea class="form-control" disabled > <%= @medical_consultation.anamnesis %></textarea>
   </div>
 </div>
 <br>
@@ -637,6 +644,20 @@
       </div>
     </div>
     <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <label>Evolucion/Pendiente</label> 
+    <textarea class="form-control" disabled > <%= @medical_consultation.medical_evolution %></textarea>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <label>Anamnesis</label>
+
   </div>
 </div>
 
