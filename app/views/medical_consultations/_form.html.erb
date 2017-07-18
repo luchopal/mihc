@@ -583,12 +583,14 @@
               </div>
           <% end %>
           <%= f.fields_for :laboratories do |laboratory| %>
+              <div class="col-md-3">
               <%= render 'laboratory_fields', f: laboratory %>
+              </div>
           <% end %>
           <div class="col-md-3">
             <table class="table">
               <tbody>
-              <div class="links">
+              <div class="links col-md-3">
                 <%= link_to_add_association 'Agregar', f, :laboratories, class: "btn btn-primary" %>
               </div>
               </tbody>
