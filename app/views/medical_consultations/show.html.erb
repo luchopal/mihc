@@ -570,10 +570,11 @@
           </tbody>
         </table>
       </div>
-      <div class="col-md-10">
-        <table class="table">
-          <tbody>
+
       <% @medical_consultation.laboratories.each do |laboratory| %>
+          <div class="col-md-2">
+            <table class="table">
+              <tbody>
             <tr style="height: 37px;"><td><%= laboratory.date.strftime("%d/%m/%Y") %></td></tr>
             <tr style="height: 37px;"><td>
               <%= laboratory.hto %>
@@ -638,10 +639,10 @@
             <tr style="height: 37px;"><td>
               <%= laboratory.ca124 %>
             </tr></td>
+              </tbody>
+            </table>
+          </div>
       <% end %>
-        </tbody>
-      </table>
-      </div>
     </div>
     <% end %>
   </div>
