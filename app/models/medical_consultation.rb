@@ -3,7 +3,7 @@ class MedicalConsultation < ApplicationRecord
   has_one :physical_exam
   has_many :complementary_exams, inverse_of: :medical_consultation
   has_many :laboratories, inverse_of: :medical_consultation
-  accepts_nested_attributes_for :physical_exam, :complementary_exams,:laboratories
+  accepts_nested_attributes_for :physical_exam, :complementary_exams,:laboratories, allow_destroy: true
 
   def self.search(medical_consultation_id, page)
     if medical_consultation_id

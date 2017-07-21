@@ -4,7 +4,7 @@ class Patient < ApplicationRecord
 
   has_many :relatives, inverse_of: :patient
   has_many :medical_consultations
-  accepts_nested_attributes_for :relatives, reject_if: proc { |relatives| relatives[:status].blank? }
+  accepts_nested_attributes_for :relatives, reject_if: proc { |relatives| relatives[:status].blank? }, allow_destroy: true
 
   def self.search(term, page)
     if term
