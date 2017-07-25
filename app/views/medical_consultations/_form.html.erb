@@ -210,63 +210,162 @@
                           <div class="col-md-12">
                             <%= physical_exam.fields_for :proctochological_examination do |proctochological_examination| %>
                                 <div class="row">
-                                  <div class="col-md-3">
-                                    <label for = "sking_lesion">Lesion de piel</label>
-                                    <%= proctochological_examination.select :sking_lesion, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
-                                  </div>
-                                  <div class="col-md-3">
-                                    <label for = "hematoma">Hematoma</label>
-                                    <%= proctochological_examination.select :hematoma, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
-                                  </div>
-                                  <div class="col-md-3">
-                                    <label for="traumatic_injury">Lesion Traumatica</label>
-                                    <%= proctochological_examination.select :traumatic_injury, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
-                                  </div>
-                                  <div class="col-md-3">
-                                    <label for="uncomplicated_hemorrhoids">Hemorroides no complicada</label>
-                                    <%= proctochological_examination.select :uncomplicated_hemorrhoids, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col-md-3">
-                                    <label for = "acute_fissure">Fisura aguda</label>
-                                    <%= proctochological_examination.select :acute_fissure, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
-                                  </div>
-                                  <div class="col-md-3">
-                                    <label for = "chronic_fissure">Fisura cronica</label>
-                                    <%= proctochological_examination.select :chronic_fissure, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
-                                  </div>
-                                  <div class="col-md-3">
-                                    <label for="fistulous_orifice">Orificio fistuloso</label>
-                                    <%= proctochological_examination.select :fistulous_orifice, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
-                                  </div>
-                                  <div class="col-md-3">
-                                    <label for="bulging">Abombamiento</label>
-                                    <%= proctochological_examination.select :bulging, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col-md-3">
-                                    <label for = "plicoma">Plicoma</label>
-                                    <%= proctochological_examination.select :plicoma, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
-                                  </div>
-                                  <div class="col-md-3">
-                                    <label for = "redness">Enrojecimiento</label>
-                                    <%= proctochological_examination.select :redness, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
-                                  </div>
-                                  <div class="col-md-3">
-                                    <label for="thrombosis_hemorrhoids">Hemorroides Complicada, Trombosis</label>
-                                    <%= proctochological_examination.select :thrombosis_hemorrhoids, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
-                                  </div>
-                                  <div class="col-md-3">
-                                    <label for="fluxion_hemorrhoids">Hemorroides Complicada, Fluxion</label>
-                                    <%= proctochological_examination.select :fluxion_hemorrhoids, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col-md-4">
-                                    <label for="hemorrhage_hemorrhoids">Hemorroides Complicada, Hemorragia</label>
-                                    <%= proctochological_examination.select :hemorrhage_hemorrhoids, ProctochologicalExamination::HOUR, {},{class: 'form-control'}  %>
+                                  <div class="col-md-12">
+                                    <table class="table">
+                                      <thead>
+                                      <tr>
+                                        <th>Lesion/Hora</th><th></th><th>NINGUNA</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>EN CORONA</th>
+                                      </tr>
+                                      </thead>
+                                      <tbody>
+                                      <tr>
+                                      <td>
+                                      <label for = "sking_lesion">Lesion de piel</label>
+                                      </td>
+                                        <td></td>
+                                      <% ProctochologicalExamination::HOUR.each do |rt| %>
+                                      <td>
+                                          <%= proctochological_examination.radio_button :sking_lesion, rt ,:checked => (rt == "NINGUNA") %>
+                                      </td>
+
+                                      <% end %>
+                                      </tr>
+                                      <tr>
+                                      <td>
+                                        <label for = "hematoma">Hematoma</label>
+                                      </td>
+                                        <td></td>
+                                      <% ProctochologicalExamination::HOUR.each do |rt| %>
+                                          <td>
+                                            <%= proctochological_examination.radio_button :hematoma, rt,:checked => (rt == "NINGUNA") %>
+                                          </td>
+                                      <% end %>
+                                      </tr>
+                                      <tr>
+                                      <td>
+                                        <label for = "traumatic_injury">Lesion Traumatica</label>
+                                      </td>
+                                        <td></td>
+                                      <% ProctochologicalExamination::HOUR.each do |rt| %>
+                                          <td>
+                                            <%= proctochological_examination.radio_button :traumatic_injury, rt ,:checked => (rt == "NINGUNA") %>
+                                          </td>
+                                      <% end %>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <label for = "uncomplicated_hemorrhoids">Hemorroides No Complicadas</label>
+                                        </td>
+                                        <td></td>
+                                        <% ProctochologicalExamination::HOUR.each do |rt| %>
+                                            <td>
+                                              <%= proctochological_examination.radio_button :uncomplicated_hemorrhoids, rt ,:checked => (rt == "NINGUNA") %>
+                                            </td>
+                                        <% end %>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <label for = "acute_fissure">Fisura aguda</label>
+                                        </td>
+                                        <td></td>
+                                        <% ProctochologicalExamination::HOUR.each do |rt| %>
+                                            <td>
+                                              <%= proctochological_examination.radio_button :acute_fissure, rt ,:checked => (rt == "NINGUNA") %>
+                                            </td>
+                                        <% end %>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <label for = "chronic_fissure">Fisura cronica</label>
+                                        </td>
+                                        <td></td>
+                                        <% ProctochologicalExamination::HOUR.each do |rt| %>
+                                            <td>
+                                              <%= proctochological_examination.radio_button :chronic_fissure, rt ,:checked => (rt == "NINGUNA") %>
+                                            </td>
+                                        <% end %>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <label for = "fistulous_orifice">Orificio fistuloso</label>
+                                        </td>
+                                        <td></td>
+                                        <% ProctochologicalExamination::HOUR.each do |rt| %>
+                                            <td>
+                                              <%= proctochological_examination.radio_button :fistulous_orifice,rt, :checked => (rt == "NINGUNA") %>
+                                            </td>
+                                        <% end %>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <label for = "bulging">Abombamiento</label>
+                                        </td>
+                                        <td></td>
+                                        <% ProctochologicalExamination::HOUR.each do |rt| %>
+                                            <td>
+                                              <%= proctochological_examination.radio_button :bulging, rt,:checked => (rt == "NINGUNA") %>
+                                            </td>
+                                        <% end %>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <label for = "plicoma">Plicoma</label>
+                                        </td>
+                                        <td></td>
+                                        <% ProctochologicalExamination::HOUR.each do |rt| %>
+                                            <td>
+                                              <%= proctochological_examination.radio_button :plicoma, rt,:checked => (rt == "NINGUNA") %>
+                                            </td>
+                                        <% end %>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <label for = "redness">Enrojecimiento</label>
+                                        </td>
+                                        <td></td>
+                                        <% ProctochologicalExamination::HOUR.each do |rt| %>
+                                            <td>
+                                              <%= proctochological_examination.radio_button :redness, rt ,:checked => (rt == "NINGUNA") %>
+                                            </td>
+                                        <% end %>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <label for = "thrombosis_hemorrhoids">Hemorroides Complicada</label>
+                                        </td>
+                                        <td><label>Trombosis</label> </td>
+                                        <% ProctochologicalExamination::HOUR.each do |rt| %>
+                                            <td>
+                                              <%= proctochological_examination.radio_button :thrombosis_hemorrhoids, rt ,:checked => (rt == "NINGUNA") %>
+                                            </td>
+                                        <% end %>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <label for = "fluxion_hemorrhoids"></label>
+                                        </td>
+                                        <td><label>Fluxion</label></td>
+                                        <% ProctochologicalExamination::HOUR.each do |rt| %>
+                                            <td>
+                                              <%= proctochological_examination.radio_button :fluxion_hemorrhoids, rt ,:checked => (rt == "NINGUNA") %>
+                                            </td>
+                                        <% end %>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <label for = "hemorrhage_hemorrhoids"></label>
+                                        </td>
+                                        <td>
+                                          <label>Hemorragia</label>
+                                        </td>
+                                        <% ProctochologicalExamination::HOUR.each do |rt| %>
+                                            <td>
+                                              <%= proctochological_examination.radio_button :hemorrhage_hemorrhoids, rt,:checked => (rt == "NINGUNA") %>
+                                            </td>
+                                        <% end %>
+                                      </tr>
+                                      </tbody>
+                                    </table>
                                   </div>
                                 </div>
                                 <div class="row">
