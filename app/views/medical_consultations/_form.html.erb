@@ -211,16 +211,31 @@
                             <%= physical_exam.fields_for :proctochological_examination do |proctochological_examination| %>
                                 <div class="row">
                                   <div class="col-md-12">
-                                    <table class="table">
+                                    <table class="table" style="text-align: center">
                                       <thead>
                                       <tr>
-                                        <th>Lesion/Hora</th><th></th><th>NINGUNA</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>EN CORONA</th>
+                                        <th>Lesion/Hora</th>
+                                        <th></th>
+                                        <th  style="text-align: center">NINGUNA</th>
+                                        <th  style="text-align: center" >1</th>
+                                        <th  style="text-align: center" >2</th>
+                                        <th  style="text-align: center" >3</th>
+                                        <th  style="text-align: center" >4</th>
+                                        <th  style="text-align: center" >5</th>
+                                        <th  style="text-align: center" >6</th>
+                                        <th  style="text-align: center" >7</th>
+                                        <th  style="text-align: center" >8</th>
+                                        <th  style="text-align: center" >9</th>
+                                        <th  style="text-align: center" >10</th>
+                                        <th  style="text-align: center" >11</th>
+                                        <th  style="text-align: center" >12</th>
+                                        <th  style="text-align: center" >EN CORONA</th>
                                       </tr>
                                       </thead>
                                       <tbody>
                                       <tr>
-                                      <td>
-                                      <label for = "sking_lesion">Lesion de piel</label>
+                                      <td  style="text-align: left">
+                                      <label for = "sking_lesion" >Lesion de piel</label>
                                       </td>
                                         <td></td>
                                       <% ProctochologicalExamination::HOUR.each do |rt| %>
@@ -231,7 +246,7 @@
                                       <% end %>
                                       </tr>
                                       <tr>
-                                      <td>
+                                      <td  style="text-align: left">
                                         <label for = "hematoma">Hematoma</label>
                                       </td>
                                         <td></td>
@@ -242,7 +257,7 @@
                                       <% end %>
                                       </tr>
                                       <tr>
-                                      <td>
+                                      <td  style="text-align: left">
                                         <label for = "traumatic_injury">Lesion Traumatica</label>
                                       </td>
                                         <td></td>
@@ -253,7 +268,7 @@
                                       <% end %>
                                       </tr>
                                       <tr>
-                                        <td>
+                                        <td  style="text-align: left">
                                           <label for = "uncomplicated_hemorrhoids">Hemorroides No Complicadas</label>
                                         </td>
                                         <td></td>
@@ -264,7 +279,7 @@
                                         <% end %>
                                       </tr>
                                       <tr>
-                                        <td>
+                                        <td style="text-align: left">
                                           <label for = "acute_fissure">Fisura aguda</label>
                                         </td>
                                         <td></td>
@@ -275,7 +290,7 @@
                                         <% end %>
                                       </tr>
                                       <tr>
-                                        <td>
+                                        <td  style="text-align: left">
                                           <label for = "chronic_fissure">Fisura cronica</label>
                                         </td>
                                         <td></td>
@@ -286,7 +301,7 @@
                                         <% end %>
                                       </tr>
                                       <tr>
-                                        <td>
+                                        <td  style="text-align: left">
                                           <label for = "fistulous_orifice">Orificio fistuloso</label>
                                         </td>
                                         <td></td>
@@ -297,7 +312,7 @@
                                         <% end %>
                                       </tr>
                                       <tr>
-                                        <td>
+                                        <td  style="text-align: left">
                                           <label for = "bulging">Abombamiento</label>
                                         </td>
                                         <td></td>
@@ -308,7 +323,7 @@
                                         <% end %>
                                       </tr>
                                       <tr>
-                                        <td>
+                                        <td style="text-align: left">
                                           <label for = "plicoma">Plicoma</label>
                                         </td>
                                         <td></td>
@@ -319,7 +334,7 @@
                                         <% end %>
                                       </tr>
                                       <tr>
-                                        <td>
+                                        <td style="text-align: left">
                                           <label for = "redness">Enrojecimiento</label>
                                         </td>
                                         <td></td>
@@ -330,10 +345,10 @@
                                         <% end %>
                                       </tr>
                                       <tr>
-                                        <td>
+                                        <td style="text-align: left">
                                           <label for = "thrombosis_hemorrhoids">Hemorroides Complicada</label>
                                         </td>
-                                        <td><label>Trombosis</label> </td>
+                                        <td  style="text-align: left"><label>Trombosis</label> </td>
                                         <% ProctochologicalExamination::HOUR.each do |rt| %>
                                             <td>
                                               <%= proctochological_examination.radio_button :thrombosis_hemorrhoids, rt ,:checked => (rt == "NINGUNA") %>
@@ -341,10 +356,10 @@
                                         <% end %>
                                       </tr>
                                       <tr>
-                                        <td>
+                                        <td  style="text-align: left">
                                           <label for = "fluxion_hemorrhoids"></label>
                                         </td>
-                                        <td><label>Fluxion</label></td>
+                                        <td style="text-align: left"><label>Fluxion</label></td>
                                         <% ProctochologicalExamination::HOUR.each do |rt| %>
                                             <td>
                                               <%= proctochological_examination.radio_button :fluxion_hemorrhoids, rt ,:checked => (rt == "NINGUNA") %>
@@ -352,10 +367,10 @@
                                         <% end %>
                                       </tr>
                                       <tr>
-                                        <td>
+                                        <td  style="text-align: left">
                                           <label for = "hemorrhage_hemorrhoids"></label>
                                         </td>
-                                        <td>
+                                        <td  style="text-align: left">
                                           <label>Hemorragia</label>
                                         </td>
                                         <% ProctochologicalExamination::HOUR.each do |rt| %>
