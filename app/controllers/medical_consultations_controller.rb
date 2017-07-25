@@ -79,7 +79,12 @@ class MedicalConsultationsController < ApplicationController
     if @laboratories.nil?
       @laboratories = Array.new
     end
+  end
 
+  def destroy
+    @patient_id = params[:format]
+    MedicalConsultation.find(params[:id]).destroy
+    redirect_to controller: 'medical_consultations', action: 'index', patient_id: @patient_id
   end
 
   def update
