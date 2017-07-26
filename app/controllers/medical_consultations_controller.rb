@@ -27,9 +27,9 @@ class MedicalConsultationsController < ApplicationController
   end
 
   def medical_consultation_params
-    params.require(:medical_consultation).permit(:date, :reason, :patient_id, :activate_laboratory, :medical_evolution,
+    params.require(:medical_consultation).permit(:date, :reason, :patient_id, :activate_laboratory, :medical_evolution, :anamnesis,
          physical_exam_attributes: [:overall_status, :activate_abdomen, :activate_proctochological_examination, :activate_inquinocrural_examination,
-          :activate_breast_exam,:activate_skin_lesion, :activate_cervical_examination, :anamnesis,
+          :activate_breast_exam,:activate_skin_lesion, :activate_cervical_examination,
           abdomen_attributes: [:inspection, :plane, :spherical, :relaxed, :asymmetric, :umbilical_hernia, :eventration, :location, :size,
           :scar, :msu, :miu, :xp, :mc_burney, :kocher, :pfannenstiel, :others, :others_description,:palpation, :soft, :uptight, :painful,
           :superficial_pain, :deep_pain, :defence, :peritoneal_reaction, :percussion, :bloat, :auscultation, :auscultation_type, :auscultation_location],
