@@ -21,8 +21,8 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Nombre</th>
           <th>Apellido</th>
+          <th>Nombre</th>
           <th>DNI</th>
           <th>Obra Social/Num</th>
           <th>Sexo</th>
@@ -37,8 +37,8 @@
       <tbody>
         <% @patients.each do |data| %>
             <tr>
-              <td><%= data.name %></td>
               <td><%= data.surname %></td>
+              <td><%= data.name %></td>
               <td><%= data.document_number %></td>
               <td><%= data.associate_number %></td>
               <td><%= data.sex %></td>
