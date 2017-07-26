@@ -164,6 +164,12 @@
                                   <%= abdomen.select :peritoneal_reaction, Abdomen::PALPATION_TYPE, {},{class: 'form-control'}  %>
                                 </div>
                               </div>
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <label for = "abdomen_palpation">Palpacion Abdominal </label>
+                                  <%= abdomen.text_area :abdomen_palpation, class: 'form-control' %>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>

@@ -32,7 +32,7 @@ class MedicalConsultationsController < ApplicationController
           :activate_breast_exam,:activate_skin_lesion, :activate_cervical_examination,
           abdomen_attributes: [:inspection, :plane, :spherical, :relaxed, :asymmetric, :umbilical_hernia, :eventration, :location, :size,
           :scar, :msu, :miu, :xp, :mc_burney, :kocher, :pfannenstiel, :others, :others_description,:palpation, :soft, :uptight, :painful,
-          :superficial_pain, :deep_pain, :defence, :peritoneal_reaction, :percussion, :bloat, :auscultation, :auscultation_type, :auscultation_location],
+          :superficial_pain, :deep_pain, :defence, :peritoneal_reaction, :abdomen_palpation, :percussion, :bloat, :auscultation, :auscultation_type, :auscultation_location],
 
           proctochological_examination_attributes: [ :physical_exam_id,:sking_lesion,:hematoma,:traumatic_injury,:uncomplicated_hemorrhoids,
           :acute_fissure,:chronic_fissure,:fistulous_orifice,:bulging,:plicoma,:redness,:thrombosis_hemorrhoids,:fluxion_hemorrhoids,
