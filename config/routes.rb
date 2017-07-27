@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 
   get 'users/list'
   resources :users do
+    collection do
+      get 'forgot_password'
+      post 'send_new_password'
+    end
   end
 
   resources :patients do
