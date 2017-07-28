@@ -94,8 +94,8 @@ Rails.application.configure do
       authentication: :plain,
       port: 587,
       domain: ENV['MAILGUN_DOMAIN'],
-      user_name: ENV['MAILGUN_LOGIN'],
-      password: ENV['MAILGUN_PASSWORD'],
+      user_name: ENV['MAILGUN_SMTP_LOGIN'],
+      password: ENV['MAILGUN_SMTP_PASSWORD'],
       api_key: ENV['MAILGUN_API_KEY'],
   }
 
