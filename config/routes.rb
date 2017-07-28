@@ -14,6 +14,10 @@ Rails.application.routes.draw do
       get 'forgot_password'
       post 'send_new_password'
     end
+    member do
+      get 'edit_password'
+      post 'update_password'
+    end
   end
 
   resources :patients do
