@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     else
       random_password = (0...25).map { ('a'..'z').to_a[rand(26)] }.join
       @user.update_attribute(:password, random_password)
-      UserMailer.new_password(@user.email, @user.name, random_password).deliver_later
+      UserMailer.new_password(@user.email, @user.name, random_password).deliver_now
       flash[:notice] = '¡Contraseña enviada!'
       redirect_to '/login'
     end
