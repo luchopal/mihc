@@ -87,19 +87,19 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => 'mihc.herokuapp.com' }
   config.action_mailer.default_options = {
-      from: ENV['MAILGUN_LOGIN'],
+      from: ENV['GMAIL_USER'],
   }
+
+  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
-      address: "smtp.mailgun.org",
-      authentication: :plain,
-      port: 587,
-      domain: ENV['MAILGUN_DOMAIN'],
-      user_name: ENV['MAILGUN_SMTP_LOGIN'],
-      password: ENV['MAILGUN_SMTP_PASSWORD'],
-      api_key: ENV['MAILGUN_API_KEY'],
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :user_name            => ENV['GMAIL_USER'],
+      :password             => ENV['GMAIL_PASSWORD'],
+      :authentication       => "plain",
+      :enable_starttls_auto => true
   }
-
-
 
   config.i18n.default_locale = :es
 end
