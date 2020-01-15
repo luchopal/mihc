@@ -91,6 +91,8 @@ Rails.application.configure do
   }
 
   config.action_mailer.delivery_method = :smtp
+  
+  #Nuevas variables de entorno para envio de mail.
   config.action_mailer.smtp_settings = {
         address: "smtp.mailgun.org",
         authentication: :plain,
@@ -100,6 +102,7 @@ Rails.application.configure do
         password: ENV['MAILGUN_PASSWORD'],
         api_key: ENV['MAILGUN_API_KEY'],
     }
+
 
   config.i18n.default_locale = :es
 end
