@@ -41,6 +41,7 @@ GEM
     arel (7.1.4)
     autoprefixer-rails (6.7.2)
       execjs
+    bcrypt (3.1.11)
     bcrypt (3.1.11-x64-mingw32)
     bindex (0.5.0)
     bootstrap-sass (3.3.7)
@@ -48,6 +49,7 @@ GEM
       sass (>= 3.3.4)
     bootstrap-toggle-rails (2.2.1.0)
     builder (3.2.3)
+    byebug (11.0.1)
     cocoon (1.2.10)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -65,6 +67,7 @@ GEM
     country_select (3.0.0)
       countries (~> 2.0)
       sort_alphabetical (~> 1.0)
+    crass (1.0.6)
     erubis (2.7.0)
     execjs (2.7.0)
     globalid (0.4.0)
@@ -78,7 +81,8 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    loofah (2.0.3)
+    loofah (2.4.0)
+      crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.5)
       mime-types (>= 1.16, < 4)
@@ -86,14 +90,17 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mini_portile2 (2.1.0)
+    mini_portile2 (2.4.0)
     minitest (5.10.2)
     money (6.9.0)
       i18n (>= 0.6.4, < 0.9)
     multi_json (1.12.1)
     nio4r (2.0.0)
-    nokogiri (1.7.2-x64-mingw32)
-      mini_portile2 (~> 2.1.0)
+    nokogiri (1.10.7)
+      mini_portile2 (~> 2.4.0)
+    nokogiri (1.10.7-x64-mingw32)
+      mini_portile2 (~> 2.4.0)
+    pg (0.19.0)
     pg (0.19.0-x64-mingw32)
     puma (3.8.2)
     rack (2.0.2)
@@ -166,6 +173,7 @@ GEM
       will_paginate (>= 3.0.3)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
