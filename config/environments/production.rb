@@ -87,7 +87,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => 'mihc.herokuapp.com' }
   config.action_mailer.default_options = {
-      from: ENV['GMAIL_USER'],
+      from: ENV['MAILGUN_LOGIN'],
   }
 
   config.action_mailer.delivery_method = :smtp
