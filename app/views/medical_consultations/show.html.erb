@@ -531,6 +531,10 @@
     <% @medical_consultation.complementary_exams.each do |complementary_exam| %>
         <div class="row">
           <div class="col-md-2">
+            <label>Fecha </label>
+            <%= complementary_exam.date%>
+          </div>
+          <div class="col-md-2">
             <label>Tipo </label>
             <%= complementary_exam.complementary_exam_type%>
           </div>
@@ -538,6 +542,7 @@
             <label>Observacion </label>
             <%= complementary_exam.comment %>
           </div>
+        
         </div>
     <% end %>
   </div>
@@ -654,10 +659,21 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-12">
-    <label>Evolucion/Pendiente</label>
-    <textarea class="form-control" disabled > <%= @medical_consultation.medical_evolution %></textarea>
+<div class="panel panel-primary">
+  <div class="panel-heading"><label>Examenes Complementarios</label>  </div>
+  <div class="panel-body">
+    <% @medical_consultation.evolutions.each do |evolution| %>
+        <div class="row">
+          <div class="col-md-2">
+            <label>Fecha </label>
+            <%= evolution.date%>
+          </div>
+          <div class="col-md-8">
+            <label>Descripcion </label>
+            <%= evolution.description %>
+          </div>
+        </div>
+    <% end %>
   </div>
 </div>
 <br>

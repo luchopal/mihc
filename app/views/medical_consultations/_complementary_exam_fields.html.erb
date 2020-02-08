@@ -1,13 +1,18 @@
-<div class="row nested-fields">
+<div class="row">
   <div class="col-md-2">
     <%= f.label :complementary_exam_type, "Tipo" %>
     <%= f.select :complementary_exam_type, ComplementaryExam::TYPE, {},{class: 'form-control'}  %>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-7">
     <%= f.label :comment, "Observacion" %>
-    <%= f.text_field :comment,{class: 'form-control'}  %>
+    <%= f.text_area :comment,{class: 'form-control'}  %>
   </div>
-  <div class="col-md-2 form-margin">
+  <div class="col-md-3">
+  <%= f.date_select :date, {:start_year=>1930, order: [:day, :month, :year]}, {:class => "date-myselect form-control"} %>
+  </div>
+</div>
+<div class="row">  
+  <div class="col-md-2">
     <%= link_to_remove_association "Eliminar", f , class: "btn btn-danger btn-block"%>
   </div>
 </div>

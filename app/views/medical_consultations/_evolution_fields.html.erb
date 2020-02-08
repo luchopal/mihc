@@ -1,0 +1,13 @@
+<div class="row nested-fields">
+  <div class="col-md-9">
+    <%= f.label :description, "Descripcion" %>  
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+  <div class="col-md-3">
+  <%= f.date_select :date, {:start_year=>1930, order: [:day, :month, :year]}, {:class => "date-myselect form-control"} %>
+  </div>
+  <div class="col-md-2 form-margin">
+    <%= link_to_remove_association "Eliminar", f , class: "btn btn-danger btn-block"%>
+  </div>
+</div>
+<br>

@@ -629,79 +629,6 @@
               </tbody>
             </table>
           </div>
-
-          <% @laboratories.each do |laboratory| %>
-              <div class="col-md-1">
-                <table class="table">
-                  <tbody>
-                  <tr style="height: 37px;"><td><%= laboratory.date.strftime("%d/%m/%Y") %></td></tr>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.hto %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.hb %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.gb %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.gluc %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.urea %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.creat %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td >
-                    <%= laboratory.tgo != "" ? laboratory.tgo : " " %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.tgp %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.fal %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.amilasa %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.bt %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.bd %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.prot_tot %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.alb %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.na %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.k %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.plaq %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.conc_pt %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.cea %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.ca199 %>
-                  </tr></td>
-                  <tr style="height: 37px;"><td>
-                    <%= laboratory.ca124 %>
-                  </tr></td>
-                  </tbody>
-                </table>
-              </div>
-          <% end %>
           <%= f.fields_for :laboratories do |laboratory| %>
               <div class="col-md-3">
               <%= render 'laboratory_fields', f: laboratory %>
@@ -721,9 +648,15 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <label>Evolucion/Pendiente</label> <%= f.text_area :medical_evolution, class: 'form-control' %>
+    <div class="panel panel-primary">
+      <div class="panel-heading"><label>Evoluciones</label> </div>
+      <div class="panel-body">
+        <%= f.fields_for :evolutions do |evolution| %>
+            <%= render 'evolution_fields', f: evolution %>
+        <% end %>
+        <div class="links">
+          <%= link_to_add_association 'Agregar evolucion', f, :evolutions, class: "btn btn-primary" %>
+        </div>
       </div>
     </div>
 
