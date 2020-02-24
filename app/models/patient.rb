@@ -12,7 +12,7 @@ class Patient < ApplicationRecord
       OR sex ilike '%#{term}%' OR marital_status ilike '%#{term}%' OR city ilike '%#{term}%' OR phone ilike '%#{term}%' OR close_person_phone ilike '%#{term}%'
       OR job ilike '%#{term}%'").paginate(page: page, per_page: 5).order('id DESC')
     else
-      paginate(page: page, per_page: 5).order('id ASC')
+      paginate(page: page, per_page: 15).order('id ASC')
     end
   end
 end
