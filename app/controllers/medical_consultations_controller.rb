@@ -82,6 +82,17 @@ class MedicalConsultationsController < ApplicationController
     end
   end
 
+  def add
+    @medical_consultation_id = params[:id]
+    @medical_consultation = MedicalConsultation.find(@medical_consultation_id)
+    @patient_id = params[:format]
+    @patient = Patient.find(@patient_id)
+    @laboratories = Laboratory.get_laboratories(@patient_id)
+    if @laboratories.nil?
+      @laboratories = Array.new
+    end
+  end
+
   def destroy
     @patient_id = params[:format]
     MedicalConsultation.find(params[:id]).destroy

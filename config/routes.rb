@@ -24,6 +24,9 @@ Rails.application.routes.draw do
   end
 
   resources :medical_consultations do
+    member do
+      get 'add'
+    end
   end
 
 end
