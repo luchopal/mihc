@@ -48,7 +48,7 @@ class MedicalConsultationsController < ApplicationController
 
           skin_lesion_exam_attributes: [:skin_lesion_description]],
 
-        complementary_exams_attributes: [:id, :complementary_exam_type, :comment, :_destroy],
+        complementary_exams_attributes: [:id, :date, :complementary_exam_type, :comment, :_destroy],
         evolutions_attributes: [:id, :description, :date, :_destroy],
 
         laboratories_attributes: [:id,:hto,:hb,:gb,:gluc,:urea,:creat,:tgo,:tgp,:fal,:amilasa,:bt,:bd,:prot_tot,:alb,:na,:k,:plaq,:conc_pt,:cea,:ca199,:ca124,:date,:_destroy],
