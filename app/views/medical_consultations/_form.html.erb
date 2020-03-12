@@ -580,7 +580,7 @@
                         </div>
                       </div>
                     </div>
-    <% end %>
+        <% end %>
     </div>
     </div>
 
@@ -600,50 +600,110 @@
     <div class="panel panel-primary">
       <div class="panel-heading"><label>Laboratorio <%= f.check_box :activate_laboratory, id:"activateLaboratoryCheckBox",  :data => { :toggle => 'toggle', :on => 'Si', :off => 'No', :size => 'mini' } %> </label> </div>
       <div class="panel-body">
-        <div class="row" id="laboratoryDiv">
-          <div class="col-md-1">
-            <table class="table">
-              <tbody>
-              <tr><th>Tipo</th></tr>
-              <tr><th>Hto</th></tr>
-              <tr><th>Hb</th></tr>
-              <tr><th>GB</th></tr>
-              <tr><th>Gluc</th></tr>
-              <tr><th>Urea</th></tr>
-              <tr><th>Creat</th></tr>
-              <tr><th>TGO</th></tr>
-              <tr><th>TGP</th></tr>
-              <tr><th>FAL</th></tr>
-              <tr><th>Amilasa</th></tr>
-              <tr><th>BT</th></tr>
-              <tr><th>BD</th></tr>
-              <tr><th>Prot.T.</th></tr>
-              <tr><th>Alb</th></tr>
-              <tr><th>NA+</th></tr>
-              <tr><th>K+</th></tr>
-              <tr><th>Plaq</th></tr>
-              <tr><th>Conc.PT</th></tr>
-              <tr><th>CEA</th></tr>
-              <tr><th>CA 19-9</th></tr>
-              <tr><th>CA 125</th></tr>
-              </tbody>
+      <div class="row" id="laboratoryDiv">
+        <div class="col-md-1">
+          <table class="table table-bordered" style="table-layout:fixed">
+            <thead>
+            <th width="180px">Fecha</th>
+            <th width="65px">Hto</th>
+            <th width="65px">Hb  </th>
+            <th width="65px">GB  </th>
+            <th width="65px">Glu </th>
+            <th width="65px">Urea</th>
+            <th width="65px">Creat</th>
+            <th width="65px">TGO </th>
+            <th width="65px">TGP </th>
+            <th width="65px">FAL </th>
+            <th width="65px">Ami </th>
+            <th width="65px">BT  </th>
+            <th width="65px">BD  </th>
+            <th width="65px">PT  </th>
+            <th width="65px">Alb </th>
+            <th width="65px">NA+ </th>
+            <th width="65px">K+  </th>
+            <th width="65px">Plaq</th>
+            <th width="65px">[PT] </th>
+            <th width="65px">CEA</th>
+            <th width="65px">CA_19_9</th>
+            <th width="65px">CA_125</th>
+            <th width="65px">Quitar</th>
+            </thead>
+            <tbody id="lines">
+            <% @medical_consultation.laboratories.each do |laboratory| %>
+              <tr>
+                <td><%= laboratory.date.strftime("%d/%m/%Y") %></td>
+                <td>
+                  <%= laboratory.hto %>
+                </td>
+                <td>
+                  <%= laboratory.hb %>
+                </td>
+                <td>
+                  <%= laboratory.gb %>
+                </td>
+                <td>
+                  <%= laboratory.gluc %>
+                </td>
+                <td>
+                  <%= laboratory.urea %>
+                </td>
+                <td>
+                  <%= laboratory.creat %>
+                </td>
+                <td >
+                  <%= laboratory.tgo != "" ? laboratory.tgo : " " %>
+                </td>
+                <td>
+                  <%= laboratory.tgp %>
+                </td>
+                <td>
+                  <%= laboratory.fal %>
+                </td>
+                <td>
+                  <%= laboratory.amilasa %>
+                </td>
+                <td>
+                  <%= laboratory.bt %>
+                </td>
+                <td>
+                  <%= laboratory.bd %>
+                </td>
+                <td>
+                  <%= laboratory.prot_tot %>
+                </td>
+                <td>
+                  <%= laboratory.alb %>
+                </td>
+                <td>
+                  <%= laboratory.na %>
+                </td>
+                <td>
+                  <%= laboratory.k %>
+                </td>
+                <td>
+                  <%= laboratory.plaq %>
+                </td>
+                <td>
+                  <%= laboratory.conc_pt %>
+                </td>
+                <td>
+                  <%= laboratory.cea %>
+                </td>
+                <td>
+                  <%= laboratory.ca199 %>
+                </td>
+                <td>
+                  <%= laboratory.ca124 %>
+                </td>
+                <td></td>
+                </tr>
+                <% end %>           
+                <%= link_to_add_association 'Agregar', f, :laboratories,
+                :"data-association-insertion-node" => "tbody#lines",
+                :"data-association-insertion-method" => "append",
+                :class => "links btn btn-primary" %>
+            
             </table>
-          </div>
-          <%= f.fields_for :laboratories do |laboratory| %>
-              <div class="col-md-3">
-              <%= render 'laboratory_fields', f: laboratory %>
-              </div>
-          <% end %>
-          <div class="col-md-3">
-            <table class="table">
-              <tbody>
-              <div class="links col-md-3">
-                <%= link_to_add_association 'Agregar', f, :laboratories, class: "btn btn-primary" %>
-              </div>
-              </tbody>
-            </table>
-          </div>
-
         </div>
       </div>
     </div>
