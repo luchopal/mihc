@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 #ruby version
-ruby "2.4.4"
+ruby "3.1.2"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.3'
 # Use postgret as the database for Active Record
